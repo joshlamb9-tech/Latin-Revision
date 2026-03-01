@@ -134,10 +134,10 @@
 | DEPLOY-02 | Phase 1 | Pending |
 
 **Coverage:**
-- v1 requirements: 28 total
-- Mapped to phases: 28
-- Unmapped: 0 ✓
+- v1 requirements: 30 total
+- Mapped to phases: 30
+- Unmapped: 0 (corrected from initial draft count of 28)
 
 ---
 *Requirements defined: 2026-03-01*
-*Last updated: 2026-03-01 after initial definition*
+*Last updated: 2026-03-01 after roadmap creation — traceability confirmed, count corrected to 30*
