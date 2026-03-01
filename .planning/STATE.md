@@ -10,9 +10,9 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 ## Current Position
 
 Phase: 1 of 4 (Foundation)
-Plan: 2 of 3 in current phase
-Status: In progress
-Last activity: 2026-03-01 — Completed 01-02 app shell and visual identity
+Plan: 3 of 3 in current phase (checkpoint awaiting human verification)
+Status: In progress — awaiting Task 3 checkpoint verification
+Last activity: 2026-03-01 — Completed 01-03 Tasks 1-2 (sw.js, manifest, icons); checkpoint pending
 
 Progress: [██░░░░░░░░] 20%
 
@@ -53,6 +53,9 @@ Recent decisions affecting current work:
 - SW registration silently catches errors — graceful forward-compatibility until Plan 01-03
 - 211-entry ISEB CE vocabulary JSON schema locked — all 8 POS, all 6 topic tags, Unicode macrons
 - frequency_rank integers assigned based on specimen paper prominence (L1+L2 words rank highest)
+- [Phase 01-foundation]: CACHE_NAME prefix ce-latin- prevents collision with French site ce-french-v1
+- [Phase 01-foundation]: No purpose field on manifest icons — avoids combined any+maskable bug breaking iOS install
+- [Phase 01-foundation]: French site SW flagged as unsafe (deletes all caches on activate) — needs prefix filter fix before Latin site goes live
 
 ### Pending Todos
 
@@ -60,10 +63,11 @@ None yet.
 
 ### Blockers/Concerns
 
-- French site SW cache prefix must be confirmed before Phase 1 is complete (PWA-05)
+- **French site SW unsafe activation (CRITICAL):** French sw.js deletes ALL non-matching caches on activate — will nuke Latin site's ce-latin-v1 cache whenever French SW updates. Fix needed in y8-french-revision/sw.js: add `startsWith('ce-french-')` prefix filter in activate handler.
+- **GitHub Pages not yet configured:** Josh needs to create repo, add remote, push, and enable GitHub Pages.
 
 ## Session Continuity
 
 Last session: 2026-03-01
-Stopped at: Completed 01-01-PLAN.md (vocabulary and grammar data foundation)
+Stopped at: 01-03-PLAN.md Task 3 checkpoint — human verification of Phase 1 foundation required
 Resume file: None
