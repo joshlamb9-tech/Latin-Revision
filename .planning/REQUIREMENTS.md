@@ -23,11 +23,11 @@
 
 ### PWA & Offline
 
-- [ ] **PWA-01**: Service worker (`sw.js`) with unique `ce-latin-` cache namespace — does not collide with French site cache
-- [ ] **PWA-02**: All site assets precached on SW install — full offline access
-- [ ] **PWA-03**: Web App Manifest (`manifest.webmanifest`) — installable from Safari as home screen app
+- [x] **PWA-01**: Service worker (`sw.js`) with unique `ce-latin-` cache namespace — does not collide with French site cache
+- [x] **PWA-02**: All site assets precached on SW install — full offline access
+- [x] **PWA-03**: Web App Manifest (`manifest.webmanifest`) — installable from Safari as home screen app
 - [ ] **PWA-04**: SW update notification banner — users see "content updated, reload" when new version available
-- [ ] **PWA-05**: French site service worker audited and confirmed safe (no cache namespace collision)
+- [x] **PWA-05**: French site service worker audited and confirmed safe (no cache namespace collision)
 
 ### Grammar Reference
 
@@ -58,8 +58,8 @@
 
 ### GitHub Pages Deployment
 
-- [ ] **DEPLOY-01**: Site deployed to GitHub Pages via `joshlamb9-tech` organisation repo
-- [ ] **DEPLOY-02**: HTTPS enforced, correct base URL configured for service worker scope
+- [x] **DEPLOY-01**: Site deployed to GitHub Pages via `joshlamb9-tech` organisation repo
+- [x] **DEPLOY-02**: HTTPS enforced, correct base URL configured for service worker scope
 
 ---
 
@@ -110,11 +110,11 @@
 | SHELL-02 | Phase 1 | Complete |
 | SHELL-03 | Phase 1 | Complete |
 | SHELL-04 | Phase 1 | Complete |
-| PWA-01 | Phase 1 | Pending |
-| PWA-02 | Phase 1 | Pending |
-| PWA-03 | Phase 1 | Pending |
+| PWA-01 | Phase 1 | Complete |
+| PWA-02 | Phase 1 | Complete |
+| PWA-03 | Phase 1 | Complete |
 | PWA-04 | Phase 4 | Pending |
-| PWA-05 | Phase 1 | Pending |
+| PWA-05 | Phase 1 | Complete |
 | GRAM-01 | Phase 2 | Pending |
 | GRAM-02 | Phase 2 | Pending |
 | GRAM-03 | Phase 2 | Pending |
@@ -130,8 +130,8 @@
 | QUIZ-04 | Phase 3 | Pending |
 | PAPER-01 | Phase 4 | Pending |
 | PAPER-02 | Phase 4 | Pending |
-| DEPLOY-01 | Phase 1 | Pending |
-| DEPLOY-02 | Phase 1 | Pending |
+| DEPLOY-01 | Phase 1 | Complete |
+| DEPLOY-02 | Phase 1 | Complete |
 
 **Coverage:**
 - v1 requirements: 30 total

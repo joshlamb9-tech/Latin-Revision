@@ -15,15 +15,15 @@ provides:
   - "manifest.webmanifest: PWA web app manifest for home screen install"
   - "icons/icon-192.png and icon-512.png: valid PNG PWA icons (terracotta placeholder)"
 affects:
-  - all phases (SW precaches every site asset — must be updated when new files are added)
+  - all phases (SW precaches every site asset -- must be updated when new files are added)
   - Phase 4 (icons will be replaced with proper artwork)
 
 # Tech tracking
 tech-stack:
   added: []
   patterns:
-    - "Cache namespace: ce-latin-v1 prefix on ALL caches — never deletes foreign caches"
-    - "Activate event filters by startsWith('ce-latin-') before deletion — safe for multi-PWA origin"
+    - "Cache namespace: ce-latin-v1 prefix on ALL caches -- never deletes foreign caches"
+    - "Activate event filters by startsWith('ce-latin-') before deletion -- safe for multi-PWA origin"
     - "Cache-first fetch strategy for static site assets"
     - "skipWaiting + clients.claim for immediate SW activation on update"
     - "Same-origin-only fetch interception"
@@ -37,55 +37,58 @@ key-files:
   modified: []
 
 key-decisions:
-  - "CACHE_NAME = 'ce-latin-v1' — ce-latin- prefix prevents collision with French site's ce-french-v1 cache"
-  - "Activation only deletes caches matching startsWith('ce-latin-') — safe on shared origin"
-  - "No 'purpose' field on manifest icons — avoids combined any+maskable bug that breaks iOS install"
-  - "Icons are solid-colour terracotta placeholders (#B5451B) — Phase 4 replaces with artwork"
-  - "No remote configured — Josh must create GitHub repo and push manually (instructions in User Setup)"
-  - "French site SW uses dangerous pattern (deletes ALL non-matching caches on activate) — flagged but not modified"
+  - "CACHE_NAME = 'ce-latin-v1' -- ce-latin- prefix prevents collision with French site's ce-french-v1 cache"
+  - "Activation only deletes caches matching startsWith('ce-latin-') -- safe on shared origin"
+  - "No 'purpose' field on manifest icons -- avoids combined any+maskable bug that breaks iOS install"
+  - "Icons are solid-colour terracotta placeholders (#B5451B) -- Phase 4 replaces with artwork"
+  - "Repo: https://github.com/joshlamb9-tech/Latin-Revision.git -- Josh pushed and enabled GitHub Pages"
+  - "French site SW uses dangerous pattern (deletes ALL non-matching caches on activate) -- flagged but not modified"
+  - "Hamburger not visible on desktop (hidden at 768px+) -- correct behaviour, verify on phone once Pages live"
 
 patterns-established:
   - "When adding new files to the site, update PRECACHE_ASSETS in sw.js and bump CACHE_NAME version"
-  - "Never use caches.keys().then(all => all.filter(k => k !== CACHE_NAME).map(...)) — that nukes other PWAs"
+  - "Never use caches.keys().then(all => all.filter(k => k !== CACHE_NAME).map(...)) -- that nukes other PWAs"
 
 requirements-completed: [PWA-01, PWA-02, PWA-03, PWA-05, DEPLOY-01, DEPLOY-02]
 
 # Metrics
-duration: 8min
+duration: 10min
 completed: 2026-03-01
 ---
 
 # Phase 1 Plan 03: PWA Infrastructure Summary
 
-**ce-latin-v1 service worker (cache-first, safe namespace, offline-first) + PWA manifest + placeholder icons — French site SW audited and flagged as cache-collision risk**
+**ce-latin-v1 service worker (cache-first, safe namespace, offline-first) + PWA manifest + placeholder icons — French site SW audited and flagged as cache-collision risk — deployed to GitHub Pages**
 
 ## Performance
 
-- **Duration:** ~8 min (Tasks 1-2 complete; Task 3 pending human verification)
+- **Duration:** ~10 min (all 3 tasks complete)
 - **Started:** 2026-03-01T16:40:39Z
-- **Completed:** 2026-03-01 (Tasks 1-2); Task 3 pending
-- **Tasks:** 2 of 3 (Task 3 is checkpoint:human-verify)
+- **Completed:** 2026-03-01
+- **Tasks:** 3 of 3 (Task 3 human-verify checkpoint approved by Josh)
 - **Files modified:** 4
 
 ## Accomplishments
 
 - sw.js created with CACHE_NAME = 'ce-latin-v1', install/activate/fetch handlers, safe namespace-filtered cache deletion
 - manifest.webmanifest valid JSON: CE Latin Revision, standalone display, parchment background, terracotta theme
-- icons/icon-192.png and icon-512.png generated as valid PNG files (PNG magic bytes confirmed, solid terracotta colour)
-- French site SW audited: uses 'ce-french-v1' cache name but has an unsafe activation pattern — flagged for Josh
+- icons/icon-192.png and icons/icon-512.png generated as valid PNG files (PNG magic bytes confirmed, solid terracotta colour)
+- French site SW audited: uses 'ce-french-v1' cache name but has an unsafe activation pattern -- flagged for Josh
+- Site pushed to GitHub Pages at https://github.com/joshlamb9-tech/Latin-Revision.git -- Josh confirmed push and Pages enabled
+- **Task 3 checkpoint approved by Josh (2026-03-01) -- Phase 1 complete**
 
 ## Task Commits
 
 1. **Task 1: Audit French site SW and create ce-latin- service worker** - `7379897` (feat)
 2. **Task 2: Create manifest, generate icons, and commit for GitHub Pages** - `035ae13` (feat)
-3. **Task 3: Verify Phase 1 foundation** — PENDING (checkpoint:human-verify)
+3. **Task 3: Verify Phase 1 foundation** - APPROVED (checkpoint:human-verify -- no code changes)
 
 ## Files Created/Modified
 
-- `sw.js` — Service worker: ce-latin-v1 cache, install/activate/fetch handlers, same-origin fetch interception
-- `manifest.webmanifest` — PWA manifest: name/short_name, start_url, display:standalone, two icon entries
-- `icons/icon-192.png` — 192x192 solid terracotta PNG (valid PNG, 547 bytes)
-- `icons/icon-512.png` — 512x512 solid terracotta PNG (valid PNG, 1881 bytes)
+- `sw.js` -- Service worker: ce-latin-v1 cache, install/activate/fetch handlers, same-origin fetch interception
+- `manifest.webmanifest` -- PWA manifest: name/short_name, start_url, display:standalone, two icon entries
+- `icons/icon-192.png` -- 192x192 solid terracotta PNG (valid PNG, 547 bytes)
+- `icons/icon-512.png` -- 512x512 solid terracotta PNG (valid PNG, 1881 bytes)
 
 ## French Site SW Audit
 
@@ -97,11 +100,11 @@ Found local clone at `/Users/josh/marvin/y8-french-revision/sw.js`.
 |----------|---------|
 | Cache name | `ce-french-v1` |
 | Prefix | `ce-french-` (different from Latin's `ce-latin-`) |
-| Install handler | Safe — opens own cache |
-| Activate handler | **UNSAFE** — deletes ALL caches not matching its own name |
-| Fetch handler | Safe — cache-first |
+| Install handler | Safe -- opens own cache |
+| Activate handler | **UNSAFE** -- deletes ALL caches not matching its own name |
+| Fetch handler | Safe -- cache-first |
 
-**The unsafe line (French sw.js line 59-61):**
+**The unsafe line (French sw.js lines 59-61):**
 ```js
 keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
 ```
@@ -119,23 +122,15 @@ keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
 keys.filter(k => k.startsWith('ce-french-') && k !== CACHE_NAME).map(k => caches.delete(k))
 ```
 
-## GitHub Pages — User Setup Required
+## GitHub Pages
 
-No remote is configured on the local repo. Josh needs to:
+Josh confirmed:
+- Repo: `https://github.com/joshlamb9-tech/Latin-Revision.git`
+- Push completed
+- GitHub Pages enabled
+- Live URL: `https://joshlamb9-tech.github.io/Latin-Revision/` (verify once DNS propagates)
 
-1. Create the repo at github.com/joshlamb9-tech (choose a name, e.g. `ce-latin-revision`)
-2. Add the remote:
-   ```bash
-   git remote add origin git@github.com:joshlamb9-tech/ce-latin-revision.git
-   ```
-3. Push:
-   ```bash
-   git push -u origin main
-   ```
-4. Enable GitHub Pages: repo Settings > Pages > Source: Deploy from branch, branch: main, folder: / (root)
-5. Note the URL — it will be `https://joshlamb9-tech.github.io/ce-latin-revision/`
-
-**Important:** Once deployed, verify that the sw.js PRECACHE_ASSETS paths work correctly. The SW uses relative paths (`./index.html`) which is correct for GitHub Pages sub-path deployments.
+**Note on hamburger nav:** The hamburger menu is intentionally hidden on desktop (CSS hides it at 768px+). If it is not visible when viewing in a desktop browser, that is correct behaviour. Test the hamburger on a phone or by narrowing the browser window below 768px.
 
 ## SW Cache Contents (PRECACHE_ASSETS)
 
@@ -157,7 +152,7 @@ The SW precaches these 14 assets:
 
 ## Icon Quality Notes
 
-Current icons are solid-colour terracotta rectangles (#B5451B) — valid PNG, functional for PWA install, but not visually branded. Phase 4 should replace them with a proper icon featuring a Roman letter or symbol. Options to discuss then:
+Current icons are solid-colour terracotta rectangles (#B5451B) -- valid PNG, functional for PWA install, but not visually branded. Phase 4 should replace them with a proper icon featuring a Roman letter or symbol. Options to discuss then:
 - Classic 'L' in EB Garamond on terracotta background
 - Simple laurel wreath
 - Roman column or fasces symbol
@@ -165,24 +160,25 @@ Current icons are solid-colour terracotta rectangles (#B5451B) — valid PNG, fu
 ## Decisions Made
 
 - CACHE_NAME prefix `ce-latin-` is the namespace that protects against French site collisions (Latin SW's side is safe; French SW's side needs fixing)
-- No `purpose` field on manifest icons — correct per plan guidance to avoid the combined any+maskable bug
-- Placeholder icons using pure Node.js PNG generation — no ImageMagick on this machine
+- No `purpose` field on manifest icons -- correct per plan guidance to avoid the combined any+maskable bug
+- Placeholder icons using pure Node.js PNG generation -- no ImageMagick on this machine
 
 ## Deviations from Plan
 
-None in execution — plan ran exactly as written. The French site audit finding (unsafe activation pattern) was anticipated by the plan and handled per its instructions: flagged in SUMMARY, not modified.
+None in execution -- plan ran exactly as written. The French site audit finding (unsafe activation pattern) was anticipated by the plan and handled per its instructions: flagged in SUMMARY, not modified.
 
 ## Issues Encountered
 
-- Node.js inline `-e` script with `!i.purpose` caused shell escape issue — resolved by writing verification to a temp file. No impact on output.
+- Node.js inline `-e` script with `!i.purpose` caused shell escape issue -- resolved by writing verification to a temp file. No impact on output.
 
 ## Next Phase Readiness
 
-- sw.js ready — offline capability wired in as soon as site is deployed
-- manifest.webmanifest ready — site can be added to home screen
-- Phase 2 can proceed immediately (grammar reference tables, vocabulary browser)
-- **Blocker for full PWA:** Josh needs to push to GitHub and enable GitHub Pages
-- **Blocker for French site safety:** French site sw.js activation handler needs prefix-filtering update
+Phase 1 is complete. Phase 2 (Grammar and Vocabulary) can begin.
+
+- sw.js ready -- offline capability active once Pages propagates
+- manifest.webmanifest ready -- site can be added to home screen from Safari
+- **Remaining action for Josh:** Fix French site sw.js activation handler (see French Site SW Audit above)
+- **Remaining action for Josh:** Verify hamburger nav and offline mode on iPhone once Pages is live
 
 ## Self-Check
 
@@ -197,4 +193,4 @@ None in execution — plan ran exactly as written. The French site audit finding
 
 ---
 *Phase: 01-foundation*
-*Completed: 2026-03-01 (partial — Task 3 checkpoint pending)*
+*Completed: 2026-03-01 -- all tasks complete, Phase 1 done*
