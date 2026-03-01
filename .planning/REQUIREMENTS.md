@@ -16,10 +16,10 @@
 
 ### App Shell & Visual Identity
 
-- [ ] **SHELL-01**: Classical visual theme — EB Garamond font, parchment/terracotta/stone colour palette, distinct from French site's Mowden blue
-- [ ] **SHELL-02**: Mobile-first responsive layout with hamburger navigation
-- [ ] **SHELL-03**: App shell (`index.html`, `css/style.css`, `js/app.js`) with `<main id="app">` pattern — content populated by JS, not hard-coded HTML
-- [ ] **SHELL-04**: UTF-8 encoding verified throughout; macron characters render correctly across devices
+- [x] **SHELL-01**: Classical visual theme — EB Garamond font, parchment/terracotta/stone colour palette, distinct from French site's Mowden blue
+- [x] **SHELL-02**: Mobile-first responsive layout with hamburger navigation
+- [x] **SHELL-03**: App shell (`index.html`, `css/style.css`, `js/app.js`) with `<main id="app">` pattern — content populated by JS, not hard-coded HTML
+- [x] **SHELL-04**: UTF-8 encoding verified throughout; macron characters render correctly across devices
 
 ### PWA & Offline
 
@@ -106,10 +106,10 @@
 | DATA-02 | Phase 1 | Pending |
 | DATA-03 | Phase 1 | Pending |
 | DATA-04 | Phase 1 | Pending |
-| SHELL-01 | Phase 1 | Pending |
-| SHELL-02 | Phase 1 | Pending |
-| SHELL-03 | Phase 1 | Pending |
-| SHELL-04 | Phase 1 | Pending |
+| SHELL-01 | Phase 1 | Complete |
+| SHELL-02 | Phase 1 | Complete |
+| SHELL-03 | Phase 1 | Complete |
+| SHELL-04 | Phase 1 | Complete |
 | PWA-01 | Phase 1 | Pending |
 | PWA-02 | Phase 1 | Pending |
 | PWA-03 | Phase 1 | Pending |
