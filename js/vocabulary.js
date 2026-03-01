@@ -19,8 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 function getFilters() {
   const params = new URLSearchParams(window.location.search);
   return {
-    topic: params.get('topic'),           // decoded automatically — "war/army" not "war%2Farmy"
-    freq: params.get('freq') ? parseInt(params.get('freq'), 10) : null
+    topic: params.get('topic'),
+    freq:  params.get('freq')  ? parseInt(params.get('freq'), 10)  : null,
+    pos:   params.get('pos'),                                         // e.g. "noun", "verb"
+    decl:  params.get('decl')  ? parseInt(params.get('decl'), 10)  : null,  // 1, 2, 3
+    conj:  params.get('conj')  ? parseInt(params.get('conj'), 10)  : null   // 1, 2
   };
 }
 
@@ -29,6 +32,16 @@ function applyFilters(words, filters) {
 
   if (filters.topic) {
     result = result.filter(w => w.topics.includes(filters.topic));
+  }
+
+  if (filters.pos) {
+    result = result.filter(w => w.part_of_speech === filters.pos);
+    if (filters.decl) {
+      result = result.filter(w => w.declension === filters.decl);
+    }
+    if (filters.conj) {
+      result = result.filter(w => w.conjugation === filters.conj);
+    }
   }
 
   if (filters.freq) {
@@ -44,12 +57,7 @@ function renderVocabulary(app, filtered, filters, total) {
 
   // Heading
   const h1 = document.createElement('h1');
-  if (filters.topic) {
-    const label = filters.topic.charAt(0).toUpperCase() + filters.topic.slice(1);
-    h1.textContent = 'Vocabulary \u2014 ' + label;
-  } else {
-    h1.textContent = 'Vocabulary';
-  }
+  h1.textContent = 'Vocabulary \u2014 ' + buildHeading(filters);
   app.appendChild(h1);
 
   // Filter nav
@@ -60,8 +68,6 @@ function renderVocabulary(app, filtered, filters, total) {
   count.className = 'vocab-count';
   if (filters.freq) {
     count.textContent = 'Top ' + filters.freq + ' by frequency';
-  } else if (filters.topic) {
-    count.textContent = filtered.length + ' word' + (filtered.length !== 1 ? 's' : '') + ' (' + filters.topic + ')';
   } else {
     count.textContent = filtered.length + ' word' + (filtered.length !== 1 ? 's' : '');
   }
@@ -79,65 +85,85 @@ function renderVocabulary(app, filtered, filters, total) {
   // Word list
   const list = document.createElement('div');
   list.className = 'vocab-list';
-  filtered.forEach(word => {
-    list.appendChild(renderWordItem(word));
-  });
+  filtered.forEach(word => list.appendChild(renderWordItem(word)));
   app.appendChild(list);
+}
+
+function buildHeading(filters) {
+  if (filters.freq)  return 'Top ' + filters.freq;
+  if (filters.topic) {
+    const label = filters.topic.charAt(0).toUpperCase() + filters.topic.slice(1);
+    return label;
+  }
+  if (filters.pos) {
+    const posLabel = filters.pos.charAt(0).toUpperCase() + filters.pos.slice(1) + 's';
+    if (filters.decl) return posLabel + ' \u2014 ' + ordinal(filters.decl) + ' Declension';
+    if (filters.conj) return posLabel + ' \u2014 ' + ordinal(filters.conj) + ' Conjugation';
+    return posLabel;
+  }
+  return 'All Words';
+}
+
+function ordinal(n) {
+  return ['', '1st', '2nd', '3rd'][n] || n + 'th';
 }
 
 function renderFilterNav(filters) {
   const nav = document.createElement('nav');
   nav.className = 'vocab-filters';
 
-  // All words link
-  const allLink = document.createElement('a');
-  allLink.href = 'vocabulary.html';
-  allLink.className = 'vocab-filter-link';
-  allLink.textContent = 'All words';
-  if (!filters.topic && !filters.freq) {
-    allLink.classList.add('active');
-  }
-  nav.appendChild(allLink);
+  // ── By Grammar ──────────────────────────────────────────────
+  addSectionLabel(nav, 'By Grammar');
 
-  // Topic links
-  const topicDefs = [
-    { value: 'family',     label: 'Family',     href: 'vocabulary.html?topic=family' },
-    { value: 'war/army',   label: 'War & Army', href: 'vocabulary.html?topic=war%2Farmy' },
-    { value: 'gods',       label: 'Gods',        href: 'vocabulary.html?topic=gods' },
-    { value: 'travel',     label: 'Travel',      href: 'vocabulary.html?topic=travel' },
-    { value: 'daily-life', label: 'Daily Life',  href: 'vocabulary.html?topic=daily-life' },
-    { value: 'nature',     label: 'Nature',      href: 'vocabulary.html?topic=nature' }
-  ];
+  // Nouns group
+  addFilterLink(nav, 'All Nouns',     'vocabulary.html?pos=noun',        !filters.topic && !filters.freq && filters.pos === 'noun' && !filters.decl);
+  addFilterLink(nav, '1st Decl.',     'vocabulary.html?pos=noun&decl=1', filters.pos === 'noun' && filters.decl === 1);
+  addFilterLink(nav, '2nd Decl.',     'vocabulary.html?pos=noun&decl=2', filters.pos === 'noun' && filters.decl === 2);
+  addFilterLink(nav, '3rd Decl.',     'vocabulary.html?pos=noun&decl=3', filters.pos === 'noun' && filters.decl === 3);
 
-  topicDefs.forEach(def => {
-    const a = document.createElement('a');
-    a.href = def.href;
-    a.className = 'vocab-filter-link';
-    a.textContent = def.label;
-    if (filters.topic === def.value) {
-      a.classList.add('active');
-    }
-    nav.appendChild(a);
-  });
+  // Verbs group
+  addFilterLink(nav, 'All Verbs',     'vocabulary.html?pos=verb',        filters.pos === 'verb' && !filters.conj);
+  addFilterLink(nav, '1st Conj.',     'vocabulary.html?pos=verb&conj=1', filters.pos === 'verb' && filters.conj === 1);
+  addFilterLink(nav, '2nd Conj.',     'vocabulary.html?pos=verb&conj=2', filters.pos === 'verb' && filters.conj === 2);
 
-  // Frequency links
-  const freqDefs = [
-    { value: 50,  label: 'Top 50',  href: 'vocabulary.html?freq=50' },
-    { value: 100, label: 'Top 100', href: 'vocabulary.html?freq=100' }
-  ];
+  // Other parts of speech
+  addFilterLink(nav, 'Adjectives',    'vocabulary.html?pos=adjective',   filters.pos === 'adjective');
+  addFilterLink(nav, 'Adverbs',       'vocabulary.html?pos=adverb',      filters.pos === 'adverb');
+  addFilterLink(nav, 'Prepositions',  'vocabulary.html?pos=preposition',  filters.pos === 'preposition');
 
-  freqDefs.forEach(def => {
-    const a = document.createElement('a');
-    a.href = def.href;
-    a.className = 'vocab-filter-link';
-    a.textContent = def.label;
-    if (filters.freq === def.value) {
-      a.classList.add('active');
-    }
-    nav.appendChild(a);
-  });
+  // ── By Topic ─────────────────────────────────────────────────
+  addSectionLabel(nav, 'By Topic');
+
+  addFilterLink(nav, 'All words',   'vocabulary.html',                         !filters.topic && !filters.freq && !filters.pos);
+  addFilterLink(nav, 'Family',      'vocabulary.html?topic=family',            filters.topic === 'family');
+  addFilterLink(nav, 'War & Army',  'vocabulary.html?topic=war%2Farmy',        filters.topic === 'war/army');
+  addFilterLink(nav, 'Gods',        'vocabulary.html?topic=gods',              filters.topic === 'gods');
+  addFilterLink(nav, 'Travel',      'vocabulary.html?topic=travel',            filters.topic === 'travel');
+  addFilterLink(nav, 'Daily Life',  'vocabulary.html?topic=daily-life',        filters.topic === 'daily-life');
+  addFilterLink(nav, 'Nature',      'vocabulary.html?topic=nature',            filters.topic === 'nature');
+
+  // ── By Frequency ─────────────────────────────────────────────
+  addSectionLabel(nav, 'By Frequency');
+
+  addFilterLink(nav, 'Top 50',  'vocabulary.html?freq=50',  filters.freq === 50);
+  addFilterLink(nav, 'Top 100', 'vocabulary.html?freq=100', filters.freq === 100);
 
   return nav;
+}
+
+function addSectionLabel(nav, text) {
+  const span = document.createElement('span');
+  span.className = 'vocab-filter-label';
+  span.textContent = text;
+  nav.appendChild(span);
+}
+
+function addFilterLink(nav, label, href, isActive) {
+  const a = document.createElement('a');
+  a.href = href;
+  a.className = 'vocab-filter-link' + (isActive ? ' active' : '');
+  a.textContent = label;
+  nav.appendChild(a);
 }
 
 function renderWordItem(word) {
@@ -146,7 +172,7 @@ function renderWordItem(word) {
 
   const latinSpan = document.createElement('span');
   latinSpan.className = 'vocab-latin';
-  latinSpan.textContent = word.latin;
+  latinSpan.textContent = buildLatinDisplay(word);
 
   const englishSpan = document.createElement('span');
   englishSpan.className = 'vocab-english';
@@ -163,20 +189,28 @@ function renderWordItem(word) {
   return div;
 }
 
+function buildLatinDisplay(word) {
+  // Show genitive for nouns: "ancilla, -ae"
+  if (word.part_of_speech === 'noun' && word.genitive) {
+    // Abbreviate genitive ending after the stem where possible
+    const gen = word.genitive;
+    return word.latin + ', ' + gen;
+  }
+  return word.latin;
+}
+
 function buildMeta(word) {
   const pos = word.part_of_speech;
 
   if (pos === 'noun') {
-    return pos + ', ' + word.gender + '., ' + word.declension + ' decl.';
+    const genderMap = { m: 'masc.', f: 'fem.', n: 'neut.' };
+    const g = genderMap[word.gender] || word.gender;
+    return g + ' \u00b7 ' + ordinal(word.declension) + ' decl.';
   }
 
   if (pos === 'verb') {
-    if (word.conjugation) {
-      return pos + ', ' + word.conjugation + ' conj.';
-    }
-    return pos + ', irreg.';
+    return word.conjugation ? ordinal(word.conjugation) + ' conj.' : 'irreg.';
   }
 
-  // adjective, adverb, preposition, conjunction, numeral, pronoun
   return pos;
 }
