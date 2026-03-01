@@ -9,10 +9,10 @@
 
 ### Data Foundation
 
-- [ ] **DATA-01**: Vocabulary JSON dataset (`data/vocabulary/all.json`) encoding all ISEB CE Level 1 & 2 words with schema: `id`, `latin`, `genitive`, `gender`, `english`, `part_of_speech`, `declension`/`conjugation`, `topics`, `frequency_rank`
-- [ ] **DATA-02**: Macrons included on all vocabulary entries, sourced from Bob Bass materials and ISEB syllabus
-- [ ] **DATA-03**: Grammar paradigm JSON (`data/grammar/nouns.json`, `data/grammar/verbs.json`) encoding all CE Level 1 & 2 noun declensions (1st, 2nd, 3rd) and verb conjugations (present, imperfect, perfect) plus `sum`
-- [ ] **DATA-04**: Vocabulary topic tags applied across all entries (family, war/army, gods, travel, daily-life, nature)
+- [x] **DATA-01**: Vocabulary JSON dataset (`data/vocabulary/all.json`) encoding all ISEB CE Level 1 & 2 words with schema: `id`, `latin`, `genitive`, `gender`, `english`, `part_of_speech`, `declension`/`conjugation`, `topics`, `frequency_rank`
+- [x] **DATA-02**: Macrons included on all vocabulary entries, sourced from Bob Bass materials and ISEB syllabus
+- [x] **DATA-03**: Grammar paradigm JSON (`data/grammar/nouns.json`, `data/grammar/verbs.json`) encoding all CE Level 1 & 2 noun declensions (1st, 2nd, 3rd) and verb conjugations (present, imperfect, perfect) plus `sum`
+- [x] **DATA-04**: Vocabulary topic tags applied across all entries (family, war/army, gods, travel, daily-life, nature)
 
 ### App Shell & Visual Identity
 
@@ -102,10 +102,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| DATA-01 | Phase 1 | Pending |
-| DATA-02 | Phase 1 | Pending |
-| DATA-03 | Phase 1 | Pending |
-| DATA-04 | Phase 1 | Pending |
+| DATA-01 | Phase 1 | Complete |
+| DATA-02 | Phase 1 | Complete |
+| DATA-03 | Phase 1 | Complete |
+| DATA-04 | Phase 1 | Complete |
 | SHELL-01 | Phase 1 | Complete |
 | SHELL-02 | Phase 1 | Complete |
 | SHELL-03 | Phase 1 | Complete |

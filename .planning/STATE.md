@@ -51,6 +51,8 @@ Recent decisions affecting current work:
 - CSS custom properties for entire design system — enables easy theming
 - Hamburger nav uses .open class toggle on .site-nav — simple, no extra JS state
 - SW registration silently catches errors — graceful forward-compatibility until Plan 01-03
+- 211-entry ISEB CE vocabulary JSON schema locked — all 8 POS, all 6 topic tags, Unicode macrons
+- frequency_rank integers assigned based on specimen paper prominence (L1+L2 words rank highest)
 
 ### Pending Todos
 
@@ -59,10 +61,9 @@ None yet.
 ### Blockers/Concerns
 
 - French site SW cache prefix must be confirmed before Phase 1 is complete (PWA-05)
-- ISEB Level 1 and 2 word list needs sourcing from official ISEB PDF and Bob Bass materials before DATA-01 can be completed
 
 ## Session Continuity
 
 Last session: 2026-03-01
-Stopped at: Completed 01-02-PLAN.md (app shell and visual identity)
+Stopped at: Completed 01-01-PLAN.md (vocabulary and grammar data foundation)
 Resume file: None
