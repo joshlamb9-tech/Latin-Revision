@@ -31,11 +31,11 @@
 
 ### Grammar Reference
 
-- [ ] **GRAM-01**: Grammar reference pages for 1st, 2nd, and 3rd declension noun tables (all cases, singular and plural)
-- [ ] **GRAM-02**: Grammar reference pages for verb conjugation tables (present, imperfect, perfect — 1st and 2nd conjugation)
-- [ ] **GRAM-03**: `sum` (to be) conjugation reference page
-- [ ] **GRAM-04**: Grammar tables rendered from JSON via `grammar.js` — not hard-coded HTML
-- [ ] **GRAM-05**: Grammar tables readable on mobile — `overflow-x: auto` wrapper, responsive reflow tested on real iPhone Safari
+- [x] **GRAM-01**: Grammar reference pages for 1st, 2nd, and 3rd declension noun tables (all cases, singular and plural)
+- [x] **GRAM-02**: Grammar reference pages for verb conjugation tables (present, imperfect, perfect — 1st and 2nd conjugation)
+- [x] **GRAM-03**: `sum` (to be) conjugation reference page
+- [x] **GRAM-04**: Grammar tables rendered from JSON via `grammar.js` — not hard-coded HTML
+- [x] **GRAM-05**: Grammar tables readable on mobile — `overflow-x: auto` wrapper, responsive reflow tested on real iPhone Safari
 
 ### Vocabulary Pages
 
@@ -115,11 +115,11 @@
 | PWA-03 | Phase 1 | Complete |
 | PWA-04 | Phase 4 | Pending |
 | PWA-05 | Phase 1 | Complete |
-| GRAM-01 | Phase 2 | Pending |
-| GRAM-02 | Phase 2 | Pending |
-| GRAM-03 | Phase 2 | Pending |
-| GRAM-04 | Phase 2 | Pending |
-| GRAM-05 | Phase 2 | Pending |
+| GRAM-01 | Phase 2 | Complete |
+| GRAM-02 | Phase 2 | Complete |
+| GRAM-03 | Phase 2 | Complete |
+| GRAM-04 | Phase 2 | Complete |
+| GRAM-05 | Phase 2 | Complete |
 | VOCAB-01 | Phase 2 | Pending |
 | VOCAB-02 | Phase 2 | Pending |
 | VOCAB-03 | Phase 2 | Pending |

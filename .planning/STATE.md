@@ -5,32 +5,33 @@
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** A student can revise every examinable area of CE Latin from their phone or tablet, offline if needed, without needing to carry textbooks.
-**Current focus:** Phase 1 — Foundation
+**Current focus:** Phase 2 — Grammar and Vocabulary
 
 ## Current Position
 
-Phase: 1 of 4 (Foundation) -- COMPLETE
-Plan: 3 of 3 in current phase -- COMPLETE
-Status: Phase 1 complete -- ready for Phase 2
-Last activity: 2026-03-01 -- Completed 01-03 all tasks (human-verify checkpoint approved); Phase 1 done
+Phase: 2 of 4 (Grammar and Vocabulary) -- IN PROGRESS
+Plan: 1 of 3 in current phase -- COMPLETE
+Status: Phase 2 underway — Plan 02-01 grammar reference page complete
+Last activity: 2026-03-01 -- Completed 02-01 grammar reference page (js/grammar.js, CSS tables, grammar.html wiring)
 
-Progress: [███░░░░░░░] 30%
+Progress: [████░░░░░░] 40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: ~7 min
-- Total execution time: ~0.35 hours
+- Total plans completed: 4
+- Average duration: ~6 min
+- Total execution time: ~0.38 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-foundation | 3 of 3 | ~21 min | ~7 min |
+| 02-grammar-and-vocabulary | 1 of 3 | ~5 min | ~5 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (5 min), 01-02 (6 min), 01-03 (10 min)
+- Last 5 plans: 01-01 (5 min), 01-02 (6 min), 01-03 (10 min), 02-01 (5 min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -56,6 +57,9 @@ Recent decisions affecting current work:
 - [Phase 01-foundation]: CACHE_NAME prefix ce-latin- prevents collision with French site ce-french-v1
 - [Phase 01-foundation]: No purpose field on manifest icons — avoids combined any+maskable bug breaking iOS install
 - [Phase 01-foundation]: French site SW flagged as unsafe (deletes all caches on activate) — needs prefix filter fix before Latin site goes live
+- [Phase 02-grammar-and-vocabulary]: createElement (not innerHTML) used for all table cell content — ensures Unicode macrons never mangled
+- [Phase 02-grammar-and-vocabulary]: Fetch paths use no leading slash (data/grammar/nouns.json) — required for GitHub Pages sub-path deployment
+- [Phase 02-grammar-and-vocabulary]: grammar.js fully self-contained, no shared globals with app.js
 
 ### Pending Todos
 
@@ -69,5 +73,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-01
-Stopped at: Phase 1 complete -- all 3 plans done; ready to start Phase 2
+Stopped at: Completed 02-01 grammar reference page — grammar.html rendering all declension and conjugation tables from JSON
 Resume file: None
