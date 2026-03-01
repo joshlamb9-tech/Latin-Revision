@@ -39,10 +39,10 @@
 
 ### Vocabulary Pages
 
-- [ ] **VOCAB-01**: Full ISEB word list page — all Level 1 & 2 words visible, searchable/filterable
-- [ ] **VOCAB-02**: By-topic vocabulary views (family, war/army, gods, travel, daily-life, nature) via URL parameter (`?topic=family`)
-- [ ] **VOCAB-03**: By-frequency vocabulary views (Top 50, Top 100) — "high-yield" cramming mode
-- [ ] **VOCAB-04**: Vocabulary pages rendered from JSON via JS — not hard-coded HTML
+- [x] **VOCAB-01**: Full ISEB word list page — all Level 1 & 2 words visible, searchable/filterable
+- [x] **VOCAB-02**: By-topic vocabulary views (family, war/army, gods, travel, daily-life, nature) via URL parameter (`?topic=family`)
+- [x] **VOCAB-03**: By-frequency vocabulary views (Top 50, Top 100) — "high-yield" cramming mode
+- [x] **VOCAB-04**: Vocabulary pages rendered from JSON via JS — not hard-coded HTML
 
 ### Practice Quiz
 
@@ -120,10 +120,10 @@
 | GRAM-03 | Phase 2 | Complete |
 | GRAM-04 | Phase 2 | Complete |
 | GRAM-05 | Phase 2 | Complete |
-| VOCAB-01 | Phase 2 | Pending |
-| VOCAB-02 | Phase 2 | Pending |
-| VOCAB-03 | Phase 2 | Pending |
-| VOCAB-04 | Phase 2 | Pending |
+| VOCAB-01 | Phase 2 | Complete |
+| VOCAB-02 | Phase 2 | Complete |
+| VOCAB-03 | Phase 2 | Complete |
+| VOCAB-04 | Phase 2 | Complete |
 | QUIZ-01 | Phase 3 | Pending |
 | QUIZ-02 | Phase 3 | Pending |
 | QUIZ-03 | Phase 3 | Pending |
@@ -140,4 +140,4 @@
 
 ---
 *Requirements defined: 2026-03-01*
-*Last updated: 2026-03-01 after roadmap creation — traceability confirmed, count corrected to 30*
+*Last updated: 2026-03-01 after Plan 02-02 completion — VOCAB-01 through VOCAB-04 marked complete*

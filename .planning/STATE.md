@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-03-01)
 ## Current Position
 
 Phase: 2 of 4 (Grammar and Vocabulary) -- IN PROGRESS
-Plan: 1 of 3 in current phase -- COMPLETE
-Status: Phase 2 underway — Plan 02-01 grammar reference page complete
-Last activity: 2026-03-01 -- Completed 02-01 grammar reference page (js/grammar.js, CSS tables, grammar.html wiring)
+Plan: 2 of 3 in current phase -- COMPLETE
+Status: Phase 2 underway — Plan 02-02 vocabulary reference page complete
+Last activity: 2026-03-01 -- Completed 02-02 vocabulary page (js/vocabulary.js, topic+freq filtering, CSS vocab styles, sw.js v2)
 
-Progress: [████░░░░░░] 40%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
-- Average duration: ~6 min
-- Total execution time: ~0.38 hours
+- Total plans completed: 5
+- Average duration: ~5 min
+- Total execution time: ~0.42 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-foundation | 3 of 3 | ~21 min | ~7 min |
-| 02-grammar-and-vocabulary | 1 of 3 | ~5 min | ~5 min |
+| 02-grammar-and-vocabulary | 2 of 3 | ~8 min | ~4 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (5 min), 01-02 (6 min), 01-03 (10 min), 02-01 (5 min)
+- Last 5 plans: 01-01 (5 min), 01-02 (6 min), 01-03 (10 min), 02-01 (5 min), 02-02 (3 min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -60,6 +60,8 @@ Recent decisions affecting current work:
 - [Phase 02-grammar-and-vocabulary]: createElement (not innerHTML) used for all table cell content — ensures Unicode macrons never mangled
 - [Phase 02-grammar-and-vocabulary]: Fetch paths use no leading slash (data/grammar/nouns.json) — required for GitHub Pages sub-path deployment
 - [Phase 02-grammar-and-vocabulary]: grammar.js fully self-contained, no shared globals with app.js
+- [Phase 02-grammar-and-vocabulary]: URLSearchParams decodes %2F automatically — topic filter compares against 'war/army' directly; hrefs encode slash as %2F
+- [Phase 02-grammar-and-vocabulary]: sw.js bumped to ce-latin-v2 to force reinstall with grammar.js and vocabulary.js in precache manifest
 
 ### Pending Todos
 
@@ -73,5 +75,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-03-01
-Stopped at: Completed 02-01 grammar reference page — grammar.html rendering all declension and conjugation tables from JSON
+Stopped at: Completed 02-02 vocabulary reference page — vocabulary.html rendering all 211 ISEB words with topic and frequency filtering
 Resume file: None

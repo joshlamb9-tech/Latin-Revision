@@ -48,8 +48,8 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Grammar JS module, table CSS, wire grammar.html (GRAM-01 through GRAM-05)
-- [ ] 02-02-PLAN.md — Vocabulary JS module, vocab CSS, wire vocabulary.html, update SW cache (VOCAB-01 through VOCAB-04)
+- [x] 02-01-PLAN.md — Grammar JS module, table CSS, wire grammar.html (GRAM-01 through GRAM-05)
+- [x] 02-02-PLAN.md — Vocabulary JS module, vocab CSS, wire vocabulary.html, update SW cache (VOCAB-01 through VOCAB-04)
 - [ ] 02-03-PLAN.md — Push to GitHub Pages, human-verify on real iPhone Safari
 
 ### Phase 3: Practice Quiz
@@ -87,6 +87,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete | 2026-03-01 |
-| 2. Grammar and Vocabulary | 1/3 | In Progress|  |
+| 2. Grammar and Vocabulary | 2/3 | In Progress|  |
 | 3. Practice Quiz | 0/TBD | Not started | - |
 | 4. Past Papers and Polish | 0/TBD | Not started | - |
