@@ -349,8 +349,12 @@ a:hover {
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
+  position: sticky;
+  top: 56px;
+  z-index: 90;
+  background-color: var(--color-parchment);
   margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  padding: 0.75rem 0 1rem;
   border-bottom: 1px solid var(--color-border);
 }
 
