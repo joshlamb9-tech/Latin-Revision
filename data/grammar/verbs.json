@@ -1,0 +1,154 @@
+{
+  "conjugations": [
+    {
+      "conjugation": 1,
+      "name": "First Conjugation",
+      "example_verb": "portō",
+      "example_infinitive": "portāre",
+      "example_meaning": "to carry",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "endings_note": "stem: portā-",
+          "singular": {
+            "1st": "portō",
+            "2nd": "portās",
+            "3rd": "portat"
+          },
+          "plural": {
+            "1st": "portāmus",
+            "2nd": "portātis",
+            "3rd": "portant"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "endings_note": "stem + bā-",
+          "singular": {
+            "1st": "portābam",
+            "2nd": "portābās",
+            "3rd": "portābat"
+          },
+          "plural": {
+            "1st": "portābāmus",
+            "2nd": "portābātis",
+            "3rd": "portābant"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "endings_note": "perfect stem portāv- + perfect endings",
+          "singular": {
+            "1st": "portāvī",
+            "2nd": "portāvistī",
+            "3rd": "portāvit"
+          },
+          "plural": {
+            "1st": "portāvimus",
+            "2nd": "portāvistis",
+            "3rd": "portāvērunt"
+          }
+        }
+      }
+    },
+    {
+      "conjugation": 2,
+      "name": "Second Conjugation",
+      "example_verb": "moneō",
+      "example_infinitive": "monēre",
+      "example_meaning": "to warn",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "endings_note": "stem: monē-",
+          "singular": {
+            "1st": "moneō",
+            "2nd": "monēs",
+            "3rd": "monet"
+          },
+          "plural": {
+            "1st": "monēmus",
+            "2nd": "monētis",
+            "3rd": "monent"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "endings_note": "stem + bā-",
+          "singular": {
+            "1st": "monēbam",
+            "2nd": "monēbās",
+            "3rd": "monēbat"
+          },
+          "plural": {
+            "1st": "monēbāmus",
+            "2nd": "monēbātis",
+            "3rd": "monēbant"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "endings_note": "perfect stem monu- + perfect endings",
+          "singular": {
+            "1st": "monuī",
+            "2nd": "monuistī",
+            "3rd": "monuit"
+          },
+          "plural": {
+            "1st": "monuimus",
+            "2nd": "monuistis",
+            "3rd": "monuērunt"
+          }
+        }
+      }
+    }
+  ],
+  "irregular": [
+    {
+      "verb": "sum",
+      "infinitive": "esse",
+      "meaning": "to be",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "singular": {
+            "1st": "sum",
+            "2nd": "es",
+            "3rd": "est"
+          },
+          "plural": {
+            "1st": "sumus",
+            "2nd": "estis",
+            "3rd": "sunt"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "singular": {
+            "1st": "eram",
+            "2nd": "erās",
+            "3rd": "erat"
+          },
+          "plural": {
+            "1st": "erāmus",
+            "2nd": "erātis",
+            "3rd": "erant"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "singular": {
+            "1st": "fuī",
+            "2nd": "fuistī",
+            "3rd": "fuit"
+          },
+          "plural": {
+            "1st": "fuimus",
+            "2nd": "fuistis",
+            "3rd": "fuērunt"
+          }
+        }
+      }
+    }
+  ]
+}

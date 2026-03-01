@@ -1,0 +1,124 @@
+{
+  "declensions": [
+    {
+      "declension": 1,
+      "name": "First Declension",
+      "gender": "f",
+      "example_noun": "puella",
+      "example_meaning": "girl",
+      "cases": ["nominative", "vocative", "accusative", "genitive", "dative", "ablative"],
+      "singular": {
+        "nominative": "puella",
+        "vocative": "puella",
+        "accusative": "puellam",
+        "genitive": "puellae",
+        "dative": "puellae",
+        "ablative": "puellā"
+      },
+      "plural": {
+        "nominative": "puellae",
+        "vocative": "puellae",
+        "accusative": "puellās",
+        "genitive": "puellārum",
+        "dative": "puellīs",
+        "ablative": "puellīs"
+      }
+    },
+    {
+      "declension": 2,
+      "name": "Second Declension (Masculine -us)",
+      "gender": "m",
+      "example_noun": "servus",
+      "example_meaning": "slave",
+      "cases": ["nominative", "vocative", "accusative", "genitive", "dative", "ablative"],
+      "singular": {
+        "nominative": "servus",
+        "vocative": "serve",
+        "accusative": "servum",
+        "genitive": "servī",
+        "dative": "servō",
+        "ablative": "servō"
+      },
+      "plural": {
+        "nominative": "servī",
+        "vocative": "servī",
+        "accusative": "servōs",
+        "genitive": "servōrum",
+        "dative": "servīs",
+        "ablative": "servīs"
+      }
+    },
+    {
+      "declension": 2,
+      "name": "Second Declension (Neuter -um)",
+      "gender": "n",
+      "example_noun": "bellum",
+      "example_meaning": "war",
+      "cases": ["nominative", "vocative", "accusative", "genitive", "dative", "ablative"],
+      "singular": {
+        "nominative": "bellum",
+        "vocative": "bellum",
+        "accusative": "bellum",
+        "genitive": "bellī",
+        "dative": "bellō",
+        "ablative": "bellō"
+      },
+      "plural": {
+        "nominative": "bella",
+        "vocative": "bella",
+        "accusative": "bella",
+        "genitive": "bellōrum",
+        "dative": "bellīs",
+        "ablative": "bellīs"
+      }
+    },
+    {
+      "declension": 3,
+      "name": "Third Declension (Masculine/Feminine)",
+      "gender": "m",
+      "example_noun": "rēx",
+      "example_meaning": "king",
+      "cases": ["nominative", "vocative", "accusative", "genitive", "dative", "ablative"],
+      "singular": {
+        "nominative": "rēx",
+        "vocative": "rēx",
+        "accusative": "rēgem",
+        "genitive": "rēgis",
+        "dative": "rēgī",
+        "ablative": "rēge"
+      },
+      "plural": {
+        "nominative": "rēgēs",
+        "vocative": "rēgēs",
+        "accusative": "rēgēs",
+        "genitive": "rēgum",
+        "dative": "rēgibus",
+        "ablative": "rēgibus"
+      }
+    },
+    {
+      "declension": 3,
+      "name": "Third Declension (Neuter)",
+      "gender": "n",
+      "example_noun": "nōmen",
+      "example_meaning": "name",
+      "cases": ["nominative", "vocative", "accusative", "genitive", "dative", "ablative"],
+      "singular": {
+        "nominative": "nōmen",
+        "vocative": "nōmen",
+        "accusative": "nōmen",
+        "genitive": "nōminis",
+        "dative": "nōminī",
+        "ablative": "nōmine"
+      },
+      "plural": {
+        "nominative": "nōmina",
+        "vocative": "nōmina",
+        "accusative": "nōmina",
+        "genitive": "nōminum",
+        "dative": "nōminibus",
+        "ablative": "nōminibus"
+      }
+    }
+  ]
+}
