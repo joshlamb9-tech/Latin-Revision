@@ -29,10 +29,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. The French site continues to work normally — no cache collision from the new Latin service worker
   4. The vocabulary JSON dataset contains all ISEB CE Level 1 and 2 words with correct schema, macrons, and topic tags
   5. The grammar paradigm JSON contains all noun declensions and verb conjugations required by the CE syllabus
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: TBD
+- [ ] 01-01-PLAN.md — Vocabulary and grammar JSON data layer (DATA-01 through DATA-04)
+- [ ] 01-02-PLAN.md — App shell, classical visual identity, hamburger nav (SHELL-01 through SHELL-04)
+- [ ] 01-03-PLAN.md — Service worker, manifest, PWA icons, deploy to GitHub Pages, French site audit (PWA-01/02/03/05, DEPLOY-01/02)
 
 ### Phase 2: Grammar and Vocabulary
 **Goal**: A student can read every grammar table and browse the full vocabulary list — all content rendered dynamically from JSON, readable on mobile.
@@ -82,7 +84,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/TBD | Not started | - |
+| 1. Foundation | 0/3 | Not started | - |
 | 2. Grammar and Vocabulary | 0/TBD | Not started | - |
 | 3. Practice Quiz | 0/TBD | Not started | - |
 | 4. Past Papers and Polish | 0/TBD | Not started | - |
