@@ -339,3 +339,83 @@ a:hover {
   font-style: italic;
   padding: 1rem 0;
 }
+
+/* ============================================
+   Vocabulary List — Phase 2
+   ============================================ */
+
+.vocab-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.vocab-filter-link {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--color-terracotta);
+  border-radius: 2rem;
+  color: var(--color-terracotta);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.vocab-filter-link:hover,
+.vocab-filter-link.active {
+  background-color: var(--color-terracotta);
+  color: var(--color-parchment);
+}
+
+.vocab-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.vocab-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 0.25rem 1rem;
+  padding: 0.625rem 0.75rem;
+  background-color: var(--color-parchment-dark);
+  border-left: 3px solid var(--color-terracotta);
+  border-radius: 2px;
+}
+
+@media (max-width: 480px) {
+  .vocab-item {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vocab-latin {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.vocab-english {
+  color: var(--color-stone);
+}
+
+.vocab-meta {
+  font-size: 0.8rem;
+  color: var(--color-stone-light);
+  font-style: italic;
+  white-space: nowrap;
+}
+
+.vocab-count {
+  font-size: 0.875rem;
+  color: var(--color-stone-light);
+  margin-bottom: 1rem;
+}
+
+.vocab-empty {
+  font-style: italic;
+  color: var(--color-stone-light);
+  padding: 1rem 0;
+}
