@@ -1,0 +1,282 @@
+/* ============================================================
+   CE Latin Revision — Classical visual theme
+   Mobile-first, EB Garamond, parchment/terracotta/stone palette
+   ============================================================ */
+
+/* --- Custom Properties --- */
+:root {
+  /* Palette */
+  --color-parchment: #F5ECD7;
+  --color-parchment-dark: #EAD9B8;
+  --color-terracotta: #B5451B;
+  --color-terracotta-dark: #8C3315;
+  --color-stone: #3A3530;
+  --color-stone-light: #6B6259;
+  --color-border: #C9B896;
+
+  /* Typography */
+  --font-body: 'EB Garamond', Georgia, serif;
+  --font-size-base: 1.1rem;
+  --line-height-base: 1.65;
+}
+
+/* --- Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Base --- */
+body {
+  background-color: var(--color-parchment);
+  color: var(--color-stone);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  min-height: 100vh;
+}
+
+/* --- Site Header --- */
+.site-header {
+  background-color: var(--color-terracotta);
+  color: var(--color-parchment);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 56px;
+}
+
+/* --- Site Title / Logo --- */
+.site-title {
+  font-family: var(--font-body);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-parchment);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.site-title:hover {
+  color: var(--color-parchment-dark);
+}
+
+/* --- Hamburger Button --- */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0 11px;
+  /* ensure 44px touch target */
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--color-parchment);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.hamburger-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-parchment);
+  border-radius: 1px;
+}
+
+/* --- Mobile Navigation (hidden by default) --- */
+.site-nav {
+  display: none;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  right: 0;
+  background-color: var(--color-terracotta-dark);
+  z-index: 99;
+}
+
+.site-nav.open {
+  display: block;
+}
+
+.site-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.site-nav li a {
+  display: block;
+  padding: 1rem 1.5rem;
+  color: var(--color-parchment);
+  text-decoration: none;
+  font-size: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.15s ease;
+}
+
+.site-nav li a:hover,
+.site-nav li a:focus {
+  background-color: var(--color-terracotta);
+  color: var(--color-parchment);
+}
+
+/* --- Desktop Navigation (768px+) --- */
+@media (min-width: 768px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .site-nav {
+    display: block;
+    position: static;
+    background: transparent;
+    z-index: auto;
+  }
+
+  .site-nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .site-nav li a {
+    padding: 0.5rem 1rem;
+    border-bottom: none;
+    font-size: 1rem;
+  }
+
+  .site-nav li a:hover,
+  .site-nav li a:focus {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: var(--color-parchment);
+  }
+}
+
+/* --- Main Content Area --- */
+main#app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+/* --- Hero Section --- */
+.hero {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-terracotta);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--color-stone-light);
+  font-style: italic;
+}
+
+/* --- Home Navigation Grid --- */
+.home-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* --- Navigation Cards --- */
+.nav-card {
+  display: block;
+  background-color: var(--color-parchment-dark);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--color-stone);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-card:hover,
+.nav-card:focus {
+  border-color: var(--color-terracotta);
+  color: var(--color-stone);
+  box-shadow: 0 2px 8px rgba(181, 69, 27, 0.15);
+  outline: none;
+}
+
+.nav-card h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-terracotta);
+  margin-bottom: 0.25rem;
+}
+
+.nav-card p {
+  font-size: 0.95rem;
+  color: var(--color-stone-light);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --- General Typography --- */
+h2 {
+  font-size: 1.5rem;
+  color: var(--color-terracotta);
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: var(--color-stone);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-terracotta);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--color-terracotta-dark);
+}
+
+/* --- Site Footer --- */
+.site-footer {
+  background-color: var(--color-parchment-dark);
+  border-top: 1px solid var(--color-border);
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-stone-light);
+  margin-top: 3rem;
+}
+
+/* --- Utility --- */
+
+/* Macron characters inherit body font — renders correctly via EB Garamond */
+/* ā ē ī ō ū — these display correctly at font-size-base */
