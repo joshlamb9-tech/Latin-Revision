@@ -253,6 +253,100 @@
           }
         }
       }
+    },
+    {
+      "verb": "fero",
+      "infinitive": "ferre",
+      "meaning": "to carry, bring, bear",
+      "note": "fero has irregular forms in the present tense — no connecting vowel before personal endings",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "singular": {
+            "1st": "fero",
+            "2nd": "fers",
+            "3rd": "fert"
+          },
+          "plural": {
+            "1st": "ferimus",
+            "2nd": "fertis",
+            "3rd": "ferunt"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "singular": {
+            "1st": "ferebam",
+            "2nd": "ferebas",
+            "3rd": "ferebat"
+          },
+          "plural": {
+            "1st": "ferebamus",
+            "2nd": "ferebatis",
+            "3rd": "ferebant"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "singular": {
+            "1st": "tuli",
+            "2nd": "tulisti",
+            "3rd": "tulit"
+          },
+          "plural": {
+            "1st": "tulimus",
+            "2nd": "tulistis",
+            "3rd": "tulerunt"
+          }
+        }
+      }
+    },
+    {
+      "verb": "volo",
+      "infinitive": "velle",
+      "meaning": "to want, wish",
+      "note": "volo is highly irregular in the present tense — learn each form individually",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "singular": {
+            "1st": "volo",
+            "2nd": "vis",
+            "3rd": "vult"
+          },
+          "plural": {
+            "1st": "volumus",
+            "2nd": "vultis",
+            "3rd": "volunt"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "singular": {
+            "1st": "volebam",
+            "2nd": "volebas",
+            "3rd": "volebat"
+          },
+          "plural": {
+            "1st": "volebamus",
+            "2nd": "volebatis",
+            "3rd": "volebant"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "singular": {
+            "1st": "volui",
+            "2nd": "voluisti",
+            "3rd": "voluit"
+          },
+          "plural": {
+            "1st": "voluimus",
+            "2nd": "voluistis",
+            "3rd": "voluerunt"
+          }
+        }
+      }
     }
   ]
 }
