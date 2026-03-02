@@ -1104,3 +1104,156 @@ a:hover {
   margin-top: 0.5rem;
   font-size: 0.95rem;
 }
+
+/* ============================================
+   Exercise Hub — Sectioned layout (engagement update)
+   ============================================ */
+
+.ex-hub-section {
+  margin-bottom: 2rem;
+}
+
+.ex-hub-section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.ex-hub-section-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-terracotta);
+}
+
+.ex-hub-section-sub {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-stone-light);
+}
+
+.ex-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.ex-hub-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  background-color: var(--color-parchment-dark);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--color-stone);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.ex-hub-card:hover,
+.ex-hub-card:focus {
+  border-color: var(--color-terracotta);
+  box-shadow: 0 2px 8px rgba(181, 69, 27, 0.12);
+  outline: none;
+}
+
+.ex-hub-card--start {
+  border-color: var(--color-terracotta);
+  background-color: rgba(181, 69, 27, 0.04);
+}
+
+.ex-hub-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.ex-hub-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.ex-hub-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.ex-hub-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-stone);
+}
+
+.ex-hub-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 2px;
+}
+
+.ex-hub-badge--start {
+  background-color: var(--color-terracotta);
+  color: var(--color-parchment);
+}
+
+.ex-hub-desc {
+  font-size: 0.875rem;
+  color: var(--color-stone-light);
+  line-height: 1.4;
+}
+
+.ex-hub-ce {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-terracotta);
+  opacity: 0.8;
+}
+
+/* ============================================
+   Vocabulary Level Badges
+   ============================================ */
+
+.vocab-item {
+  grid-template-columns: 1fr 1fr auto auto;
+}
+
+@media (max-width: 480px) {
+  .vocab-item {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.vocab-level {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.1rem 0.35rem;
+  border-radius: 2px;
+  align-self: center;
+  white-space: nowrap;
+}
+
+.vocab-level--1 {
+  background-color: rgba(58, 122, 58, 0.15);
+  color: #2a5a2a;
+  border: 1px solid rgba(58, 122, 58, 0.3);
+}
+
+.vocab-level--2 {
+  background-color: rgba(181, 130, 27, 0.12);
+  color: #7a5a0a;
+  border: 1px solid rgba(181, 130, 27, 0.25);
+}

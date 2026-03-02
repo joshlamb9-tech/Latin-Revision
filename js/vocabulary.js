@@ -21,9 +21,10 @@ function getFilters() {
   return {
     topic: params.get('topic'),
     freq:  params.get('freq')  ? parseInt(params.get('freq'), 10)  : null,
-    pos:   params.get('pos'),                                         // e.g. "noun", "verb"
-    decl:  params.get('decl')  ? parseInt(params.get('decl'), 10)  : null,  // 1, 2, 3
-    conj:  params.get('conj')  ? parseInt(params.get('conj'), 10)  : null   // 1, 2
+    pos:   params.get('pos'),
+    decl:  params.get('decl')  ? parseInt(params.get('decl'), 10)  : null,
+    conj:  params.get('conj')  ? parseInt(params.get('conj'), 10)  : null,
+    level: params.get('level') ? parseInt(params.get('level'), 10) : null   // 1 or 2
   };
 }
 
@@ -42,6 +43,10 @@ function applyFilters(words, filters) {
     if (filters.conj) {
       result = result.filter(w => w.conjugation === filters.conj);
     }
+  }
+
+  if (filters.level) {
+    result = result.filter(w => w.level === filters.level);
   }
 
   if (filters.freq) {
@@ -101,6 +106,7 @@ function renderVocabulary(app, filtered, filters, total) {
 }
 
 function buildHeading(filters) {
+  if (filters.level) return 'Level ' + filters.level + ' Words';
   if (filters.freq)  return 'Top ' + filters.freq;
   if (filters.topic) {
     const label = filters.topic.charAt(0).toUpperCase() + filters.topic.slice(1);
@@ -144,6 +150,11 @@ function renderFilterNav(filters) {
   addFilterLink(nav, 'Adjectives',    'vocabulary.html?pos=adjective',   filters.pos === 'adjective');
   addFilterLink(nav, 'Adverbs',       'vocabulary.html?pos=adverb',      filters.pos === 'adverb');
   addFilterLink(nav, 'Prepositions',  'vocabulary.html?pos=preposition',  filters.pos === 'preposition');
+
+  // ── By Level ─────────────────────────────────────────────────
+  addSectionLabel(nav, 'By Level');
+  addFilterLink(nav, 'Level 1', 'vocabulary.html?level=1', filters.level === 1);
+  addFilterLink(nav, 'Level 2', 'vocabulary.html?level=2', filters.level === 2);
 
   // ── By Frequency ─────────────────────────────────────────────
   addSectionLabel(nav, 'By Frequency');
@@ -189,9 +200,14 @@ function renderWordItem(word) {
   metaSpan.className = 'vocab-meta';
   metaSpan.textContent = buildMeta(word);
 
+  const levelSpan = document.createElement('span');
+  levelSpan.className = 'vocab-level vocab-level--' + (word.level || 2);
+  levelSpan.textContent = 'L' + (word.level || 2);
+
   div.appendChild(latinSpan);
   div.appendChild(englishSpan);
   div.appendChild(metaSpan);
+  div.appendChild(levelSpan);
 
   return div;
 }

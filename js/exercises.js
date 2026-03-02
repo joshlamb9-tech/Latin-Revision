@@ -112,91 +112,67 @@ function renderHub(app, allWords) {
   strip.appendChild(el('span', { className: 'ex-mastery-done' }, summary.mastered + ' mastered'));
   app.appendChild(strip);
 
-  const activities = [
+  // Grouped activity sections
+  const sections = [
     {
-      id: 'flashcard',
-      title: 'Flashcard',
-      desc: 'Latin to English. Rate your confidence. Builds your mastery.',
-      ce: null,
-      href: 'quiz.html?activity=flashcard',
-      icon: 'FC'
+      label: 'Vocabulary',
+      sublabel: 'Levels 1 & 2',
+      activities: [
+        { id: 'flashcard', title: 'Flashcards', desc: 'See a word, recall the meaning, rate yourself. The best way to build a word bank.', ce: 'CE: all questions', href: 'quiz.html?activity=flashcard', icon: '🃏', start: true },
+        { id: 'mcq-le',   title: 'Word Quiz',  desc: 'Latin → English. Choose from 4 options. Quick and effective.', ce: 'CE Q3 vocab', href: 'quiz.html?activity=mcq&mode=latin-english', icon: '📝' },
+        { id: 'mcq-el',   title: 'Reverse Quiz', desc: 'English → Latin. Harder — great exam preparation.', ce: 'CE Q4 prep', href: 'quiz.html?activity=mcq&mode=english-latin', icon: '🔄' },
+        { id: 'pairs',    title: 'Matching Pairs', desc: 'Tap a Latin word, then its English match. Race through 6 pairs.', ce: 'CE vocab recall', href: 'quiz.html?activity=pairs', icon: '🔗' },
+      ]
     },
     {
-      id: 'mcq-le',
-      title: 'Vocabulary Quiz',
-      desc: 'Latin to English multiple choice. 4 options, smart distractors.',
-      ce: 'Practises: CE Question 3 (vocabulary)',
-      href: 'quiz.html?activity=mcq&mode=latin-english',
-      icon: 'VQ'
+      label: 'Grammar',
+      sublabel: 'CE Question 3',
+      activities: [
+        { id: 'case',     title: 'Case Identifier', desc: 'Given a noun form — what case is it? With explanation of why that case is used.', ce: 'CE Q3', href: 'quiz.html?activity=case', icon: '🔍' },
+        { id: 'verb',     title: 'Verb Parser',     desc: 'Person, number, tense. Exactly what CE Q3 asks you to do.', ce: 'CE Q3', href: 'quiz.html?activity=verb', icon: '⚡' },
+        { id: 'paradigm', title: 'Paradigm Check',  desc: 'Fill the blanks in a declension or conjugation table.', ce: 'CE Q3 & Q4', href: 'quiz.html?activity=paradigm', icon: '📊' },
+      ]
     },
     {
-      id: 'mcq-el',
-      title: 'Reverse Quiz',
-      desc: 'English to Latin multiple choice.',
-      ce: 'Practises: CE Question 4 preparation',
-      href: 'quiz.html?activity=mcq&mode=english-latin',
-      icon: 'RQ'
+      label: 'Latin in Context',
+      sublabel: 'CE Questions 1 & 2',
+      activities: [
+        { id: 'gap-fill',   title: 'Gap-Fill Sentences', desc: 'Real Latin sentences with one word missing. Pick the right form — cases matter here.', ce: 'CE Q1 & Q2', href: 'quiz.html?activity=gap-fill', icon: '✏️' },
+      ]
     },
     {
-      id: 'case',
-      title: 'Case Identifier',
-      desc: 'Identify the case of a Latin noun form.',
-      ce: 'Practises: CE Question 3 (grammar)',
-      href: 'quiz.html?activity=case',
-      icon: 'CI'
-    },
-    {
-      id: 'verb',
-      title: 'Verb Parser',
-      desc: 'Give the person, number, and tense of a verb form.',
-      ce: 'Practises: CE Question 3 (grammar)',
-      href: 'quiz.html?activity=verb',
-      icon: 'VP'
-    },
-    {
-      id: 'pairs',
-      title: 'Matching Pairs',
-      desc: 'Match 6 Latin words with their English meanings.',
-      ce: 'Practises: CE vocabulary recall',
-      href: 'quiz.html?activity=pairs',
-      icon: '🔗'
-    },
-    {
-      id: 'gap-fill',
-      title: 'Gap-Fill Sentences',
-      desc: 'Complete a Latin sentence by choosing the right word.',
-      ce: 'Practises: CE Questions 1 & 2 (context reading)',
-      href: 'quiz.html?activity=gap-fill',
-      icon: '✏️'
-    },
-    {
-      id: 'paradigm',
-      title: 'Paradigm Check',
-      desc: 'Fill in the blanks in a noun or verb table.',
-      ce: 'Practises: CE Question 3 & 4',
-      href: 'quiz.html?activity=paradigm',
-      icon: 'PC'
-    },
-    {
-      id: 'dashboard',
-      title: 'My Progress',
-      desc: 'See how many words you have mastered.',
-      ce: 'Vocabulary mastery tracker',
-      href: 'quiz.html?activity=dashboard',
-      icon: '📈'
-    },
+      label: 'Progress',
+      sublabel: null,
+      activities: [
+        { id: 'dashboard', title: 'My Mastery', desc: 'See which words you\'ve secured and how your bank of knowledge is growing.', ce: null, href: 'quiz.html?activity=dashboard', icon: '📈' },
+      ]
+    }
   ];
 
-  const grid = el('div', { className: 'ex-hub-grid' });
-  activities.forEach(act => {
-    const card = el('a', { className: 'ex-hub-card', href: act.href });
-    card.appendChild(el('span', { className: 'ex-hub-icon' }, act.icon));
-    card.appendChild(el('span', { className: 'ex-hub-title' }, act.title));
-    card.appendChild(el('span', { className: 'ex-hub-desc' }, act.desc));
-    if (act.ce) card.appendChild(el('span', { className: 'ex-hub-ce' }, act.ce));
-    grid.appendChild(card);
+  sections.forEach(section => {
+    const sectionEl = el('div', { className: 'ex-hub-section' });
+    const sectionHead = el('div', { className: 'ex-hub-section-head' });
+    sectionHead.appendChild(el('span', { className: 'ex-hub-section-label' }, section.label));
+    if (section.sublabel) sectionHead.appendChild(el('span', { className: 'ex-hub-section-sub' }, section.sublabel));
+    sectionEl.appendChild(sectionHead);
+
+    const grid = el('div', { className: 'ex-hub-grid' });
+    section.activities.forEach(act => {
+      const card = el('a', { className: 'ex-hub-card' + (act.start ? ' ex-hub-card--start' : ''), href: act.href });
+      card.appendChild(el('span', { className: 'ex-hub-icon' }, act.icon));
+      const body = el('div', { className: 'ex-hub-body' });
+      const titleRow = el('div', { className: 'ex-hub-title-row' });
+      titleRow.appendChild(el('span', { className: 'ex-hub-title' }, act.title));
+      if (act.start) titleRow.appendChild(el('span', { className: 'ex-hub-badge ex-hub-badge--start' }, 'Start here'));
+      body.appendChild(titleRow);
+      body.appendChild(el('span', { className: 'ex-hub-desc' }, act.desc));
+      if (act.ce) body.appendChild(el('span', { className: 'ex-hub-ce' }, act.ce));
+      card.appendChild(body);
+      grid.appendChild(card);
+    });
+    sectionEl.appendChild(grid);
+    app.appendChild(sectionEl);
   });
-  app.appendChild(grid);
 }
 
 // -- FLASHCARD ------------------------------------------------------------
