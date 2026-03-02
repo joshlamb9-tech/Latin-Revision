@@ -1210,7 +1210,7 @@ function runQ4Builder(app) {
         card.appendChild(hintWrap);
 
         // Textarea
-        const ta = el('textarea', { className: 'q4-textarea', placeholder: 'Write the full Latin sentence here\u2026', rows: '3' });
+        const ta = el('textarea', { className: 'q4-textarea', placeholder: 'Write the full Latin sentence here\u2026', rows: '3', spellcheck: 'false', autocorrect: 'off', autocapitalize: 'off' });
         card.appendChild(ta);
 
         const checkBtn = el('button', { className: 'ex-btn ex-btn-primary' }, 'Show answer \u2192');
