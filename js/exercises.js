@@ -37,6 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
     case 'case':     return runCaseIdentifier(app);
     case 'verb':     return runVerbParser(app);
     case 'paradigm': return runParadigmCheck(app);
+    case 'pairs':    return runMatchingPairs(app);
+    case 'matching': return runMatchingPairs(app);
+    case 'gap-fill': return runGapFill(app);
+    case 'gapfill':  return runGapFill(app);
   }
 
   fetch('data/vocabulary/all.json')
@@ -123,20 +127,20 @@ function renderHub(app, allWords) {
       icon: 'VP'
     },
     {
-      id: 'matching',
+      id: 'pairs',
       title: 'Matching Pairs',
-      desc: 'Match 6 Latin words to their English meanings.',
-      ce: null,
-      href: 'quiz.html?activity=matching',
-      icon: 'MP'
+      desc: 'Match 6 Latin words with their English meanings.',
+      ce: 'Practises: CE vocabulary recall',
+      href: 'quiz.html?activity=pairs',
+      icon: '🔗'
     },
     {
-      id: 'gapfill',
-      title: 'Gap Fill',
+      id: 'gap-fill',
+      title: 'Gap-Fill Sentences',
       desc: 'Complete a Latin sentence by choosing the right word.',
-      ce: 'Practises: CE Question 1 & 2',
-      href: 'quiz.html?activity=gapfill',
-      icon: 'GF'
+      ce: 'Practises: CE Questions 1 & 2 (context reading)',
+      href: 'quiz.html?activity=gap-fill',
+      icon: '✏️'
     },
     {
       id: 'paradigm',
@@ -922,7 +926,199 @@ function renderParadigmSummary(app, state) {
   summary.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// -- STUB ROUTES (matching, gapfill — implemented in later plans) ----------
+// =============================================================
+// MATCHING PAIRS — quiz.html?activity=pairs
+// =============================================================
+
+function runMatchingPairs(app) {
+  fetch('data/vocabulary/all.json')
+    .then(r => r.json())
+    .then(words => {
+      // Pick a topic
+      const params = new URLSearchParams(location.search);
+      const topicFilter = params.get('filter');
+      let topic = topicFilter ? topicFilter.replace('topic:', '') : null;
+      const topics = ['family', 'daily-life', 'war-army', 'nature', 'travel', 'gods'];
+      if (!topic || !topics.includes(topic)) {
+        topic = topics[Math.floor(Math.random() * topics.length)];
+      }
+
+      // Filter and take 6
+      const pool = words.filter(w => w.topics && w.topics.includes(topic) && w.part_of_speech === 'noun');
+      if (pool.length < 6) {
+        // Fallback: take any 6 nouns
+        const allNouns = words.filter(w => w.part_of_speech === 'noun');
+        return startPairs(shuffle(allNouns).slice(0, 6), app, null);
+      }
+      const selected = shuffle(pool).slice(0, 6);
+      startPairs(selected, app, topic);
+    })
+    .catch(() => {
+      app.innerHTML = '<p class="error">Could not load vocabulary data.</p>';
+    });
+}
+
+function startPairs(words, app, topic) {
+  const topicLabel = topic ? topic.replace('-', '/') : 'mixed';
+  let matched = new Set();
+  let selectedLatin = null;
+
+  const englishItems = shuffle(words.map((w, i) => ({ id: i, english: w.english.split(',')[0].trim() })));
+
+  function render() {
+    const latinCol = words.map((w, i) => {
+      const isMatched = matched.has(i);
+      const isSelected = selectedLatin === i;
+      return `<button class="pair-btn latin-btn${isMatched ? ' matched' : ''}${isSelected ? ' selected' : ''}"
+        data-idx="${i}" ${isMatched ? 'disabled' : ''}>${w.latin}</button>`;
+    }).join('');
+
+    const englishCol = englishItems.map(item => {
+      const isMatched = matched.has(item.id);
+      return `<button class="pair-btn english-btn${isMatched ? ' matched' : ''}"
+        data-idx="${item.id}" ${isMatched ? 'disabled' : ''}>${item.english}</button>`;
+    }).join('');
+
+    app.innerHTML = `
+      <div class="ex-header">
+        <a href="quiz.html" class="ex-back">&#8592; Exercises</a>
+        <span class="ex-ce-label">Practises: CE vocabulary recall</span>
+      </div>
+      <h2>Matching Pairs</h2>
+      <p class="ex-topic-label">Topic: <strong>${topicLabel}</strong> &#8212; tap a Latin word, then its English meaning</p>
+      <div class="pairs-grid">
+        <div class="pairs-col">${latinCol}</div>
+        <div class="pairs-col">${englishCol}</div>
+      </div>
+      <p class="pairs-score">${matched.size}/6 matched</p>
+    `;
+
+    // Attach events
+    app.querySelectorAll('.latin-btn:not([disabled])').forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectedLatin = parseInt(btn.dataset.idx);
+        render();
+      });
+    });
+
+    app.querySelectorAll('.english-btn:not([disabled])').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (selectedLatin === null) return;
+        const englishIdx = parseInt(btn.dataset.idx);
+        if (selectedLatin === englishIdx) {
+          // Correct match
+          matched.add(selectedLatin);
+          selectedLatin = null;
+          render();
+          if (matched.size === 6) showPairsSummary(app, words, topic);
+        } else {
+          // Wrong — flash both buttons red briefly, deselect
+          btn.classList.add('wrong');
+          const latinBtn = app.querySelector(`.latin-btn[data-idx="${selectedLatin}"]`);
+          if (latinBtn) latinBtn.classList.add('wrong');
+          setTimeout(() => { selectedLatin = null; render(); }, 800);
+        }
+      });
+    });
+  }
+
+  render();
+}
+
+function showPairsSummary(app, words, topic) {
+  const topicLabel = topic ? topic.replace('-', '/') : 'mixed';
+  app.innerHTML = `
+    <div class="ex-summary">
+      <div class="ex-summary-icon">&#10003;</div>
+      <h2>All matched!</h2>
+      <p>You matched all 6 ${topicLabel} words correctly.</p>
+      <div class="ex-summary-actions">
+        <a href="quiz.html?activity=pairs" class="ex-btn ex-btn-primary">Try another set</a>
+        <a href="quiz.html" class="ex-btn ex-btn-secondary">Back to Exercises</a>
+      </div>
+    </div>
+  `;
+}
+
+// =============================================================
+// GAP-FILL — quiz.html?activity=gap-fill
+// =============================================================
+
+function runGapFill(app) {
+  fetch('data/exercises/gap-fill.json')
+    .then(r => r.json())
+    .then(data => {
+      const questions = shuffle(data).slice(0, 8);
+      let idx = 0, correct = 0;
+
+      function showQuestion() {
+        if (idx >= questions.length) return showGapFillSummary(app, correct, questions.length);
+        const q = questions[idx];
+        const opts = shuffle([...q.options]);
+        app.innerHTML = `
+          <div class="ex-header">
+            <a href="quiz.html" class="ex-back">&#8592; Exercises</a>
+            <span class="ex-ce-label">Practises: CE Questions 1 &amp; 2 (vocabulary in context)</span>
+          </div>
+          <p class="ex-progress">${idx + 1} / ${questions.length}</p>
+          <div class="ex-sentence-card">
+            <p class="ex-sentence">${q.display}</p>
+            <p class="ex-translation-hint">${q.translation.replace(q.correct, '_____')}</p>
+          </div>
+          <div class="ex-options">
+            ${opts.map(o => `<button class="ex-opt-btn" data-val="${o}">${o}</button>`).join('')}
+          </div>
+          <div class="ex-feedback" id="gf-feedback" style="display:none"></div>
+        `;
+
+        app.querySelectorAll('.ex-opt-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const chosen = btn.dataset.val;
+            const isCorrect = chosen === q.correct;
+            if (isCorrect) correct++;
+
+            // Disable all buttons and colour them
+            app.querySelectorAll('.ex-opt-btn').forEach(b => {
+              b.disabled = true;
+              if (b.dataset.val === q.correct) b.classList.add('correct');
+              else if (b === btn && !isCorrect) b.classList.add('wrong');
+            });
+
+            const fb = document.getElementById('gf-feedback');
+            fb.style.display = 'block';
+            fb.innerHTML = `
+              <p class="${isCorrect ? 'fb-correct' : 'fb-wrong'}">${isCorrect ? '&#10003; Correct!' : `&#10007; The answer is <strong>${q.correct}</strong>`}</p>
+              <p class="fb-explanation">${q.explanation}</p>
+              <button class="ex-btn ex-btn-primary" id="gf-next">
+                ${idx + 1 < questions.length ? 'Next sentence &#8594;' : 'See results &#8594;'}
+              </button>
+            `;
+            document.getElementById('gf-next').addEventListener('click', () => { idx++; showQuestion(); });
+          });
+        });
+      }
+
+      showQuestion();
+    })
+    .catch(() => {
+      app.innerHTML = '<p class="error">Could not load gap-fill data.</p>';
+    });
+}
+
+function showGapFillSummary(app, correct, total) {
+  const pct = Math.round((correct / total) * 100);
+  app.innerHTML = `
+    <div class="ex-summary">
+      <div class="ex-summary-icon">${pct >= 70 ? '&#10003;' : '&#8594;'}</div>
+      <h2>${correct}/${total} correct</h2>
+      <p>${pct >= 70 ? 'Strong work &#8212; you can read Latin in context.' : 'Keep going &#8212; context reading takes practice.'}</p>
+      <div class="ex-summary-actions">
+        <a href="quiz.html?activity=gap-fill" class="ex-btn ex-btn-primary">Try again</a>
+        <a href="quiz.html" class="ex-btn ex-btn-secondary">Back to Exercises</a>
+      </div>
+    </div>
+  `;
+}
 
 // -- UTILITIES ------------------------------------------------------------
 

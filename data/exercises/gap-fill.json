@@ -1,0 +1,202 @@
+[
+  {
+    "id": "gf-01",
+    "sentence": "puella in viā ambulat.",
+    "blank_word": "viā",
+    "display": "puella in _____ ambulat.",
+    "translation": "The girl walks in the street.",
+    "options": ["viā", "silvā", "aquā", "portā"],
+    "correct": "viā",
+    "explanation": "'viā' (road/street, ablative) follows 'in'. The girl walks in/along the street."
+  },
+  {
+    "id": "gf-02",
+    "sentence": "servus cibum portat.",
+    "blank_word": "cibum",
+    "display": "servus _____ portat.",
+    "translation": "The slave carries the food.",
+    "options": ["cibum", "aquam", "pecūniam", "vinum"],
+    "correct": "cibum",
+    "explanation": "'cibum' (food, accusative) is the direct object of 'portat' (carries). The accusative marks the thing being carried."
+  },
+  {
+    "id": "gf-03",
+    "sentence": "dominus servōs laudat.",
+    "blank_word": "servōs",
+    "display": "dominus _____ laudat.",
+    "translation": "The master praises the slaves.",
+    "options": ["servōs", "servī", "servō", "servus"],
+    "correct": "servōs",
+    "explanation": "'servōs' is accusative plural — the slaves are the object of 'laudat' (praises)."
+  },
+  {
+    "id": "gf-04",
+    "sentence": "māter fīliōs amat.",
+    "blank_word": "fīliōs",
+    "display": "māter _____ amat.",
+    "translation": "The mother loves her sons.",
+    "options": ["fīliōs", "fīliī", "fīliō", "fīlius"],
+    "correct": "fīliōs",
+    "explanation": "'fīliōs' is accusative plural — the sons are the object of 'amat' (loves)."
+  },
+  {
+    "id": "gf-05",
+    "sentence": "mīlitēs in oppidō manēbant.",
+    "blank_word": "oppidō",
+    "display": "mīlitēs in _____ manēbant.",
+    "translation": "The soldiers were staying in the town.",
+    "options": ["oppidō", "oppidum", "oppidī", "oppida"],
+    "correct": "oppidō",
+    "explanation": "'oppidō' is ablative singular after 'in' (meaning location: in the town). The imperfect 'manēbant' = they were staying."
+  },
+  {
+    "id": "gf-06",
+    "sentence": "puer librōs legit.",
+    "blank_word": "librōs",
+    "display": "puer _____ legit.",
+    "translation": "The boy reads the books.",
+    "options": ["librōs", "librī", "librō", "liber"],
+    "correct": "librōs",
+    "explanation": "'librōs' is accusative plural — the books are the direct object of 'legit' (reads)."
+  },
+  {
+    "id": "gf-07",
+    "sentence": "nauta per aquam nāvigābat.",
+    "blank_word": "aquam",
+    "display": "nauta per _____ nāvigābat.",
+    "translation": "The sailor was sailing through the water.",
+    "options": ["aquam", "aquā", "aquae", "aquārum"],
+    "correct": "aquam",
+    "explanation": "'aquam' is accusative after 'per' (through). The preposition 'per' always takes the accusative."
+  },
+  {
+    "id": "gf-08",
+    "sentence": "fēmina pecūniam habet.",
+    "blank_word": "pecūniam",
+    "display": "fēmina _____ habet.",
+    "translation": "The woman has money.",
+    "options": ["pecūniam", "pecūniā", "pecūniae", "pecūniārum"],
+    "correct": "pecūniam",
+    "explanation": "'pecūniam' is accusative — the money is the direct object of 'habet' (has)."
+  },
+  {
+    "id": "gf-09",
+    "sentence": "imperātor mīlitēs laudāvit.",
+    "blank_word": "mīlitēs",
+    "display": "imperātor _____ laudāvit.",
+    "translation": "The general praised the soldiers.",
+    "options": ["mīlitēs", "mīlitibus", "mīlitum", "mīlitī"],
+    "correct": "mīlitēs",
+    "explanation": "'mīlitēs' is accusative plural — the soldiers are the object of 'laudāvit' (praised, perfect tense)."
+  },
+  {
+    "id": "gf-10",
+    "sentence": "puellae in hortō lūdēbant.",
+    "blank_word": "hortō",
+    "display": "puellae in _____ lūdēbant.",
+    "translation": "The girls were playing in the garden.",
+    "options": ["hortō", "hortum", "hortī", "hortus"],
+    "correct": "hortō",
+    "explanation": "'hortō' is ablative after 'in' (location). The imperfect 'lūdēbant' = they were playing."
+  },
+  {
+    "id": "gf-11",
+    "sentence": "pater fīliae dōnum dedit.",
+    "blank_word": "fīliae",
+    "display": "pater _____ dōnum dedit.",
+    "translation": "The father gave a gift to his daughter.",
+    "options": ["fīliae", "fīliam", "fīliā", "fīliārum"],
+    "correct": "fīliae",
+    "explanation": "'fīliae' is dative singular — she is the indirect object (the gift is given *to* her). Dative = the person something is done for."
+  },
+  {
+    "id": "gf-12",
+    "sentence": "cīvēs in forō stābant.",
+    "blank_word": "forō",
+    "display": "cīvēs in _____ stābant.",
+    "translation": "The citizens were standing in the forum.",
+    "options": ["forō", "forum", "forī", "fora"],
+    "correct": "forō",
+    "explanation": "'forō' is ablative after 'in' (location — standing *in* the forum). If movement were involved, the accusative 'forum' would be used."
+  },
+  {
+    "id": "gf-13",
+    "sentence": "rēx cum mīlitibus pugnat.",
+    "blank_word": "mīlitibus",
+    "display": "rēx cum _____ pugnat.",
+    "translation": "The king fights with the soldiers.",
+    "options": ["mīlitibus", "mīlitēs", "mīlitum", "mīlitem"],
+    "correct": "mīlitibus",
+    "explanation": "'mīlitibus' is ablative plural after 'cum' (with). The preposition 'cum' always takes the ablative."
+  },
+  {
+    "id": "gf-14",
+    "sentence": "ancilla dominam timet.",
+    "blank_word": "dominam",
+    "display": "ancilla _____ timet.",
+    "translation": "The slave-girl fears the mistress.",
+    "options": ["dominam", "domina", "dominae", "dominō"],
+    "correct": "dominam",
+    "explanation": "'dominam' is accusative — the mistress is the object of 'timet' (fears). The subject 'ancilla' stays nominative."
+  },
+  {
+    "id": "gf-15",
+    "sentence": "poēta carmina scrīpsit.",
+    "blank_word": "carmina",
+    "display": "poēta _____ scrīpsit.",
+    "translation": "The poet wrote songs/poems.",
+    "options": ["carmina", "carminum", "carminibus", "carminī"],
+    "correct": "carmina",
+    "explanation": "'carmina' is accusative plural (neuter) — the poems are the object of 'scrīpsit' (wrote, perfect tense)."
+  },
+  {
+    "id": "gf-16",
+    "sentence": "servī in agrīs labōrābant.",
+    "blank_word": "agrīs",
+    "display": "servī in _____ labōrābant.",
+    "translation": "The slaves were working in the fields.",
+    "options": ["agrīs", "agrōs", "agrī", "agrum"],
+    "correct": "agrīs",
+    "explanation": "'agrīs' is ablative plural after 'in' (location). The imperfect 'labōrābant' = they were working (continuous past)."
+  },
+  {
+    "id": "gf-17",
+    "sentence": "deus Rōmānōs servāvit.",
+    "blank_word": "Rōmānōs",
+    "display": "deus _____ servāvit.",
+    "translation": "The god saved the Romans.",
+    "options": ["Rōmānōs", "Rōmānī", "Rōmānīs", "Rōmānus"],
+    "correct": "Rōmānōs",
+    "explanation": "'Rōmānōs' is accusative plural — the Romans are the object of 'servāvit' (saved, perfect tense)."
+  },
+  {
+    "id": "gf-18",
+    "sentence": "magister discipulīs respondēbat.",
+    "blank_word": "discipulīs",
+    "display": "magister _____ respondēbat.",
+    "translation": "The teacher was answering the pupils.",
+    "options": ["discipulīs", "discipulōs", "discipulī", "discipulum"],
+    "correct": "discipulīs",
+    "explanation": "'discipulīs' is dative plural — 'respondēre' (to answer/reply) takes the dative for the person replied to."
+  },
+  {
+    "id": "gf-19",
+    "sentence": "nāvis ad portum nāvigāvit.",
+    "blank_word": "portum",
+    "display": "nāvis ad _____ nāvigāvit.",
+    "translation": "The ship sailed to the harbour.",
+    "options": ["portum", "portō", "portī", "portus"],
+    "correct": "portum",
+    "explanation": "'portum' is accusative after 'ad' (to/towards). The preposition 'ad' always takes the accusative."
+  },
+  {
+    "id": "gf-20",
+    "sentence": "puella aquam ex fonte portāvit.",
+    "blank_word": "fonte",
+    "display": "puella aquam ex _____ portāvit.",
+    "translation": "The girl carried water from the spring.",
+    "options": ["fonte", "fontem", "fontis", "fontibus"],
+    "correct": "fonte",
+    "explanation": "'fonte' is ablative after 'ex' (from/out of). The preposition 'ex' always takes the ablative."
+  }
+]

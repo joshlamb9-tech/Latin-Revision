@@ -764,3 +764,172 @@ a:hover {
   from { opacity: 0; transform: translateY(-6px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+/* ============================================
+   Exercise Activities — Phase 3 (03-03 additions)
+   ============================================ */
+
+/* ex-btn / ex-btn-primary / ex-btn-secondary — aliases for .btn */
+.ex-btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background: var(--color-terracotta);
+  color: var(--color-parchment);
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s;
+}
+.ex-btn:hover { background: var(--color-terracotta-dark); color: var(--color-parchment); }
+
+.ex-btn-primary { background: var(--color-terracotta); color: var(--color-parchment); }
+.ex-btn-primary:hover { background: var(--color-terracotta-dark); color: var(--color-parchment); }
+
+.ex-btn-secondary {
+  background: transparent;
+  color: var(--color-terracotta);
+  border: 2px solid var(--color-terracotta);
+}
+.ex-btn-secondary:hover { background: var(--color-parchment); color: var(--color-terracotta); }
+
+/* Summary layout helpers */
+.ex-summary-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.ex-summary-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Back link in activity header */
+.ex-back {
+  font-size: 0.9rem;
+  color: var(--color-terracotta);
+  text-decoration: none;
+}
+.ex-back:hover { text-decoration: underline; }
+
+/* Matching Pairs */
+.pairs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.pairs-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pair-btn {
+  width: 100%;
+  padding: 0.6rem 0.5rem;
+  background-color: var(--color-parchment-dark);
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-stone);
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+  text-align: center;
+}
+
+.pair-btn.selected {
+  border-color: var(--color-terracotta);
+  background-color: rgba(181, 69, 27, 0.08);
+}
+
+.pair-btn.matched {
+  border-color: #3a7a3a;
+  background-color: rgba(58, 122, 58, 0.12);
+  color: #2a5a2a;
+  cursor: default;
+}
+
+.pair-btn.wrong {
+  border-color: var(--color-terracotta);
+  background-color: rgba(181, 69, 27, 0.12);
+}
+
+.pairs-score {
+  font-size: 0.9rem;
+  color: var(--color-stone-light);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.ex-topic-label {
+  font-size: 0.9rem;
+  color: var(--color-stone-light);
+  margin-bottom: 1rem;
+}
+
+/* Gap-Fill */
+.ex-sentence-card {
+  background-color: var(--color-parchment-dark);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.ex-sentence {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 0.25rem;
+}
+
+.ex-translation-hint {
+  font-size: 0.9rem;
+  color: var(--color-stone-light);
+  margin: 0;
+}
+
+/* Gap-fill option buttons — styled like ex-option-btn */
+.ex-opt-btn {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.ex-opt-btn:hover:not(:disabled) { border-color: var(--color-terracotta); background: var(--color-parchment); }
+.ex-opt-btn.correct { border-color: #2a7a2a; background: #e8f5e8; color: #1a5a1a; }
+.ex-opt-btn.wrong   { border-color: #8b1a1a; background: #f5e8e8; color: #6b1a1a; }
+
+/* Gap-fill feedback text */
+.fb-correct {
+  font-weight: 700;
+  color: #1a5a1a;
+  margin-bottom: 0.4rem;
+}
+
+.fb-wrong {
+  font-weight: 700;
+  color: #6b1a1a;
+  margin-bottom: 0.4rem;
+}
+
+.fb-explanation {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
