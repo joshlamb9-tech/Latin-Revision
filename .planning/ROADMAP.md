@@ -81,10 +81,12 @@ Plans:
   1. A student can navigate to the past papers section and find links to CE Latin past papers and ISEB specimen materials
   2. A student who has the app installed sees a "content updated, reload" banner when a new version of the site is deployed
   3. All pages pass a mobile review on real iPhone Safari — no layout breaks, no unreadable tables, no broken nav
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: TBD
+- [ ] 04-01-PLAN.md — SW update banner (PWA-04), CSS variable aliases, sw.js bump to v8 (js/app.js, css/style.css, sw.js)
+- [ ] 04-02-PLAN.md — Specimen papers section in papers.html, Josh provides URLs (PAPER-01, PAPER-02)
+- [ ] 04-03-PLAN.md — Deploy to GitHub Pages, mobile review on real iPhone Safari
 
 ## Progress
 
@@ -96,4 +98,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Foundation | 3/3 | Complete | 2026-03-01 |
 | 2. Grammar and Vocabulary | 3/3 | Complete | 2026-03-02 |
 | 3. Interactive Exercises | 4/4 | Complete | 2026-03-02 |
-| 4. Past Papers and Polish | 0/TBD | Not started | - |
+| 4. Past Papers and Polish | 0/3 | Not started | - |
