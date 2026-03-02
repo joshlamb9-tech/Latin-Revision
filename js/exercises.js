@@ -34,19 +34,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Grammar activities don't need the vocabulary JSON — route them first
   switch (activity) {
-    case 'case':     return runCaseIdentifier(app);
-    case 'verb':     return runVerbParser(app);
-    case 'paradigm': return runParadigmCheck(app);
-    case 'pairs':    return runMatchingPairs(app);
-    case 'matching': return runMatchingPairs(app);
-    case 'gap-fill': return runGapFill(app);
-    case 'gapfill':  return runGapFill(app);
+    case 'case':      return runCaseIdentifier(app);
+    case 'verb':      return runVerbParser(app);
+    case 'paradigm':  return runParadigmCheck(app);
+    case 'pairs':     return runMatchingPairs(app);
+    case 'matching':  return runMatchingPairs(app);
+    case 'gap-fill':  return runGapFill(app);
+    case 'gapfill':   return runGapFill(app);
+    case 'dashboard': return runDashboard(app);
   }
 
   fetch('data/vocabulary/all.json')
     .then(r => { if (!r.ok) throw new Error('vocab'); return r.json(); })
     .then(allWords => {
-      const words = applyWordFilter(allWords, filter);
+      // Support both legacy filter=pos:noun format and individual URL params
+      // (topic, pos, decl, conj, freq) passed through from vocabulary.html
+      let words = applyWordFilter(allWords, filter);
+      if (!filter) {
+        words = applyUrlParamFilter(allWords, params);
+      }
 
       switch (activity) {
         case 'flashcard': return runFlashcard(app, words, filter);
@@ -67,6 +73,27 @@ function applyWordFilter(words, filter) {
   if (type === 'freq') return words.slice().sort((a, b) => a.frequency_rank - b.frequency_rank).slice(0, parseInt(value, 10));
   if (type === 'decl') return words.filter(w => w.declension === parseInt(value, 10));
   return words;
+}
+
+// Apply individual URL params (topic, pos, decl, conj, freq) — used when
+// arriving from vocabulary.html "Test yourself on this list" CTA.
+function applyUrlParamFilter(words, params) {
+  const topic = params.get('topic');
+  const pos   = params.get('pos');
+  const decl  = params.get('decl')  ? parseInt(params.get('decl'), 10)  : null;
+  const conj  = params.get('conj')  ? parseInt(params.get('conj'), 10)  : null;
+  const freq  = params.get('freq')  ? parseInt(params.get('freq'), 10)  : null;
+
+  let pool = words;
+  if (topic) pool = pool.filter(w => w.topics && w.topics.includes(topic));
+  if (pos)   pool = pool.filter(w => w.part_of_speech === pos);
+  if (decl)  pool = pool.filter(w => w.declension === decl);
+  if (conj)  pool = pool.filter(w => w.conjugation === conj);
+  if (freq)  pool = pool.slice().sort((a, b) => a.frequency_rank - b.frequency_rank).slice(0, freq);
+
+  // Fallback if filter is too narrow for MCQ (needs at least 4)
+  if (pool.length < 4) pool = words;
+  return pool;
 }
 
 // -- HUB ------------------------------------------------------------------
@@ -149,6 +176,14 @@ function renderHub(app, allWords) {
       ce: 'Practises: CE Question 3 & 4',
       href: 'quiz.html?activity=paradigm',
       icon: 'PC'
+    },
+    {
+      id: 'dashboard',
+      title: 'My Progress',
+      desc: 'See how many words you have mastered.',
+      ce: 'Vocabulary mastery tracker',
+      href: 'quiz.html?activity=dashboard',
+      icon: '📈'
     },
   ];
 
@@ -1118,6 +1153,70 @@ function showGapFillSummary(app, correct, total) {
       </div>
     </div>
   `;
+}
+
+// =============================================================
+// MASTERY DASHBOARD — quiz.html?activity=dashboard
+// =============================================================
+
+function runDashboard(app) {
+  fetch('data/vocabulary/all.json')
+    .then(r => r.json())
+    .then(words => {
+      const summary = SRS.summary(words.map(w => w.id));
+      const total = words.length;
+      const mastered = summary.mastered;
+      const learning = summary.learning;
+      const newCount = total - mastered - learning;
+
+      // Build dot strip (max 100 dots shown for layout)
+      const displayCount = Math.min(total, 100);
+      const dots = [];
+      for (let i = 0; i < displayCount; i++) {
+        if (i < mastered) dots.push('<span class="dash-dot mastered" title="Mastered"></span>');
+        else if (i < mastered + learning) dots.push('<span class="dash-dot learning" title="Learning"></span>');
+        else dots.push('<span class="dash-dot new" title="Not yet seen"></span>');
+      }
+      if (total > displayCount) dots.push(`<span class="dash-dot-more">+${total - displayCount} more</span>`);
+
+      const progressNote = mastered === 0
+        ? 'Start with flashcards \u2014 every word you rate correctly moves up a level.'
+        : mastered >= total
+          ? 'Outstanding \u2014 every word mastered. Keep reviewing to stay sharp.'
+          : `You\u2019ve secured ${mastered} out of ${total} words. Keep going!`;
+
+      app.innerHTML = `
+        <div class="ex-header">
+          <a href="quiz.html" class="ex-back">\u2190 Exercises</a>
+          <span class="ex-ce-label">Your progress</span>
+        </div>
+        <h2>Mastery Dashboard</h2>
+        <div class="dash-stats">
+          <div class="dash-stat dash-stat--mastered">
+            <span class="dash-stat-num">${mastered}</span>
+            <span class="dash-stat-label">Mastered</span>
+          </div>
+          <div class="dash-stat dash-stat--learning">
+            <span class="dash-stat-num">${learning}</span>
+            <span class="dash-stat-label">Learning</span>
+          </div>
+          <div class="dash-stat dash-stat--new">
+            <span class="dash-stat-num">${newCount}</span>
+            <span class="dash-stat-label">Not yet seen</span>
+          </div>
+        </div>
+        <div class="dash-dots">${dots.join('')}</div>
+        <p class="dash-note">${progressNote}</p>
+        <div class="dash-actions">
+          <a href="quiz.html?activity=flashcard" class="ex-btn ex-btn-primary">Flashcards</a>
+          <a href="quiz.html?activity=mcq" class="ex-btn ex-btn-secondary">MCQ Quiz</a>
+          <a href="quiz.html" class="ex-btn ex-btn-secondary">All exercises</a>
+        </div>
+      `;
+    })
+    .catch(() => {
+      app.innerHTML = '<p class="error">Could not load progress data.</p>';
+    });
 }
 
 // -- UTILITIES ------------------------------------------------------------

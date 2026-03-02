@@ -21,6 +21,7 @@ const PRECACHE_ASSETS = [
   './data/vocabulary/word-groups.json',
   './data/grammar/nouns.json',
   './data/grammar/verbs.json',
+  './data/exercises/gap-fill.json',
   './manifest.webmanifest',
   './icons/icon-192.png',
   './icons/icon-512.png'

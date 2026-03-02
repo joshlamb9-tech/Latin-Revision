@@ -933,3 +933,174 @@ a:hover {
   margin-bottom: 0.75rem;
   line-height: 1.5;
 }
+
+/* ============================================
+   Mastery Dashboard — Phase 3 (03-04 additions)
+   ============================================ */
+
+.dash-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.dash-stat {
+  text-align: center;
+  padding: 0.75rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+}
+
+.dash-stat--mastered { background: rgba(58, 122, 58, 0.1); border-color: #3a7a3a; }
+.dash-stat--learning { background: rgba(181, 130, 27, 0.1); border-color: #b5821b; }
+.dash-stat--new      { background: var(--color-parchment-dark); }
+
+.dash-stat-num {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.dash-stat--mastered .dash-stat-num { color: #2a5a2a; }
+.dash-stat--learning .dash-stat-num { color: #7a5a0a; }
+.dash-stat--new      .dash-stat-num { color: var(--color-stone-light); }
+
+.dash-stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-stone-light);
+}
+
+.dash-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 1rem 0;
+}
+
+.dash-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dash-dot.mastered { background-color: #3a7a3a; }
+.dash-dot.learning { background-color: #b5821b; }
+.dash-dot.new      { background-color: var(--color-border); }
+
+.dash-dot-more {
+  font-size: 0.8rem;
+  color: var(--color-stone-light);
+  align-self: center;
+  margin-left: 4px;
+}
+
+.dash-note {
+  font-style: italic;
+  color: var(--color-stone-light);
+  margin: 0.5rem 0 1.5rem;
+  font-size: 0.95rem;
+}
+
+.dash-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* ============================================
+   Vocabulary Test-Yourself CTA — Phase 3 (03-04 additions)
+   ============================================ */
+
+.vocab-test-cta {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.vocab-test-btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background-color: var(--color-terracotta);
+  color: var(--color-parchment);
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.15s;
+}
+
+.vocab-test-btn:hover {
+  background-color: var(--color-terracotta-dark);
+  color: var(--color-parchment);
+}
+
+/* ============================================
+   Grammar Quick-Check — Phase 3 (03-04 additions)
+   ============================================ */
+
+.qcheck {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background-color: var(--color-parchment-dark);
+  border-left: 3px solid var(--color-terracotta);
+  border-radius: 2px;
+}
+
+.qcheck-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-terracotta);
+  margin-bottom: 0.4rem;
+}
+
+.qcheck-q {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.qcheck-opts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.qcheck-btn {
+  padding: 0.4rem 0.9rem;
+  background-color: var(--color-parchment);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.qcheck-btn:hover:not([disabled]) {
+  border-color: var(--color-terracotta);
+}
+
+.qcheck-btn.qcheck-correct {
+  border-color: #3a7a3a;
+  background-color: rgba(58, 122, 58, 0.12);
+  color: #2a5a2a;
+}
+
+.qcheck-btn.qcheck-wrong {
+  border-color: var(--color-terracotta);
+  background-color: rgba(181, 69, 27, 0.1);
+}
+
+.qcheck-fb {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}

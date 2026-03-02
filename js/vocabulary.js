@@ -87,6 +87,17 @@ function renderVocabulary(app, filtered, filters, total) {
   list.className = 'vocab-list';
   filtered.forEach(word => list.appendChild(renderWordItem(word)));
   app.appendChild(list);
+
+  // "Test yourself on this list" CTA — passes current URL params through to flashcard mode
+  const filterStr = window.location.search; // e.g. "?topic=family" or "?pos=noun&decl=1"
+  const testBtn = document.createElement('div');
+  testBtn.className = 'vocab-test-cta';
+  testBtn.innerHTML = `
+    <a href="quiz.html?activity=flashcard${filterStr ? '&' + filterStr.slice(1) : ''}" class="vocab-test-btn">
+      Test yourself on this list \u2192
+    </a>
+  `;
+  app.appendChild(testBtn);
 }
 
 function buildHeading(filters) {

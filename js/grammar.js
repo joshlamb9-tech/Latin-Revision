@@ -1,5 +1,88 @@
 'use strict';
 
+// =============================================================
+// Grammar Quick-Check questions — embedded constants, no external data
+// =============================================================
+
+const GRAMMAR_QUICK_CHECKS = {
+  noun_1: {
+    question: 'In the 1st declension, which ending marks the accusative singular?',
+    options: ['-am', '-ae', '-\u0101', '-\u0101rum'],
+    correct: '-am',
+    explanation: 'The accusative singular of 1st declension nouns ends in -am (e.g. puellam). The accusative marks the direct object.'
+  },
+  noun_2: {
+    question: 'In the 2nd declension (masculine), which ending marks the genitive singular?',
+    options: ['-\u012b', '-\u014d', '-um', '-\u014drum'],
+    correct: '-\u012b',
+    explanation: 'The genitive singular of 2nd declension masculine nouns ends in -\u012b (e.g. serv\u012b = of the slave). The genitive shows possession.'
+  },
+  noun_3: {
+    question: 'What case is used for the subject of a Latin verb?',
+    options: ['Nominative', 'Accusative', 'Genitive', 'Dative'],
+    correct: 'Nominative',
+    explanation: 'The nominative case marks the subject \u2014 the person or thing doing the action. In CE Q3 you may be asked to identify it.'
+  },
+  verb_1_present: {
+    question: 'What does the imperfect tense describe?',
+    options: ['A continuous or repeated past action', 'A completed past action', 'An action happening now', 'A command'],
+    correct: 'A continuous or repeated past action',
+    explanation: 'The imperfect tense (port\u0101bam = I was carrying) describes ongoing or repeated action in the past. CE Q3 often asks you to identify the tense.'
+  },
+  verb_1_perfect: {
+    question: 'What is the 3rd person singular perfect of port\u014d?',
+    options: ['port\u0101vit', 'portat', 'port\u0101bat', 'port\u0101v\u012b'],
+    correct: 'port\u0101vit',
+    explanation: 'port\u0101vit = he/she/it carried (perfect, completed action). The -vit ending marks 3rd person singular perfect for 1st conjugation verbs.'
+  },
+  verb_2_present: {
+    question: 'Which ending marks the 1st person singular present in the 2nd conjugation?',
+    options: ['-e\u014d', '-\u0101s', '-et', '-\u0113mus'],
+    correct: '-e\u014d',
+    explanation: 'mone\u014d = I warn. The 1st person singular present ends in -e\u014d for 2nd conjugation verbs.'
+  }
+};
+
+/**
+ * Append an interactive MCQ quick-check to a grammar section container.
+ * @param {HTMLElement} container - the section element to append to
+ * @param {string} checkKey - key from GRAMMAR_QUICK_CHECKS
+ */
+function appendQuickCheck(container, checkKey) {
+  const check = GRAMMAR_QUICK_CHECKS[checkKey];
+  if (!check) return;
+  let answered = false;
+
+  const div = document.createElement('div');
+  div.className = 'qcheck';
+  const shuffled = [...check.options].sort(() => Math.random() - 0.5);
+  div.innerHTML = `
+    <p class="qcheck-label">Quick check</p>
+    <p class="qcheck-q">${check.question}</p>
+    <div class="qcheck-opts">
+      ${shuffled.map(o => `<button class="qcheck-btn" data-val="${o}">${o}</button>`).join('')}
+    </div>
+    <div class="qcheck-fb" style="display:none"></div>
+  `;
+  container.appendChild(div);
+
+  div.querySelectorAll('.qcheck-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (answered) return;
+      answered = true;
+      const correct = btn.dataset.val === check.correct;
+      div.querySelectorAll('.qcheck-btn').forEach(b => {
+        b.disabled = true;
+        if (b.dataset.val === check.correct) b.classList.add('qcheck-correct');
+        else if (b === btn && !correct) b.classList.add('qcheck-wrong');
+      });
+      const fb = div.querySelector('.qcheck-fb');
+      fb.style.display = 'block';
+      fb.innerHTML = `<p class="${correct ? 'fb-correct' : 'fb-wrong'}">${correct ? '\u2713 Correct!' : `\u2717 The answer is <strong>${check.correct}</strong>`}</p><p class="fb-explanation">${check.explanation}</p>`;
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const app = document.getElementById('app');
 
@@ -72,10 +155,15 @@ function renderDeclensionSection(decl) {
 
   const example = document.createElement('p');
   example.className = 'grammar-example';
-  example.textContent = decl.example_noun + ' — ' + decl.example_meaning;
+  example.textContent = decl.example_noun + ' \u2014 ' + decl.example_meaning;
   section.appendChild(example);
 
   section.appendChild(renderNounTable(decl));
+
+  // Quick-check question keyed by declension number
+  const checkKeyMap = { 1: 'noun_1', 2: 'noun_2', 3: 'noun_3' };
+  const checkKey = checkKeyMap[decl.declension];
+  if (checkKey) appendQuickCheck(section, checkKey);
 
   return section;
 }
@@ -136,7 +224,7 @@ function renderConjugationSection(conj) {
 
   const example = document.createElement('p');
   example.className = 'grammar-example';
-  example.textContent = conj.example_verb + ' (' + conj.example_infinitive + ') — ' + conj.example_meaning;
+  example.textContent = conj.example_verb + ' (' + conj.example_infinitive + ') \u2014 ' + conj.example_meaning;
   section.appendChild(example);
 
   Object.keys(conj.tenses).forEach(tenseKey => {
@@ -149,6 +237,14 @@ function renderConjugationSection(conj) {
 
     section.appendChild(renderVerbTable(tenseData));
   });
+
+  // Quick-check questions keyed by conjugation number
+  if (conj.conjugation === 1) {
+    appendQuickCheck(section, 'verb_1_present');
+    appendQuickCheck(section, 'verb_1_perfect');
+  } else if (conj.conjugation === 2) {
+    appendQuickCheck(section, 'verb_2_present');
+  }
 
   return section;
 }
