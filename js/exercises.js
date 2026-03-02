@@ -240,9 +240,9 @@ function runFlashcard(app, words, filter) {
     const card = el('div', { className: 'ex-card flashcard' + (revealed ? ' revealed' : '') });
 
     const front = el('div', { className: 'flashcard-front' });
-    front.appendChild(el('span', { className: 'flashcard-latin' }, word.latin));
+    front.appendChild(el('span', { className: 'flashcard-latin' }, stripMacrons(word.latin)));
     if (word.part_of_speech === 'noun' && word.genitive) {
-      front.appendChild(el('span', { className: 'flashcard-genitive' }, word.genitive));
+      front.appendChild(el('span', { className: 'flashcard-genitive' }, stripMacrons(word.genitive)));
     }
     front.appendChild(el('button', { className: 'btn btn-secondary flashcard-reveal-btn' }, 'Tap to reveal'));
 
@@ -356,9 +356,9 @@ function runMCQ(app, words, mode, allWords) {
     const card = el('div', { className: 'ex-card' });
     const prompt = el('div', { className: 'ex-prompt' });
     if (mode === 'latin-english') {
-      prompt.appendChild(el('span', { className: 'ex-prompt-latin' }, word.latin));
+      prompt.appendChild(el('span', { className: 'ex-prompt-latin' }, stripMacrons(word.latin)));
       if (word.part_of_speech === 'noun' && word.genitive) {
-        prompt.appendChild(el('span', { className: 'ex-prompt-genitive' }, word.genitive + ', ' + (word.gender === 'f' ? 'f.' : word.gender === 'm' ? 'm.' : 'n.')));
+        prompt.appendChild(el('span', { className: 'ex-prompt-genitive' }, stripMacrons(word.genitive) + ', ' + (word.gender === 'f' ? 'f.' : word.gender === 'm' ? 'm.' : 'n.')));
       }
     } else {
       prompt.appendChild(el('span', { className: 'ex-prompt-english' }, word.english));
@@ -368,7 +368,7 @@ function runMCQ(app, words, mode, allWords) {
 
     const optionsList = el('div', { className: 'ex-options' });
     options.forEach(opt => {
-      const btn = el('button', { className: 'ex-option-btn' }, mode === 'latin-english' ? opt.english : opt.latin);
+      const btn = el('button', { className: 'ex-option-btn' }, mode === 'latin-english' ? opt.english : stripMacrons(opt.latin));
       btn.addEventListener('click', () => {
         if (answered) return;
         answered = true;
@@ -379,7 +379,7 @@ function runMCQ(app, words, mode, allWords) {
 
         // Reveal all options with correct/wrong marking
         optionsList.querySelectorAll('.ex-option-btn').forEach(b => {
-          const isCorrect = (mode === 'latin-english' ? b.textContent === word.english : b.textContent === word.latin);
+          const isCorrect = (mode === 'latin-english' ? b.textContent === word.english : b.textContent === stripMacrons(word.latin));
           b.classList.add(isCorrect ? 'correct' : (b === btn && !correct ? 'wrong' : 'neutral'));
           b.disabled = true;
         });
@@ -388,9 +388,9 @@ function runMCQ(app, words, mode, allWords) {
         const fb = el('div', { className: 'ex-feedback ' + (correct ? 'ex-feedback-positive' : 'ex-feedback-negative') });
         if (correct) {
           let streakNote = streak >= 5 && streak % 5 === 0 ? ' \uD83D\uDD25 ' + streak + ' in a row!' : streak === 3 ? ' 3 in a row!' : '';
-          fb.textContent = 'Correct \u2014 ' + word.latin + ' means \u201c' + word.english + '\u201d. ' + buildGrammarInsight(word) + streakNote;
+          fb.textContent = 'Correct \u2014 ' + stripMacrons(word.latin) + ' means \u201c' + word.english + '\u201d. ' + buildGrammarInsight(word) + streakNote;
         } else {
-          fb.textContent = 'Not yet \u2014 ' + word.latin + ' means \u201c' + word.english + '\u201d. ' + buildGrammarInsight(word) + ' Seeing it again will help it stick.';
+          fb.textContent = 'Not yet \u2014 ' + stripMacrons(word.latin) + ' means \u201c' + word.english + '\u201d. ' + buildGrammarInsight(word) + ' Seeing it again will help it stick.';
         }
         app.appendChild(fb);
 
@@ -511,8 +511,8 @@ function renderCaseQuestion(app, questions, index, score) {
   app.appendChild(el('p', { className: 'ex-ce-label' }, 'Practises: CE Question 3 (grammar \u2014 case identification)'));
 
   const card = el('div', { className: 'ex-card' });
-  card.appendChild(el('p', { className: 'ex-context' }, q.declensionName + ' \u2014 ' + q.exampleNoun + ' (' + q.exampleMeaning + ')'));
-  card.appendChild(el('p', { className: 'ex-form-display' }, q.form));
+  card.appendChild(el('p', { className: 'ex-context' }, q.declensionName + ' \u2014 ' + stripMacrons(q.exampleNoun) + ' (' + q.exampleMeaning + ')'));
+  card.appendChild(el('p', { className: 'ex-form-display' }, stripMacrons(q.form)));
   card.appendChild(el('p', { className: 'ex-number-hint' }, q.number.charAt(0).toUpperCase() + q.number.slice(1)));
   card.appendChild(el('p', { className: 'ex-prompt' }, 'What case is this?'));
   app.appendChild(card);
@@ -702,8 +702,8 @@ function renderVerbQuestion(app, questions, index, score) {
 
   const card = el('div', { className: 'ex-card' });
   card.appendChild(el('p', { className: 'ex-context' },
-    q.exampleVerb + ' (' + q.exampleInfinitive + ') \u2014 ' + q.exampleMeaning));
-  card.appendChild(el('p', { className: 'ex-form-display' }, q.form));
+    stripMacrons(q.exampleVerb) + ' (' + stripMacrons(q.exampleInfinitive) + ') \u2014 ' + q.exampleMeaning));
+  card.appendChild(el('p', { className: 'ex-form-display' }, stripMacrons(q.form)));
   card.appendChild(el('p', { className: 'ex-prompt' }, 'What is the person, number, and tense?'));
   app.appendChild(card);
 
@@ -728,7 +728,7 @@ function renderVerbQuestion(app, questions, index, score) {
           ? '\u2713 Correct \u2014 you parsed it right.'
           : 'Not yet \u2014 it\u2019s: ' + correctLabel + '.'));
       fb.appendChild(el('p', { className: 'ex-feedback-explanation' },
-        q.form + ': ' + correctLabel + ' of ' + q.exampleVerb + ' \u2014 \u201c' + buildVerbTranslation(q) + '\u201d'));
+        stripMacrons(q.form) + ': ' + correctLabel + ' of ' + stripMacrons(q.exampleVerb) + ' \u2014 \u201c' + buildVerbTranslation(q) + '\u201d'));
       fb.appendChild(el('p', { className: 'ex-feedback-note' }, TENSE_NOTES[q.tense]));
 
       const nextBtn = el('button', { className: 'btn ex-next-btn' },
@@ -823,7 +823,7 @@ function renderParadigmTable(app, decl, allDeclensions) {
   app.appendChild(el('p', { className: 'ex-ce-label' }, 'Practises: CE Question 3 & 4'));
 
   app.appendChild(el('p', { className: 'ex-context' },
-    decl.name + ' \u2014 ' + decl.example_noun + ' (' + decl.example_meaning + ')'));
+    decl.name + ' \u2014 ' + stripMacrons(decl.example_noun) + ' (' + decl.example_meaning + ')'));
   app.appendChild(el('p', { className: 'ex-prompt' },
     'Tap the \u201c?\u201d cells to fill in the missing forms.'));
 
@@ -864,7 +864,7 @@ function renderParadigmTable(app, decl, allDeclensions) {
           openParadigmOptions(app, td, decl, allDeclensions, state, allCells));
         td.appendChild(btn);
       } else {
-        td.textContent = decl[number][caseName] || '';
+        td.textContent = stripMacrons(decl[number][caseName] || '');
       }
     });
   });
@@ -887,19 +887,19 @@ function renderParadigmTable(app, decl, allDeclensions) {
 function openParadigmOptions(app, td, decl, allDeclensions, state, allCells) {
   if (state.filled.has(td.dataset.key)) return;
 
-  const correctForm = td.dataset.correct;
+  const correctForm = stripMacrons(td.dataset.correct);
   const caseName = td.dataset.caseName;
   const number = td.dataset.number;
 
   // Build distractor pool from this paradigm plus other declensions
   const otherForms = [];
-  allCells.forEach(c => { if (c.form !== correctForm) otherForms.push(c.form); });
+  allCells.forEach(c => { if (stripMacrons(c.form) !== correctForm) otherForms.push(stripMacrons(c.form)); });
   allDeclensions.forEach(d => {
     if (d !== decl) {
       d.cases.forEach(cn => {
         ['singular', 'plural'].forEach(nb => {
           const f = d[nb] && d[nb][cn];
-          if (f && f !== correctForm) otherForms.push(f);
+          if (f && stripMacrons(f) !== correctForm) otherForms.push(stripMacrons(f));
         });
       });
     }
@@ -1017,7 +1017,7 @@ function startPairs(words, app, topic) {
       const isMatched = matched.has(i);
       const isSelected = selectedLatin === i;
       return `<button class="pair-btn latin-btn${isMatched ? ' matched' : ''}${isSelected ? ' selected' : ''}"
-        data-idx="${i}" ${isMatched ? 'disabled' : ''}>${w.latin}</button>`;
+        data-idx="${i}" ${isMatched ? 'disabled' : ''}>${stripMacrons(w.latin)}</button>`;
     }).join('');
 
     const englishCol = englishItems.map(item => {
@@ -1109,11 +1109,11 @@ function runGapFill(app) {
           </div>
           <p class="ex-progress">${idx + 1} / ${questions.length}</p>
           <div class="ex-sentence-card">
-            <p class="ex-sentence">${q.display}</p>
+            <p class="ex-sentence">${stripMacrons(q.display)}</p>
             <p class="ex-translation-hint">${q.translation.replace(q.correct, '_____')}</p>
           </div>
           <div class="ex-options">
-            ${opts.map(o => `<button class="ex-opt-btn" data-val="${o}">${o}</button>`).join('')}
+            ${opts.map(o => `<button class="ex-opt-btn" data-val="${o}">${stripMacrons(o)}</button>`).join('')}
           </div>
           <div class="ex-feedback" id="gf-feedback" style="display:none"></div>
         `;
@@ -1134,7 +1134,7 @@ function runGapFill(app) {
             const fb = document.getElementById('gf-feedback');
             fb.style.display = 'block';
             fb.innerHTML = `
-              <p class="${isCorrect ? 'fb-correct' : 'fb-wrong'}">${isCorrect ? '&#10003; Correct \u2014 you knew that one.' : `Not yet \u2014 it\u2019s <strong>${q.correct}</strong>`}</p>
+              <p class="${isCorrect ? 'fb-correct' : 'fb-wrong'}">${isCorrect ? '&#10003; Correct \u2014 you knew that one.' : `Not yet \u2014 it\u2019s <strong>${stripMacrons(q.correct)}</strong>`}</p>
               <p class="fb-explanation">${q.explanation}</p>
               <button class="ex-btn ex-btn-primary" id="gf-next">
                 ${idx + 1 < questions.length ? 'Next sentence &#8594;' : 'See results &#8594;'}
@@ -1392,6 +1392,17 @@ function englishOverlaps(a, b) {
   }
   const ka = new Set(keys(a));
   return keys(b).some(w => ka.has(w));
+}
+
+// Strip macrons/diacritics — CE exam uses plain vowels, not macrons
+function stripMacrons(str) {
+  if (!str) return str;
+  return str
+    .replace(/[āĀ]/g, m => m === 'ā' ? 'a' : 'A')
+    .replace(/[ēĒ]/g, m => m === 'ē' ? 'e' : 'E')
+    .replace(/[īĪ]/g, m => m === 'ī' ? 'i' : 'I')
+    .replace(/[ōŌ]/g, m => m === 'ō' ? 'o' : 'O')
+    .replace(/[ūŪ]/g, m => m === 'ū' ? 'u' : 'U');
 }
 
 function shuffle(arr) {
