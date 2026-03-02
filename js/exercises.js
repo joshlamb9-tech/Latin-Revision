@@ -331,9 +331,15 @@ function runMCQ(app, words, mode, allWords) {
     }
 
     const word = questions[index];
-    // Distractors: same part of speech, different word
-    const samePos = allWords.filter(w => w.part_of_speech === word.part_of_speech && w.id !== word.id);
-    const shuffled = shuffle(samePos).slice(0, 3);
+    // Distractors: same part of speech, no overlapping English key words
+    const samePos = allWords.filter(w =>
+      w.part_of_speech === word.part_of_speech &&
+      w.id !== word.id &&
+      !englishOverlaps(w.english, word.english)
+    );
+    // Fall back to any same-pos word if overlap filtering leaves too few
+    const pool = samePos.length >= 3 ? samePos : allWords.filter(w => w.part_of_speech === word.part_of_speech && w.id !== word.id);
+    const shuffled = shuffle(pool).slice(0, 3);
     const options = shuffle([word, ...shuffled]);
 
     app.innerHTML = '';
@@ -1235,6 +1241,21 @@ function el(tag, attrs, text) {
   });
   if (text !== undefined) e.textContent = text;
   return e;
+}
+
+// Returns true if two English meanings share a meaningful key word
+// Used to prevent ambiguous MCQ distractors (e.g. vir/homo both meaning "man")
+function englishOverlaps(a, b) {
+  const IGNORE = new Set(['a','an','the','to','of','or','and','with','in','out','up','be','at','i','my','his','her','its','pl','make','away','for','on','by']);
+  function keys(s) {
+    return s.toLowerCase()
+      .replace(/[()]/g, '')   // strip brackets like (pl.)
+      .split(/[,;\s\/]+/)
+      .map(w => w.replace(/[^a-z]/g, ''))
+      .filter(w => w.length > 2 && !IGNORE.has(w));
+  }
+  const ka = new Set(keys(a));
+  return keys(b).some(w => ka.has(w));
 }
 
 function shuffle(arr) {
