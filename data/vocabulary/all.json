@@ -8,7 +8,10 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["family", "daily-life"],
+    "topics": [
+      "family",
+      "daily-life"
+    ],
     "frequency_rank": 5
   },
   {
@@ -20,79 +23,96 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["daily-life", "nature"],
+    "topics": [
+      "daily-life",
+      "nature"
+    ],
     "frequency_rank": 12
   },
   {
     "id": "cena-01",
-    "latin": "cēna",
-    "genitive": "cēnae",
+    "latin": "cena",
+    "genitive": "cenae",
     "gender": "f",
     "english": "dinner, meal",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 14
   },
   {
     "id": "copia-01",
-    "latin": "cōpia",
-    "genitive": "cōpiae",
+    "latin": "copia",
+    "genitive": "copiae",
     "gender": "f",
     "english": "abundance, supply; (pl.) troops",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["war/army", "daily-life"],
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 30
   },
   {
     "id": "culina-01",
-    "latin": "culīna",
-    "genitive": "culīnae",
+    "latin": "culina",
+    "genitive": "culinae",
     "gender": "f",
     "english": "kitchen",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 38
   },
   {
     "id": "fama-01",
-    "latin": "fāma",
-    "genitive": "fāmae",
+    "latin": "fama",
+    "genitive": "famae",
     "gender": "f",
     "english": "rumour, reputation, fame",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 24
   },
   {
     "id": "femina-01",
-    "latin": "fēmina",
-    "genitive": "fēminae",
+    "latin": "femina",
+    "genitive": "feminae",
     "gender": "f",
     "english": "woman",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["family", "daily-life"],
+    "topics": [
+      "family",
+      "daily-life"
+    ],
     "frequency_rank": 3
   },
   {
     "id": "filia-01",
-    "latin": "fīlia",
-    "genitive": "fīliae",
+    "latin": "filia",
+    "genitive": "filiae",
     "gender": "f",
     "english": "daughter",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["family"],
+    "topics": [
+      "family"
+    ],
     "frequency_rank": 18
   },
   {
@@ -104,55 +124,67 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 22
   },
   {
     "id": "hora-01",
-    "latin": "hōra",
-    "genitive": "hōrae",
+    "latin": "hora",
+    "genitive": "horae",
     "gender": "f",
     "english": "hour",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 40
   },
   {
     "id": "insula-01",
-    "latin": "īnsula",
-    "genitive": "īnsulae",
+    "latin": "insula",
+    "genitive": "insulae",
     "gender": "f",
     "english": "island",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["travel", "nature"],
+    "topics": [
+      "travel",
+      "nature"
+    ],
     "frequency_rank": 35
   },
   {
     "id": "ira-01",
-    "latin": "īra",
-    "genitive": "īrae",
+    "latin": "ira",
+    "genitive": "irae",
     "gender": "f",
     "english": "anger",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 20
   },
   {
     "id": "luna-01",
-    "latin": "lūna",
-    "genitive": "lūnae",
+    "latin": "luna",
+    "genitive": "lunae",
     "gender": "f",
     "english": "moon",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["nature", "gods"],
+    "topics": [
+      "nature",
+      "gods"
+    ],
     "frequency_rank": 45
   },
   {
@@ -164,7 +196,10 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["daily-life", "travel"],
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
     "frequency_rank": 16
   },
   {
@@ -176,7 +211,10 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["travel", "war/army"],
+    "topics": [
+      "travel",
+      "war/army"
+    ],
     "frequency_rank": 28
   },
   {
@@ -188,19 +226,24 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["war/army", "daily-life"],
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 32
   },
   {
     "id": "poeta-01",
-    "latin": "poēta",
-    "genitive": "poētae",
+    "latin": "poeta",
+    "genitive": "poetae",
     "gender": "m",
     "english": "poet",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 50
   },
   {
@@ -212,19 +255,25 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["family", "daily-life"],
+    "topics": [
+      "family",
+      "daily-life"
+    ],
     "frequency_rank": 4
   },
   {
     "id": "regina-01",
-    "latin": "rēgīna",
-    "genitive": "rēgīnae",
+    "latin": "regina",
+    "genitive": "reginae",
     "gender": "f",
     "english": "queen",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["family", "gods"],
+    "topics": [
+      "family",
+      "gods"
+    ],
     "frequency_rank": 10
   },
   {
@@ -236,7 +285,10 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["nature", "travel"],
+    "topics": [
+      "nature",
+      "travel"
+    ],
     "frequency_rank": 26
   },
   {
@@ -248,7 +300,10 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["nature", "travel"],
+    "topics": [
+      "nature",
+      "travel"
+    ],
     "frequency_rank": 15
   },
   {
@@ -260,7 +315,10 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["travel", "daily-life"],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
     "frequency_rank": 11
   },
   {
@@ -272,367 +330,448 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["daily-life", "family"],
+    "topics": [
+      "daily-life",
+      "family"
+    ],
     "frequency_rank": 9
   },
   {
     "id": "vita-01",
-    "latin": "vīta",
-    "genitive": "vītae",
+    "latin": "vita",
+    "genitive": "vitae",
     "gender": "f",
     "english": "life",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 17
   },
   {
     "id": "amicus-01",
-    "latin": "amīcus",
-    "genitive": "amīcī",
+    "latin": "amicus",
+    "genitive": "amici",
     "gender": "m",
     "english": "friend",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["daily-life", "family"],
+    "topics": [
+      "daily-life",
+      "family"
+    ],
     "frequency_rank": 8
   },
   {
     "id": "animus-01",
     "latin": "animus",
-    "genitive": "animī",
+    "genitive": "animi",
     "gender": "m",
     "english": "mind, spirit, courage",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 19
   },
   {
     "id": "bellum-01",
     "latin": "bellum",
-    "genitive": "bellī",
+    "genitive": "belli",
     "gender": "n",
     "english": "war",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 6
   },
   {
     "id": "consilium-01",
-    "latin": "cōnsilium",
-    "genitive": "cōnsiliī",
+    "latin": "consilium",
+    "genitive": "consilii",
     "gender": "n",
     "english": "plan, advice, counsel",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["daily-life", "war/army"],
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 13
   },
   {
     "id": "cubiculum-01",
     "latin": "cubiculum",
-    "genitive": "cubiculī",
+    "genitive": "cubiculi",
     "gender": "n",
     "english": "bedroom",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 21
   },
   {
     "id": "deus-01",
     "latin": "deus",
-    "genitive": "deī",
+    "genitive": "dei",
     "gender": "m",
     "english": "god",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["gods"],
+    "topics": [
+      "gods"
+    ],
     "frequency_rank": 7
   },
   {
     "id": "dominus-01",
     "latin": "dominus",
-    "genitive": "dominī",
+    "genitive": "domini",
     "gender": "m",
     "english": "master, lord",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["family", "daily-life"],
+    "topics": [
+      "family",
+      "daily-life"
+    ],
     "frequency_rank": 7
   },
   {
     "id": "equus-01",
     "latin": "equus",
-    "genitive": "equī",
+    "genitive": "equi",
     "gender": "m",
     "english": "horse",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["travel", "war/army", "nature"],
+    "topics": [
+      "travel",
+      "war/army",
+      "nature"
+    ],
     "frequency_rank": 27
   },
   {
     "id": "filius-01",
-    "latin": "fīlius",
-    "genitive": "fīliī",
+    "latin": "filius",
+    "genitive": "filii",
     "gender": "m",
     "english": "son",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["family"],
+    "topics": [
+      "family"
+    ],
     "frequency_rank": 9
   },
   {
     "id": "gladius-01",
     "latin": "gladius",
-    "genitive": "gladiī",
+    "genitive": "gladii",
     "gender": "m",
     "english": "sword",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 23
   },
   {
     "id": "imperium-01",
     "latin": "imperium",
-    "genitive": "imperiī",
+    "genitive": "imperii",
     "gender": "n",
     "english": "power, command, empire",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["war/army", "gods"],
+    "topics": [
+      "war/army",
+      "gods"
+    ],
     "frequency_rank": 16
   },
   {
     "id": "locus-01",
     "latin": "locus",
-    "genitive": "locī",
+    "genitive": "loci",
     "gender": "m",
     "english": "place",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["travel", "daily-life"],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
     "frequency_rank": 25
   },
   {
     "id": "ludus-01",
-    "latin": "lūdus",
-    "genitive": "lūdī",
+    "latin": "ludus",
+    "genitive": "ludi",
     "gender": "m",
     "english": "game, school",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 42
   },
   {
     "id": "magister-01",
     "latin": "magister",
-    "genitive": "magistrī",
+    "genitive": "magistri",
     "gender": "m",
     "english": "schoolmaster, teacher",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 31
   },
   {
     "id": "maritus-01",
-    "latin": "marītus",
-    "genitive": "marītī",
+    "latin": "maritus",
+    "genitive": "mariti",
     "gender": "m",
     "english": "husband",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["family"],
+    "topics": [
+      "family"
+    ],
     "frequency_rank": 15
   },
   {
     "id": "murus-01",
-    "latin": "mūrus",
-    "genitive": "mūrī",
+    "latin": "murus",
+    "genitive": "muri",
     "gender": "m",
     "english": "wall",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["war/army", "daily-life"],
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 24
   },
   {
     "id": "nuntius-01",
-    "latin": "nūntius",
-    "genitive": "nūntiī",
+    "latin": "nuntius",
+    "genitive": "nuntii",
     "gender": "m",
     "english": "messenger, message, news",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["daily-life", "war/army"],
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 29
   },
   {
     "id": "oculus-01",
     "latin": "oculus",
-    "genitive": "oculī",
+    "genitive": "oculi",
     "gender": "m",
     "english": "eye",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 44
   },
   {
     "id": "oppidum-01",
     "latin": "oppidum",
-    "genitive": "oppidī",
+    "genitive": "oppidi",
     "gender": "n",
     "english": "town",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["travel", "daily-life"],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
     "frequency_rank": 26
   },
   {
     "id": "periculum-01",
-    "latin": "perīculum",
-    "genitive": "perīculī",
+    "latin": "periculum",
+    "genitive": "periculi",
     "gender": "n",
     "english": "danger",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["war/army", "travel"],
+    "topics": [
+      "war/army",
+      "travel"
+    ],
     "frequency_rank": 33
   },
   {
     "id": "poculum-01",
-    "latin": "pōculum",
-    "genitive": "pōculī",
+    "latin": "poculum",
+    "genitive": "poculi",
     "gender": "n",
     "english": "cup, drink",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 36
   },
   {
     "id": "populus-01",
     "latin": "populus",
-    "genitive": "populī",
+    "genitive": "populi",
     "gender": "m",
     "english": "people, nation",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["daily-life", "war/army"],
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 20
   },
   {
     "id": "puer-01",
     "latin": "puer",
-    "genitive": "puerī",
+    "genitive": "pueri",
     "gender": "m",
     "english": "boy, child",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["family", "daily-life"],
+    "topics": [
+      "family",
+      "daily-life"
+    ],
     "frequency_rank": 6
   },
   {
     "id": "servus-01",
     "latin": "servus",
-    "genitive": "servī",
+    "genitive": "servi",
     "gender": "m",
     "english": "slave",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["family", "daily-life"],
+    "topics": [
+      "family",
+      "daily-life"
+    ],
     "frequency_rank": 2
   },
   {
     "id": "tabernaculum-01",
-    "latin": "tabernāculum",
-    "genitive": "tabernāculī",
+    "latin": "tabernaculum",
+    "genitive": "tabernaculi",
     "gender": "n",
     "english": "tent",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["war/army", "travel"],
+    "topics": [
+      "war/army",
+      "travel"
+    ],
     "frequency_rank": 34
   },
   {
     "id": "templum-01",
     "latin": "templum",
-    "genitive": "templī",
+    "genitive": "templi",
     "gender": "n",
     "english": "temple",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["gods", "daily-life"],
+    "topics": [
+      "gods",
+      "daily-life"
+    ],
     "frequency_rank": 28
   },
   {
     "id": "venenum-01",
-    "latin": "venēnum",
-    "genitive": "venēnī",
+    "latin": "venenum",
+    "genitive": "veneni",
     "gender": "n",
     "english": "poison",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 37
   },
   {
     "id": "verbum-01",
     "latin": "verbum",
-    "genitive": "verbī",
+    "genitive": "verbi",
     "gender": "n",
     "english": "word",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 22
   },
   {
     "id": "vir-01",
     "latin": "vir",
-    "genitive": "virī",
+    "genitive": "viri",
     "gender": "m",
     "english": "man, hero",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["family", "war/army", "daily-life"],
+    "topics": [
+      "family",
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 8
   },
   {
@@ -644,19 +783,25 @@
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["daily-life", "nature"],
+    "topics": [
+      "daily-life",
+      "nature"
+    ],
     "frequency_rank": 43
   },
   {
     "id": "civis-01",
-    "latin": "cīvis",
-    "genitive": "cīvis",
+    "latin": "civis",
+    "genitive": "civis",
     "gender": "m",
     "english": "citizen",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["daily-life", "war/army"],
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 39
   },
   {
@@ -668,103 +813,125 @@
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 18
   },
   {
     "id": "flumen-01",
-    "latin": "flūmen",
-    "genitive": "flūminis",
+    "latin": "flumen",
+    "genitive": "fluminis",
     "gender": "n",
     "english": "river",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["nature", "travel"],
+    "topics": [
+      "nature",
+      "travel"
+    ],
     "frequency_rank": 19
   },
   {
     "id": "homo-01",
-    "latin": "homō",
+    "latin": "homo",
     "genitive": "hominis",
     "gender": "m",
     "english": "man, person, human",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 21
   },
   {
     "id": "imperator-01",
-    "latin": "imperātor",
-    "genitive": "imperātōris",
+    "latin": "imperator",
+    "genitive": "imperatoris",
     "gender": "m",
     "english": "emperor, commander",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["war/army", "gods"],
+    "topics": [
+      "war/army",
+      "gods"
+    ],
     "frequency_rank": 17
   },
   {
     "id": "letum-01",
-    "latin": "lētum",
-    "genitive": "lētī",
+    "latin": "letum",
+    "genitive": "leti",
     "gender": "n",
     "english": "(violent) death",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["war/army", "daily-life"],
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 41
   },
   {
     "id": "lex-01",
-    "latin": "lēx",
-    "genitive": "lēgis",
+    "latin": "lex",
+    "genitive": "legis",
     "gender": "f",
     "english": "law",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 46
   },
   {
     "id": "lux-01",
-    "latin": "lūx",
-    "genitive": "lūcis",
+    "latin": "lux",
+    "genitive": "lucis",
     "gender": "f",
     "english": "light",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["nature", "daily-life"],
+    "topics": [
+      "nature",
+      "daily-life"
+    ],
     "frequency_rank": 47
   },
   {
     "id": "medicus-01",
     "latin": "medicus",
-    "genitive": "medicī",
+    "genitive": "medici",
     "gender": "m",
     "english": "doctor, physician",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 35
   },
   {
     "id": "miles-01",
-    "latin": "mīles",
-    "genitive": "mīlitis",
+    "latin": "miles",
+    "genitive": "militis",
     "gender": "m",
     "english": "soldier",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 5
   },
   {
@@ -776,31 +943,39 @@
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["war/army", "daily-life"],
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 20
   },
   {
     "id": "navis-01",
-    "latin": "nāvis",
-    "genitive": "nāvis",
+    "latin": "navis",
+    "genitive": "navis",
     "gender": "f",
     "english": "ship",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["travel", "war/army"],
+    "topics": [
+      "travel",
+      "war/army"
+    ],
     "frequency_rank": 23
   },
   {
     "id": "nomen-01",
-    "latin": "nōmen",
-    "genitive": "nōminis",
+    "latin": "nomen",
+    "genitive": "nominis",
     "gender": "n",
     "english": "name",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 14
   },
   {
@@ -812,7 +987,10 @@
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["daily-life", "travel"],
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
     "frequency_rank": 32
   },
   {
@@ -824,31 +1002,40 @@
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["family", "gods"],
+    "topics": [
+      "family",
+      "gods"
+    ],
     "frequency_rank": 10
   },
   {
     "id": "rex-01",
-    "latin": "rēx",
-    "genitive": "rēgis",
+    "latin": "rex",
+    "genitive": "regis",
     "gender": "m",
     "english": "king",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["family", "gods", "war/army"],
+    "topics": [
+      "family",
+      "gods",
+      "war/army"
+    ],
     "frequency_rank": 7
   },
   {
     "id": "testamentum-01",
-    "latin": "testāmentum",
-    "genitive": "testāmentī",
+    "latin": "testamentum",
+    "genitive": "testamenti",
     "gender": "n",
     "english": "will, testament",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 40
   },
   {
@@ -860,571 +1047,698 @@
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["travel", "daily-life"],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
     "frequency_rank": 13
   },
   {
     "id": "uxor-01",
     "latin": "uxor",
-    "genitive": "uxōris",
+    "genitive": "uxoris",
     "gender": "f",
     "english": "wife",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["family"],
+    "topics": [
+      "family"
+    ],
     "frequency_rank": 11
   },
   {
     "id": "vox-01",
-    "latin": "vōx",
-    "genitive": "vōcis",
+    "latin": "vox",
+    "genitive": "vocis",
     "gender": "f",
     "english": "voice",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 36
   },
   {
     "id": "amo-01",
-    "latin": "amō",
+    "latin": "amo",
     "genitive": null,
     "gender": null,
     "english": "I love, like",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["family", "daily-life"],
+    "topics": [
+      "family",
+      "daily-life"
+    ],
     "frequency_rank": 4
   },
   {
     "id": "ambulo-01",
-    "latin": "ambulō",
+    "latin": "ambulo",
     "genitive": null,
     "gender": null,
     "english": "I walk",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["daily-life", "travel"],
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
     "frequency_rank": 18
   },
   {
     "id": "appropinquo-01",
-    "latin": "appropinquō",
+    "latin": "appropinquo",
     "genitive": null,
     "gender": null,
     "english": "I approach, draw near",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["travel", "war/army"],
+    "topics": [
+      "travel",
+      "war/army"
+    ],
     "frequency_rank": 25
   },
   {
     "id": "audio-01",
-    "latin": "audiō",
+    "latin": "audio",
     "genitive": null,
     "gender": null,
     "english": "I hear, listen to",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 14
   },
   {
     "id": "bibit-01",
-    "latin": "bibō",
+    "latin": "bibo",
     "genitive": null,
     "gender": null,
     "english": "I drink",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 33
   },
   {
     "id": "capio-01",
-    "latin": "capiō",
+    "latin": "capio",
     "genitive": null,
     "gender": null,
     "english": "I take, capture",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": null,
-    "topics": ["war/army", "daily-life"],
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 10
   },
   {
     "id": "celo-01",
-    "latin": "cēlō",
+    "latin": "celo",
     "genitive": null,
     "gender": null,
     "english": "I hide, conceal",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 42
   },
   {
     "id": "clamo-01",
-    "latin": "clāmō",
+    "latin": "clamo",
     "genitive": null,
     "gender": null,
     "english": "I shout, cry out",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["daily-life", "war/army"],
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 19
   },
   {
     "id": "cupio-01",
-    "latin": "cupiō",
+    "latin": "cupio",
     "genitive": null,
     "gender": null,
     "english": "I want, desire, wish",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 12
   },
   {
     "id": "delet-01",
-    "latin": "dēleō",
+    "latin": "deleo",
     "genitive": null,
     "gender": null,
     "english": "I destroy",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 2,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 22
   },
   {
     "id": "discedo-01",
-    "latin": "discēdō",
+    "latin": "discedo",
     "genitive": null,
     "gender": null,
     "english": "I depart, go away",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": null,
-    "topics": ["travel", "daily-life"],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
     "frequency_rank": 28
   },
   {
     "id": "do-01",
-    "latin": "dō",
+    "latin": "do",
     "genitive": null,
     "gender": null,
     "english": "I give",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 9
   },
   {
     "id": "duco-01",
-    "latin": "dūcō",
+    "latin": "duco",
     "genitive": null,
     "gender": null,
     "english": "I lead; (here) I marry",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": null,
-    "topics": ["family", "war/army"],
+    "topics": [
+      "family",
+      "war/army"
+    ],
     "frequency_rank": 16
   },
   {
     "id": "eo-01",
-    "latin": "eō",
+    "latin": "eo",
     "genitive": null,
     "gender": null,
     "english": "I go",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": null,
-    "topics": ["travel", "daily-life"],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
     "frequency_rank": 11
   },
   {
     "id": "erro-01",
-    "latin": "errō",
+    "latin": "erro",
     "genitive": null,
     "gender": null,
     "english": "I wander, make a mistake",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["travel", "daily-life"],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
     "frequency_rank": 38
   },
   {
     "id": "faveo-01",
-    "latin": "faveō",
+    "latin": "faveo",
     "genitive": null,
     "gender": null,
     "english": "I favour (+ dative)",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 2,
-    "topics": ["family", "daily-life"],
+    "topics": [
+      "family",
+      "daily-life"
+    ],
     "frequency_rank": 44
   },
   {
     "id": "festino-01",
-    "latin": "festīnō",
+    "latin": "festino",
     "genitive": null,
     "gender": null,
     "english": "I hurry",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["travel", "daily-life"],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
     "frequency_rank": 20
   },
   {
     "id": "fugio-01",
-    "latin": "fugiō",
+    "latin": "fugio",
     "genitive": null,
     "gender": null,
     "english": "I flee, run away",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": null,
-    "topics": ["war/army", "travel"],
+    "topics": [
+      "war/army",
+      "travel"
+    ],
     "frequency_rank": 21
   },
   {
     "id": "habeo-01",
-    "latin": "habeō",
+    "latin": "habeo",
     "genitive": null,
     "gender": null,
     "english": "I have, hold",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 2,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 5
   },
   {
     "id": "habito-01",
-    "latin": "habitō",
+    "latin": "habito",
     "genitive": null,
     "gender": null,
     "english": "I live, dwell, inhabit",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["daily-life", "family"],
+    "topics": [
+      "daily-life",
+      "family"
+    ],
     "frequency_rank": 13
   },
   {
     "id": "intro-01",
-    "latin": "intrō",
+    "latin": "intro",
     "genitive": null,
     "gender": null,
     "english": "I enter",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["daily-life", "travel"],
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
     "frequency_rank": 17
   },
   {
     "id": "lacrimavit-01",
-    "latin": "lacrimō",
+    "latin": "lacrimo",
     "genitive": null,
     "gender": null,
     "english": "I weep, cry",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["daily-life", "family"],
+    "topics": [
+      "daily-life",
+      "family"
+    ],
     "frequency_rank": 39
   },
   {
     "id": "maneo-01",
-    "latin": "māneō",
+    "latin": "maneo",
     "genitive": null,
     "gender": null,
     "english": "I remain, stay",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 2,
-    "topics": ["daily-life", "travel"],
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
     "frequency_rank": 27
   },
   {
     "id": "mitto-01",
-    "latin": "mittō",
+    "latin": "mitto",
     "genitive": null,
     "gender": null,
     "english": "I send",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": null,
-    "topics": ["war/army", "daily-life"],
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 12
   },
   {
     "id": "moneo-01",
-    "latin": "moneō",
+    "latin": "moneo",
     "genitive": null,
     "gender": null,
     "english": "I warn, advise",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 2,
-    "topics": ["daily-life", "war/army"],
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 15
   },
   {
     "id": "muto-01",
-    "latin": "mūtō",
+    "latin": "muto",
     "genitive": null,
     "gender": null,
     "english": "I change",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 41
   },
   {
     "id": "navigo-01",
-    "latin": "nāvigō",
+    "latin": "navigo",
     "genitive": null,
     "gender": null,
     "english": "I sail",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["travel"],
+    "topics": [
+      "travel"
+    ],
     "frequency_rank": 30
   },
   {
     "id": "neco-01",
-    "latin": "necō",
+    "latin": "neco",
     "genitive": null,
     "gender": null,
     "english": "I kill",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 23
   },
   {
     "id": "nuntio-01",
-    "latin": "nūntiō",
+    "latin": "nuntio",
     "genitive": null,
     "gender": null,
     "english": "I announce, report",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["daily-life", "war/army"],
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 29
   },
   {
     "id": "paro-01",
-    "latin": "parō",
+    "latin": "paro",
     "genitive": null,
     "gender": null,
     "english": "I prepare, provide",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["daily-life", "war/army"],
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 8
   },
   {
     "id": "pareo-01",
-    "latin": "pāreō",
+    "latin": "pareo",
     "genitive": null,
     "gender": null,
     "english": "I obey (+ dative)",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 2,
-    "topics": ["family", "daily-life", "war/army"],
+    "topics": [
+      "family",
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 31
   },
   {
     "id": "peto-01",
-    "latin": "petō",
+    "latin": "peto",
     "genitive": null,
     "gender": null,
     "english": "I seek, make for, attack",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": null,
-    "topics": ["war/army", "travel"],
+    "topics": [
+      "war/army",
+      "travel"
+    ],
     "frequency_rank": 24
   },
   {
     "id": "porto-01",
-    "latin": "portō",
+    "latin": "porto",
     "genitive": null,
     "gender": null,
     "english": "I carry",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["daily-life", "war/army", "travel"],
+    "topics": [
+      "daily-life",
+      "war/army",
+      "travel"
+    ],
     "frequency_rank": 6
   },
   {
     "id": "pugno-01",
-    "latin": "pugnō",
+    "latin": "pugno",
     "genitive": null,
     "gender": null,
     "english": "I fight",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 7
   },
   {
     "id": "rideo-01",
-    "latin": "rideō",
+    "latin": "rideo",
     "genitive": null,
     "gender": null,
     "english": "I laugh, smile",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 2,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 37
   },
   {
     "id": "rego-01",
-    "latin": "regō",
+    "latin": "rego",
     "genitive": null,
     "gender": null,
     "english": "I rule, govern",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": null,
-    "topics": ["war/army", "family"],
+    "topics": [
+      "war/army",
+      "family"
+    ],
     "frequency_rank": 16
   },
   {
     "id": "respondeo-01",
-    "latin": "respondeō",
+    "latin": "respondeo",
     "genitive": null,
     "gender": null,
     "english": "I reply, answer",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 2,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 32
   },
   {
     "id": "rogo-01",
-    "latin": "rogō",
+    "latin": "rogo",
     "genitive": null,
     "gender": null,
     "english": "I ask",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 26
   },
   {
     "id": "specto-01",
-    "latin": "spectō",
+    "latin": "specto",
     "genitive": null,
     "gender": null,
     "english": "I watch, look at",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 34
   },
   {
     "id": "taceo-01",
-    "latin": "taceō",
+    "latin": "taceo",
     "genitive": null,
     "gender": null,
     "english": "I am silent, keep quiet",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 2,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 43
   },
   {
     "id": "terreo-01",
-    "latin": "terreō",
+    "latin": "terreo",
     "genitive": null,
     "gender": null,
     "english": "I frighten, terrify",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 2,
-    "topics": ["war/army", "daily-life"],
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 35
   },
   {
     "id": "timeo-01",
-    "latin": "timeō",
+    "latin": "timeo",
     "genitive": null,
     "gender": null,
     "english": "I fear, am afraid of",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 2,
-    "topics": ["war/army", "daily-life"],
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 13
   },
   {
     "id": "voco-01",
-    "latin": "vocō",
+    "latin": "voco",
     "genitive": null,
     "gender": null,
     "english": "I call, summon",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 1,
-    "topics": ["daily-life", "family"],
+    "topics": [
+      "daily-life",
+      "family"
+    ],
     "frequency_rank": 10
   },
   {
     "id": "video-01",
-    "latin": "videō",
+    "latin": "video",
     "genitive": null,
     "gender": null,
     "english": "I see",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": 2,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 3
   },
   {
     "id": "venio-01",
-    "latin": "veniō",
+    "latin": "venio",
     "genitive": null,
     "gender": null,
     "english": "I come",
     "part_of_speech": "verb",
     "declension": null,
     "conjugation": null,
-    "topics": ["travel", "daily-life"],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
     "frequency_rank": 6
   },
   {
@@ -1436,7 +1750,9 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 5
   },
   {
@@ -1448,7 +1764,10 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life", "war/army"],
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 8
   },
   {
@@ -1460,7 +1779,10 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life", "war/army"],
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 3
   },
   {
@@ -1472,7 +1794,9 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 16
   },
   {
@@ -1484,7 +1808,9 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 9
   },
   {
@@ -1496,7 +1822,10 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life", "travel"],
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
     "frequency_rank": 20
   },
   {
@@ -1508,7 +1837,9 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 22
   },
   {
@@ -1520,7 +1851,10 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["war/army", "daily-life"],
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 14
   },
   {
@@ -1532,7 +1866,9 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 17
   },
   {
@@ -1544,19 +1880,23 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 18
   },
   {
     "id": "iratus-01",
-    "latin": "īrātus",
+    "latin": "iratus",
     "genitive": null,
     "gender": null,
     "english": "angry",
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 19
   },
   {
@@ -1568,7 +1908,9 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 36
   },
   {
@@ -1580,7 +1922,10 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["war/army", "daily-life"],
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 29
   },
   {
@@ -1592,7 +1937,9 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 11
   },
   {
@@ -1604,7 +1951,9 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 21
   },
   {
@@ -1616,7 +1965,10 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life", "war/army"],
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 33
   },
   {
@@ -1628,7 +1980,9 @@
     "part_of_speech": "conjunction",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 1
   },
   {
@@ -1640,7 +1994,9 @@
     "part_of_speech": "conjunction",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 4
   },
   {
@@ -1652,7 +2008,9 @@
     "part_of_speech": "conjunction",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 15
   },
   {
@@ -1664,7 +2022,9 @@
     "part_of_speech": "conjunction",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 10
   },
   {
@@ -1676,7 +2036,9 @@
     "part_of_speech": "conjunction",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 13
   },
   {
@@ -1688,7 +2050,9 @@
     "part_of_speech": "conjunction",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 9
   },
   {
@@ -1700,7 +2064,9 @@
     "part_of_speech": "conjunction",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 12
   },
   {
@@ -1712,7 +2078,9 @@
     "part_of_speech": "conjunction",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 16
   },
   {
@@ -1724,7 +2092,9 @@
     "part_of_speech": "conjunction",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 18
   },
   {
@@ -1736,7 +2106,10 @@
     "part_of_speech": "conjunction",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life", "travel"],
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
     "frequency_rank": 14
   },
   {
@@ -1748,19 +2121,25 @@
     "part_of_speech": "preposition",
     "declension": null,
     "conjugation": null,
-    "topics": ["travel", "daily-life"],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
     "frequency_rank": 2
   },
   {
     "id": "contra-01",
-    "latin": "contrā",
+    "latin": "contra",
     "genitive": null,
     "gender": null,
     "english": "against (+ accusative)",
     "part_of_speech": "preposition",
     "declension": null,
     "conjugation": null,
-    "topics": ["war/army", "daily-life"],
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 11
   },
   {
@@ -1772,31 +2151,38 @@
     "part_of_speech": "preposition",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 6
   },
   {
     "id": "de-01",
-    "latin": "dē",
+    "latin": "de",
     "genitive": null,
     "gender": null,
     "english": "about, concerning; down from (+ ablative)",
     "part_of_speech": "preposition",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 14
   },
   {
     "id": "e-01",
-    "latin": "ē / ex",
+    "latin": "e / ex",
     "genitive": null,
     "gender": null,
     "english": "out of, from (+ ablative)",
     "part_of_speech": "preposition",
     "declension": null,
     "conjugation": null,
-    "topics": ["travel", "daily-life"],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
     "frequency_rank": 8
   },
   {
@@ -1808,7 +2194,10 @@
     "part_of_speech": "preposition",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life", "travel"],
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
     "frequency_rank": 3
   },
   {
@@ -1820,7 +2209,10 @@
     "part_of_speech": "preposition",
     "declension": null,
     "conjugation": null,
-    "topics": ["travel", "daily-life"],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
     "frequency_rank": 10
   },
   {
@@ -1832,19 +2224,25 @@
     "part_of_speech": "preposition",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life", "travel"],
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
     "frequency_rank": 13
   },
   {
     "id": "pro-01",
-    "latin": "prō",
+    "latin": "pro",
     "genitive": null,
     "gender": null,
     "english": "for, on behalf of (+ ablative)",
     "part_of_speech": "preposition",
     "declension": null,
     "conjugation": null,
-    "topics": ["war/army", "daily-life"],
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 15
   },
   {
@@ -1856,7 +2254,9 @@
     "part_of_speech": "preposition",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 20
   },
   {
@@ -1868,7 +2268,9 @@
     "part_of_speech": "preposition",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 17
   },
   {
@@ -1880,19 +2282,24 @@
     "part_of_speech": "preposition",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life", "nature"],
+    "topics": [
+      "daily-life",
+      "nature"
+    ],
     "frequency_rank": 22
   },
   {
     "id": "trans-01",
-    "latin": "trāns",
+    "latin": "trans",
     "genitive": null,
     "gender": null,
     "english": "across (+ accusative)",
     "part_of_speech": "preposition",
     "declension": null,
     "conjugation": null,
-    "topics": ["travel"],
+    "topics": [
+      "travel"
+    ],
     "frequency_rank": 19
   },
   {
@@ -1904,7 +2311,9 @@
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 11
   },
   {
@@ -1916,7 +2325,10 @@
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life", "travel"],
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
     "frequency_rank": 14
   },
   {
@@ -1928,43 +2340,53 @@
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 16
   },
   {
     "id": "diu-01",
-    "latin": "diū",
+    "latin": "diu",
     "genitive": null,
     "gender": null,
     "english": "for a long time",
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 12
   },
   {
     "id": "frustra-01",
-    "latin": "frūstrā",
+    "latin": "frustra",
     "genitive": null,
     "gender": null,
     "english": "in vain",
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life", "war/army"],
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 26
   },
   {
     "id": "hic-01",
-    "latin": "hīc",
+    "latin": "hic",
     "genitive": null,
     "gender": null,
     "english": "here",
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["travel", "daily-life"],
+    "topics": [
+      "travel",
+      "daily-life"
+    ],
     "frequency_rank": 18
   },
   {
@@ -1976,7 +2398,9 @@
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 9
   },
   {
@@ -1988,7 +2412,9 @@
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 15
   },
   {
@@ -2000,19 +2426,23 @@
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 17
   },
   {
     "id": "non-01",
-    "latin": "nōn",
+    "latin": "non",
     "genitive": null,
     "gender": null,
     "english": "not",
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 2
   },
   {
@@ -2024,7 +2454,9 @@
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 13
   },
   {
@@ -2036,7 +2468,9 @@
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 10
   },
   {
@@ -2048,7 +2482,9 @@
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 8
   },
   {
@@ -2060,19 +2496,23 @@
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 7
   },
   {
     "id": "sic-01",
-    "latin": "sīc",
+    "latin": "sic",
     "genitive": null,
     "gender": null,
     "english": "thus, in this way",
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 19
   },
   {
@@ -2084,19 +2524,24 @@
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 6
   },
   {
     "id": "subito-01",
-    "latin": "subitō",
+    "latin": "subito",
     "genitive": null,
     "gender": null,
     "english": "suddenly",
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life", "war/army"],
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 20
   },
   {
@@ -2108,7 +2553,9 @@
     "part_of_speech": "adverb",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 21
   },
   {
@@ -2120,7 +2567,9 @@
     "part_of_speech": "pronoun",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 5
   },
   {
@@ -2132,7 +2581,9 @@
     "part_of_speech": "pronoun",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 7
   },
   {
@@ -2144,31 +2595,37 @@
     "part_of_speech": "pronoun",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 4
   },
   {
     "id": "qui-01",
-    "latin": "quī",
+    "latin": "qui",
     "genitive": null,
     "gender": null,
     "english": "who, which, that",
     "part_of_speech": "pronoun",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 6
   },
   {
     "id": "unus-01",
-    "latin": "ūnus",
+    "latin": "unus",
     "genitive": null,
     "gender": null,
     "english": "one",
     "part_of_speech": "numeral",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 25
   },
   {
@@ -2180,19 +2637,23 @@
     "part_of_speech": "numeral",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 28
   },
   {
     "id": "tres-01",
-    "latin": "trēs",
+    "latin": "tres",
     "genitive": null,
     "gender": null,
     "english": "three",
     "part_of_speech": "numeral",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 31
   },
   {
@@ -2204,19 +2665,23 @@
     "part_of_speech": "numeral",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 40
   },
   {
     "id": "quinque-01",
-    "latin": "quīnque",
+    "latin": "quinque",
     "genitive": null,
     "gender": null,
     "english": "five",
     "part_of_speech": "numeral",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 42
   },
   {
@@ -2228,7 +2693,9 @@
     "part_of_speech": "numeral",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 44
   },
   {
@@ -2240,7 +2707,9 @@
     "part_of_speech": "numeral",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 46
   },
   {
@@ -2252,19 +2721,24 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["gods"],
+    "topics": [
+      "gods"
+    ],
     "frequency_rank": 23
   },
   {
     "id": "ara-01",
-    "latin": "āra",
-    "genitive": "ārae",
+    "latin": "ara",
+    "genitive": "arae",
     "gender": "f",
     "english": "altar",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["gods", "daily-life"],
+    "topics": [
+      "gods",
+      "daily-life"
+    ],
     "frequency_rank": 37
   },
   {
@@ -2276,43 +2750,52 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 45
   },
   {
     "id": "corona-01",
-    "latin": "corōna",
-    "genitive": "corōnae",
+    "latin": "corona",
+    "genitive": "coronae",
     "gender": "f",
     "english": "crown, garland",
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["gods", "daily-life"],
+    "topics": [
+      "gods",
+      "daily-life"
+    ],
     "frequency_rank": 48
   },
   {
     "id": "arma-01",
     "latin": "arma",
-    "genitive": "armōrum",
+    "genitive": "armorum",
     "gender": "n",
     "english": "arms, weapons (pl.)",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 27
   },
   {
     "id": "castra-01",
     "latin": "castra",
-    "genitive": "castrōrum",
+    "genitive": "castrorum",
     "gender": "n",
     "english": "camp (pl.)",
     "part_of_speech": "noun",
     "declension": 2,
     "conjugation": null,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 32
   },
   {
@@ -2324,7 +2807,11 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["war/army", "travel", "daily-life"],
+    "topics": [
+      "war/army",
+      "travel",
+      "daily-life"
+    ],
     "frequency_rank": 30
   },
   {
@@ -2336,7 +2823,9 @@
     "part_of_speech": "noun",
     "declension": 1,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 47
   },
   {
@@ -2348,7 +2837,9 @@
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 18
   },
   {
@@ -2360,7 +2851,9 @@
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["daily-life"],
+    "topics": [
+      "daily-life"
+    ],
     "frequency_rank": 38
   },
   {
@@ -2372,43 +2865,55 @@
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["travel", "war/army"],
+    "topics": [
+      "travel",
+      "war/army"
+    ],
     "frequency_rank": 34
   },
   {
     "id": "mons-01",
-    "latin": "mōns",
+    "latin": "mons",
     "genitive": "montis",
     "gender": "m",
     "english": "mountain, hill",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["nature", "travel"],
+    "topics": [
+      "nature",
+      "travel"
+    ],
     "frequency_rank": 41
   },
   {
     "id": "pons-01",
-    "latin": "pōns",
+    "latin": "pons",
     "genitive": "pontis",
     "gender": "m",
     "english": "bridge",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["travel", "war/army"],
+    "topics": [
+      "travel",
+      "war/army"
+    ],
     "frequency_rank": 43
   },
   {
     "id": "princeps-01",
-    "latin": "prīnceps",
-    "genitive": "prīncipis",
+    "latin": "princeps",
+    "genitive": "principis",
     "gender": "m",
     "english": "chief, leader, emperor",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["war/army", "family"],
+    "topics": [
+      "war/army",
+      "family"
+    ],
     "frequency_rank": 46
   },
   {
@@ -2420,7 +2925,10 @@
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["family", "daily-life"],
+    "topics": [
+      "family",
+      "daily-life"
+    ],
     "frequency_rank": 48
   },
   {
@@ -2432,43 +2940,52 @@
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 22
   },
   {
     "id": "mater-01",
-    "latin": "māter",
-    "genitive": "mātris",
+    "latin": "mater",
+    "genitive": "matris",
     "gender": "f",
     "english": "mother",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["family", "gods"],
+    "topics": [
+      "family",
+      "gods"
+    ],
     "frequency_rank": 12
   },
   {
     "id": "frater-01",
-    "latin": "frāter",
-    "genitive": "frātris",
+    "latin": "frater",
+    "genitive": "fratris",
     "gender": "m",
     "english": "brother",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["family"],
+    "topics": [
+      "family"
+    ],
     "frequency_rank": 24
   },
   {
     "id": "soror-01",
     "latin": "soror",
-    "genitive": "sorōris",
+    "genitive": "sororis",
     "gender": "f",
     "english": "sister",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["family"],
+    "topics": [
+      "family"
+    ],
     "frequency_rank": 29
   },
   {
@@ -2480,31 +2997,39 @@
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["nature", "daily-life"],
+    "topics": [
+      "nature",
+      "daily-life"
+    ],
     "frequency_rank": 39
   },
   {
     "id": "pax-01",
-    "latin": "pāx",
-    "genitive": "pācis",
+    "latin": "pax",
+    "genitive": "pacis",
     "gender": "f",
     "english": "peace",
     "part_of_speech": "noun",
     "declension": 3,
     "conjugation": null,
-    "topics": ["war/army"],
+    "topics": [
+      "war/army"
+    ],
     "frequency_rank": 33
   },
   {
     "id": "audax-01",
-    "latin": "audāx",
+    "latin": "audax",
     "genitive": null,
     "gender": null,
     "english": "bold, daring",
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["war/army", "daily-life"],
+    "topics": [
+      "war/army",
+      "daily-life"
+    ],
     "frequency_rank": 44
   },
   {
@@ -2516,7 +3041,10 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life", "travel"],
+    "topics": [
+      "daily-life",
+      "travel"
+    ],
     "frequency_rank": 45
   },
   {
@@ -2528,7 +3056,10 @@
     "part_of_speech": "adjective",
     "declension": null,
     "conjugation": null,
-    "topics": ["daily-life", "war/army"],
+    "topics": [
+      "daily-life",
+      "war/army"
+    ],
     "frequency_rank": 42
   }
 ]

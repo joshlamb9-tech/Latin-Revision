@@ -1,0 +1,102 @@
+[
+  {
+    "id": "group-a",
+    "label": "Group A — 1st declension nouns (f.)",
+    "note": "Nouns ending in -a: puella, ancilla, via...",
+    "words": [
+      { "english": "dinner", "latin": "cena" },
+      { "english": "girl", "latin": "puella" },
+      { "english": "letter", "latin": "epistula" },
+      { "english": "maidservant", "latin": "ancilla" },
+      { "english": "meal", "latin": "cena" },
+      { "english": "money", "latin": "pecunia" },
+      { "english": "queen", "latin": "regina" },
+      { "english": "road", "latin": "via" },
+      { "english": "sailor", "latin": "nauta" },
+      { "english": "slave-girl", "latin": "ancilla" },
+      { "english": "spear", "latin": "hasta" },
+      { "english": "street", "latin": "via" },
+      { "english": "villa", "latin": "villa" },
+      { "english": "woman", "latin": "femina" }
+    ]
+  },
+  {
+    "id": "group-b",
+    "label": "Group B — 2nd declension nouns (m.)",
+    "note": "Nouns ending in -us: servus, dominus...",
+    "words": [
+      { "english": "friend", "latin": "amicus" },
+      { "english": "god", "latin": "deus" },
+      { "english": "horse", "latin": "equus" },
+      { "english": "master", "latin": "dominus" },
+      { "english": "Roman", "latin": "Romanus" },
+      { "english": "slave", "latin": "servus" },
+      { "english": "son", "latin": "filius" },
+      { "english": "sword", "latin": "gladius" },
+      { "english": "wall", "latin": "murus" }
+    ]
+  },
+  {
+    "id": "group-c",
+    "label": "Group C — 2nd declension nouns (m. & n.)",
+    "note": "Nouns ending in -er or neuter -um: puer, liber, templum...",
+    "words": [
+      { "english": "book", "latin": "liber" },
+      { "english": "boy", "latin": "puer" },
+      { "english": "man", "latin": "vir" },
+      { "english": "master / teacher", "latin": "magister" },
+      { "english": "temple", "latin": "templum" },
+      { "english": "town", "latin": "oppidum" },
+      { "english": "wine", "latin": "vinum" }
+    ]
+  },
+  {
+    "id": "group-verbs-1",
+    "label": "Verbs — Group 1 (1st conjugation, high frequency)",
+    "note": "Remove -o, add endings: -as, -at, -amus, -atis, -ant",
+    "words": [
+      { "english": "build", "latin": "aedifico" },
+      { "english": "call", "latin": "voco" },
+      { "english": "carry", "latin": "porto" },
+      { "english": "enter", "latin": "intro" },
+      { "english": "kill", "latin": "neco" },
+      { "english": "like / love", "latin": "amo" },
+      { "english": "look at / watch", "latin": "specto" },
+      { "english": "praise", "latin": "laudo" },
+      { "english": "prepare", "latin": "paro" },
+      { "english": "shout", "latin": "clamo" },
+      { "english": "watch", "latin": "specto" }
+    ]
+  },
+  {
+    "id": "group-verbs-2",
+    "label": "Verbs — Group 2 (2nd conjugation)",
+    "note": "Infinitive ends in -ere (long e): monere, timere...",
+    "words": [
+      { "english": "destroy", "latin": "deleo" },
+      { "english": "fear", "latin": "timeo" },
+      { "english": "have", "latin": "habeo" },
+      { "english": "see", "latin": "video" },
+      { "english": "warn", "latin": "moneo" }
+    ]
+  },
+  {
+    "id": "group-verbs-irreg",
+    "label": "Verbs — Irregular",
+    "note": "Must be learned separately — no regular pattern",
+    "words": [
+      { "english": "be", "latin": "sum (es, est, sumus, estis, sunt)" }
+    ]
+  },
+  {
+    "id": "group-others",
+    "label": "Others — Adverbs & Conjunctions",
+    "note": "These never change their form",
+    "words": [
+      { "english": "always", "latin": "semper" },
+      { "english": "and", "latin": "et" },
+      { "english": "not", "latin": "non" },
+      { "english": "often", "latin": "saepe" }
+    ]
+  }
+]

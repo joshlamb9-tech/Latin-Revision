@@ -439,3 +439,328 @@ a:hover {
   color: var(--color-stone-light);
   padding: 1rem 0;
 }
+
+/* ============================================
+   Exercises — Phase 3
+   ============================================ */
+
+.ex-mastery-strip {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.ex-mastery-new     { color: var(--color-stone); }
+.ex-mastery-learning { color: var(--color-terracotta); font-weight: 600; }
+.ex-mastery-done    { color: #2a7a2a; font-weight: 600; }
+
+/* Hub grid */
+.ex-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.ex-hub-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--color-ink);
+  transition: box-shadow 0.15s, transform 0.1s;
+}
+
+.ex-hub-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  transform: translateY(-2px);
+}
+
+.ex-hub-icon  { font-size: 1.1rem; font-weight: 700; color: var(--color-terracotta); }
+.ex-hub-title { font-weight: 700; font-size: 1rem; }
+.ex-hub-desc  { font-size: 0.8rem; color: var(--color-stone-light); line-height: 1.4; }
+.ex-hub-ce    { font-size: 0.7rem; color: var(--color-terracotta); font-style: italic; margin-top: 0.25rem; }
+
+/* Shared activity UI */
+.ex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.ex-header h1 { margin: 0; }
+
+.ex-progress {
+  font-size: 0.85rem;
+  color: var(--color-stone-light);
+  margin: 0;
+}
+
+.ex-ce-label {
+  font-size: 0.75rem;
+  color: var(--color-terracotta);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.ex-filter-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  background: var(--color-terracotta);
+  color: var(--color-parchment);
+  padding: 0.15rem 0.6rem;
+  border-radius: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.ex-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Flashcard */
+.flashcard-latin   { display: block; font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+.flashcard-genitive { display: block; font-size: 1rem; color: var(--color-stone-light); margin-bottom: 1rem; }
+.flashcard-english { display: block; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
+.flashcard-meta    { display: block; font-size: 0.85rem; color: var(--color-stone-light); }
+
+.flashcard .flashcard-back { display: none; }
+.flashcard.revealed .flashcard-front .flashcard-reveal-btn { display: none; }
+.flashcard.revealed .flashcard-back { display: block; }
+
+.ex-ratings {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.btn-rating { padding: 0.6rem 1.2rem; border: none; border-radius: 6px; cursor: pointer; font-size: 0.95rem; font-family: inherit; font-weight: 600; }
+.btn-rating-no    { background: #f0e0e0; color: #8b1a1a; }
+.btn-rating-maybe { background: #f5f0e0; color: #7a6000; }
+.btn-rating-yes   { background: #e0f0e0; color: #1a6b1a; }
+
+.btn-rating-no:hover    { background: #e8c8c8; }
+.btn-rating-maybe:hover { background: #ede8d0; }
+.btn-rating-yes:hover   { background: #c8e8c8; }
+
+/* MCQ options */
+.ex-prompt {
+  padding: 1.5rem;
+  text-align: center;
+}
+.ex-prompt-latin   { display: block; font-size: 2rem; font-weight: 700; }
+.ex-prompt-genitive { display: block; font-size: 0.9rem; color: var(--color-stone-light); margin-top: 0.25rem; }
+.ex-prompt-english { display: block; font-size: 1.5rem; font-weight: 600; }
+
+.ex-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.ex-option-btn {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: 6px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.ex-option-btn:hover:not(:disabled) { border-color: var(--color-terracotta); background: var(--color-parchment); }
+.ex-option-btn.correct  { border-color: #2a7a2a; background: #e8f5e8; color: #1a5a1a; }
+.ex-option-btn.wrong    { border-color: #8b1a1a; background: #f5e8e8; color: #6b1a1a; }
+.ex-option-btn.neutral  { opacity: 0.5; }
+
+.ex-feedback {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.ex-feedback-positive { background: #e8f5e8; color: #1a5a1a; border-left: 4px solid #2a7a2a; }
+.ex-feedback-negative { background: #f5e8e8; color: #6b1a1a; border-left: 4px solid #8b1a1a; }
+.ex-feedback-neutral  { background: #f5f0e0; color: #5a4a00; border-left: 4px solid #b8a000; }
+
+.ex-next-btn { width: 100%; margin-bottom: 1rem; }
+.ex-score-big { font-size: 2.5rem; font-weight: 700; text-align: center; margin: 1rem 0; }
+
+.ex-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  background: var(--color-terracotta);
+  color: var(--color-parchment);
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.15s;
+}
+.btn:hover { background: var(--color-terracotta-dark); color: var(--color-parchment); }
+.btn-secondary {
+  background: transparent;
+  color: var(--color-terracotta);
+  border: 2px solid var(--color-terracotta);
+}
+.btn-secondary:hover { background: var(--color-parchment); color: var(--color-terracotta); }
+
+/* ============================================
+   Grammar Activities — Phase 3 Plan 03-02
+   Case Identifier, Verb Parser, Paradigm Check
+   ============================================ */
+
+/* Loading state */
+.ex-loading {
+  font-style: italic;
+  color: var(--color-stone-light);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* Context line (declension name, verb context) */
+.ex-context {
+  font-size: 0.9rem;
+  color: var(--color-stone-light);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+/* Large Latin form display inside question card */
+.ex-form-display {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-terracotta);
+  text-align: center;
+  margin: 0.75rem 0 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+/* Singular / Plural hint */
+.ex-number-hint {
+  font-size: 0.85rem;
+  color: var(--color-stone-light);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+/* Prompt text inside the card */
+.ex-card .ex-prompt {
+  font-size: 1rem;
+  color: var(--color-stone);
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* Wide single-column options for long verb parsing labels */
+.ex-options-wide {
+  grid-template-columns: 1fr;
+}
+
+/* Feedback sub-elements */
+.ex-feedback-result {
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.ex-feedback-explanation {
+  margin-bottom: 0.4rem;
+}
+
+.ex-feedback-note {
+  font-style: italic;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Summary wrapper */
+.ex-summary {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* ---- Paradigm table specifics ---- */
+
+/* The "?" button inside a blanked cell */
+.paradigm-blank-btn {
+  display: inline-block;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: var(--color-parchment-dark);
+  border: 2px dashed var(--color-terracotta);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-terracotta);
+  cursor: pointer;
+  text-align: center;
+  line-height: 1;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.paradigm-blank-btn:hover {
+  background: var(--color-terracotta);
+  color: var(--color-parchment);
+  border-color: var(--color-terracotta);
+}
+
+/* Filled cell states */
+.paradigm-cell-correct {
+  background-color: #e8f5e8 !important;
+  color: #1a5a1a;
+  font-weight: 600;
+}
+
+.paradigm-cell-wrong {
+  background-color: #f5e8e8 !important;
+  color: #6b1a1a;
+  font-weight: 600;
+}
+
+/* Options panel that appears below the table */
+.paradigm-options-panel {
+  background: var(--color-parchment-dark);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  animation: slideIn 0.15s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

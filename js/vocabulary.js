@@ -112,6 +112,9 @@ function renderFilterNav(filters) {
   const nav = document.createElement('nav');
   nav.className = 'vocab-filters';
 
+  // ── All ──────────────────────────────────────────────────────
+  addFilterLink(nav, 'All words', 'vocabulary.html', !filters.topic && !filters.freq && !filters.pos);
+
   // ── By Grammar ──────────────────────────────────────────────
   addSectionLabel(nav, 'By Grammar');
 
@@ -131,22 +134,15 @@ function renderFilterNav(filters) {
   addFilterLink(nav, 'Adverbs',       'vocabulary.html?pos=adverb',      filters.pos === 'adverb');
   addFilterLink(nav, 'Prepositions',  'vocabulary.html?pos=preposition',  filters.pos === 'preposition');
 
-  // ── By Topic ─────────────────────────────────────────────────
-  addSectionLabel(nav, 'By Topic');
-
-  addFilterLink(nav, 'All words',   'vocabulary.html',                         !filters.topic && !filters.freq && !filters.pos);
-  addFilterLink(nav, 'Family',      'vocabulary.html?topic=family',            filters.topic === 'family');
-  addFilterLink(nav, 'War & Army',  'vocabulary.html?topic=war%2Farmy',        filters.topic === 'war/army');
-  addFilterLink(nav, 'Gods',        'vocabulary.html?topic=gods',              filters.topic === 'gods');
-  addFilterLink(nav, 'Travel',      'vocabulary.html?topic=travel',            filters.topic === 'travel');
-  addFilterLink(nav, 'Daily Life',  'vocabulary.html?topic=daily-life',        filters.topic === 'daily-life');
-  addFilterLink(nav, 'Nature',      'vocabulary.html?topic=nature',            filters.topic === 'nature');
-
   // ── By Frequency ─────────────────────────────────────────────
   addSectionLabel(nav, 'By Frequency');
 
   addFilterLink(nav, 'Top 50',  'vocabulary.html?freq=50',  filters.freq === 50);
   addFilterLink(nav, 'Top 100', 'vocabulary.html?freq=100', filters.freq === 100);
+
+  // ── Q4 Word Groups ───────────────────────────────────────────
+  addSectionLabel(nav, 'Q4 Word Groups');
+  addFilterLink(nav, 'Eng → Latin', 'word-groups.html', false);
 
   return nav;
 }

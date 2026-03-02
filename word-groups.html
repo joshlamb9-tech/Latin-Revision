@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CE Latin English-to-Latin word groupings — organised by declension and conjugation for Q4 revision">
+  <meta name="theme-color" content="#B5451B">
+  <title>Word Groups &mdash; CE Latin Revision</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .wg-intro {
+      font-style: italic;
+      color: var(--color-stone-light);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+    .wg-group {
+      margin-bottom: 2.5rem;
+    }
+    .wg-group-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-terracotta);
+      margin-bottom: 0.25rem;
+    }
+    .wg-group-note {
+      font-size: 0.85rem;
+      color: var(--color-stone-light);
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+    .wg-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .wg-table tr {
+      border-bottom: 1px solid var(--color-border);
+    }
+    .wg-table tr:last-child {
+      border-bottom: none;
+    }
+    .wg-table td {
+      padding: 0.4rem 0.75rem;
+      font-size: 1rem;
+    }
+    .wg-table td:first-child {
+      color: var(--color-stone-light);
+      width: 45%;
+    }
+    .wg-table td:last-child {
+      font-weight: 700;
+      color: var(--color-stone);
+    }
+    .wg-table tr:hover td {
+      background-color: var(--color-parchment-dark);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-title">CE Latin</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="vocabulary.html">Vocabulary</a></li>
+          <li><a href="grammar.html">Grammar</a></li>
+          <li><a href="quiz.html">Exercises</a></li>
+          <li><a href="papers.html">Past Papers</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="app">
+    <h1>Q4 Word Groups</h1>
+    <p class="wg-intro">English to Latin — organised by noun group and verb conjugation. Use this for Q4 sentence practice: cover the Latin column and test yourself.</p>
+    <div id="groups-container"><p>Loading&hellip;</p></div>
+  </main>
+  <footer class="site-footer">
+    <p>CE Latin Revision &middot; For ISEB Common Entrance &middot; Content sourced from ISEB syllabus and Bob Bass materials (used with permission)</p>
+  </footer>
+  <script src="js/app.js"></script>
+  <script>
+    fetch('data/vocabulary/word-groups.json')
+      .then(r => r.json())
+      .then(groups => {
+        const container = document.getElementById('groups-container');
+        container.innerHTML = '';
+        groups.forEach(group => {
+          const section = document.createElement('div');
+          section.className = 'wg-group';
+
+          const title = document.createElement('div');
+          title.className = 'wg-group-title';
+          title.textContent = group.label;
+          section.appendChild(title);
+
+          if (group.note) {
+            const note = document.createElement('div');
+            note.className = 'wg-group-note';
+            note.textContent = group.note;
+            section.appendChild(note);
+          }
+
+          const table = document.createElement('table');
+          table.className = 'wg-table';
+          group.words.forEach(word => {
+            const row = document.createElement('tr');
+            const engCell = document.createElement('td');
+            engCell.textContent = word.english;
+            const latCell = document.createElement('td');
+            latCell.textContent = word.latin;
+            row.appendChild(engCell);
+            row.appendChild(latCell);
+            table.appendChild(row);
+          });
+          section.appendChild(table);
+          container.appendChild(section);
+        });
+      })
+      .catch(() => {
+        document.getElementById('groups-container').innerHTML = '<p class="error">Could not load word groups.</p>';
+      });
+  </script>
+</body>
+</html>

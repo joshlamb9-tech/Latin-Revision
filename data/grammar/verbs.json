@@ -3,50 +3,50 @@
     {
       "conjugation": 1,
       "name": "First Conjugation",
-      "example_verb": "portō",
-      "example_infinitive": "portāre",
+      "example_verb": "porto",
+      "example_infinitive": "portare",
       "example_meaning": "to carry",
       "tenses": {
         "present": {
           "name": "Present",
-          "endings_note": "stem: portā-",
+          "endings_note": "stem: porta-",
           "singular": {
-            "1st": "portō",
-            "2nd": "portās",
+            "1st": "porto",
+            "2nd": "portas",
             "3rd": "portat"
           },
           "plural": {
-            "1st": "portāmus",
-            "2nd": "portātis",
+            "1st": "portamus",
+            "2nd": "portatis",
             "3rd": "portant"
           }
         },
         "imperfect": {
           "name": "Imperfect",
-          "endings_note": "stem + bā-",
+          "endings_note": "stem + ba-",
           "singular": {
-            "1st": "portābam",
-            "2nd": "portābās",
-            "3rd": "portābat"
+            "1st": "portabam",
+            "2nd": "portabas",
+            "3rd": "portabat"
           },
           "plural": {
-            "1st": "portābāmus",
-            "2nd": "portābātis",
-            "3rd": "portābant"
+            "1st": "portabamus",
+            "2nd": "portabatis",
+            "3rd": "portabant"
           }
         },
         "perfect": {
           "name": "Perfect",
-          "endings_note": "perfect stem portāv- + perfect endings",
+          "endings_note": "perfect stem portav- + perfect endings",
           "singular": {
-            "1st": "portāvī",
-            "2nd": "portāvistī",
-            "3rd": "portāvit"
+            "1st": "portavi",
+            "2nd": "portavisti",
+            "3rd": "portavit"
           },
           "plural": {
-            "1st": "portāvimus",
-            "2nd": "portāvistis",
-            "3rd": "portāvērunt"
+            "1st": "portavimus",
+            "2nd": "portavistis",
+            "3rd": "portaverunt"
           }
         }
       }
@@ -54,50 +54,50 @@
     {
       "conjugation": 2,
       "name": "Second Conjugation",
-      "example_verb": "moneō",
-      "example_infinitive": "monēre",
+      "example_verb": "moneo",
+      "example_infinitive": "monere",
       "example_meaning": "to warn",
       "tenses": {
         "present": {
           "name": "Present",
-          "endings_note": "stem: monē-",
+          "endings_note": "stem: mone-",
           "singular": {
-            "1st": "moneō",
-            "2nd": "monēs",
+            "1st": "moneo",
+            "2nd": "mones",
             "3rd": "monet"
           },
           "plural": {
-            "1st": "monēmus",
-            "2nd": "monētis",
+            "1st": "monemus",
+            "2nd": "monetis",
             "3rd": "monent"
           }
         },
         "imperfect": {
           "name": "Imperfect",
-          "endings_note": "stem + bā-",
+          "endings_note": "stem + ba-",
           "singular": {
-            "1st": "monēbam",
-            "2nd": "monēbās",
-            "3rd": "monēbat"
+            "1st": "monebam",
+            "2nd": "monebas",
+            "3rd": "monebat"
           },
           "plural": {
-            "1st": "monēbāmus",
-            "2nd": "monēbātis",
-            "3rd": "monēbant"
+            "1st": "monebamus",
+            "2nd": "monebatis",
+            "3rd": "monebant"
           }
         },
         "perfect": {
           "name": "Perfect",
           "endings_note": "perfect stem monu- + perfect endings",
           "singular": {
-            "1st": "monuī",
-            "2nd": "monuistī",
+            "1st": "monui",
+            "2nd": "monuisti",
             "3rd": "monuit"
           },
           "plural": {
             "1st": "monuimus",
             "2nd": "monuistis",
-            "3rd": "monuērunt"
+            "3rd": "monuerunt"
           }
         }
       }
@@ -126,26 +126,26 @@
           "name": "Imperfect",
           "singular": {
             "1st": "eram",
-            "2nd": "erās",
+            "2nd": "eras",
             "3rd": "erat"
           },
           "plural": {
-            "1st": "erāmus",
-            "2nd": "erātis",
+            "1st": "eramus",
+            "2nd": "eratis",
             "3rd": "erant"
           }
         },
         "perfect": {
           "name": "Perfect",
           "singular": {
-            "1st": "fuī",
-            "2nd": "fuistī",
+            "1st": "fui",
+            "2nd": "fuisti",
             "3rd": "fuit"
           },
           "plural": {
             "1st": "fuimus",
             "2nd": "fuistis",
-            "3rd": "fuērunt"
+            "3rd": "fuerunt"
           }
         }
       }
