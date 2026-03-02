@@ -1305,3 +1305,41 @@ a:hover {
   border-color: var(--color-terracotta);
   color: var(--color-parchment);
 }
+
+/* ============================================
+   Grammar Quick-Check — cycling additions
+   ============================================ */
+
+.qcheck-wrapper {
+  margin-top: 1.5rem;
+}
+
+.qcheck-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.qcheck-count {
+  font-size: 0.75rem;
+  color: var(--color-stone-light);
+  font-style: italic;
+}
+
+.qcheck-next-btn {
+  margin-top: 0.75rem;
+  padding: 0.4rem 1rem;
+  background-color: var(--color-terracotta);
+  color: var(--color-parchment);
+  border: none;
+  border-radius: 3px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.qcheck-next-btn:hover {
+  background-color: var(--color-terracotta-dark);
+}
