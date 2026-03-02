@@ -1343,3 +1343,192 @@ a:hover {
 .qcheck-next-btn:hover {
   background-color: var(--color-terracotta-dark);
 }
+
+/* ============================================
+   Q4 Latin Composition activity
+   ============================================ */
+
+.q4-card {
+  background: var(--color-parchment);
+  border: 1px solid var(--color-stone-light);
+  border-radius: 6px;
+  padding: 1.25rem 1.25rem 1rem;
+  margin-top: 0.75rem;
+}
+
+.q4-english {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-ink);
+  margin: 0 0 1rem;
+  line-height: 1.4;
+}
+
+/* Word bank */
+.q4-hints {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.q4-hints-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-stone);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 0.25rem;
+}
+
+.q4-hint-chip {
+  font-family: var(--font-latin);
+  font-size: 0.85rem;
+  background: #f0ece4;
+  border: 1px solid var(--color-stone-light);
+  border-radius: 3px;
+  padding: 0.2rem 0.5rem;
+  color: var(--color-ink);
+}
+
+/* Textarea */
+.q4-textarea {
+  width: 100%;
+  font-family: var(--font-latin);
+  font-size: 1rem;
+  color: var(--color-ink);
+  background: #fff;
+  border: 1px solid var(--color-stone-light);
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  resize: vertical;
+  box-sizing: border-box;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.q4-textarea:focus {
+  outline: none;
+  border-color: var(--color-terracotta);
+}
+
+/* Reveal section */
+.q4-reveal {
+  margin-top: 1rem;
+  border-top: 1px solid var(--color-stone-light);
+  padding-top: 1rem;
+}
+
+.q4-section-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-stone);
+  margin-bottom: 0.3rem;
+}
+
+.q4-attempt {
+  margin-bottom: 1rem;
+}
+
+.q4-attempt-text {
+  font-family: var(--font-latin);
+  font-size: 1rem;
+  color: var(--color-stone);
+  margin: 0;
+  font-style: italic;
+}
+
+.q4-model-wrap {
+  margin-bottom: 0.75rem;
+}
+
+.q4-model-text {
+  font-family: var(--font-latin);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0 0 0.4rem;
+}
+
+.q4-notes {
+  font-size: 0.85rem;
+  color: var(--color-stone);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Self-mark */
+.q4-self-mark {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-stone-light);
+}
+
+.q4-mark-prompt {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin: 0 0 0.6rem;
+}
+
+.q4-mark-btns {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.q4-mark-btn {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.q4-mark-btn:hover {
+  opacity: 0.85;
+}
+
+.q4-mark-got {
+  background: #2d6a2d;
+  border-color: #2d6a2d;
+  color: #fff;
+}
+
+.q4-mark-nearly {
+  background: #b05a00;
+  border-color: #b05a00;
+  color: #fff;
+}
+
+.q4-mark-notyet {
+  background: var(--color-stone-light);
+  border-color: var(--color-stone-light);
+  color: var(--color-ink);
+}
+
+/* Summary scores */
+.q4-summary-scores {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0.75rem 0 1rem;
+}
+
+.q4-score {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+}
+
+.q4-score--got    { background: #d4edda; color: #155724; }
+.q4-score--nearly { background: #fff3cd; color: #856404; }
+.q4-score--notyet { background: #f8d7da; color: #721c24; }

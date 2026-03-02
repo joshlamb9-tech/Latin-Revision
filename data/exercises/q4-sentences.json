@@ -1,0 +1,107 @@
+[
+  {
+    "id": "q4-01",
+    "english": "The farmer loves the girl.",
+    "hints": ["agricola (farmer)", "puella, -ae (girl)", "amare (to love)"],
+    "model": "agricola puellam amat.",
+    "notes": "agricola = subject (nominative, 1st decl.); puellam = object (accusative, 1st decl.); amat = 3rd person singular present"
+  },
+  {
+    "id": "q4-02",
+    "english": "The slave carries water.",
+    "hints": ["servus, -i (slave)", "aqua, -ae (water)", "portare (to carry)"],
+    "model": "servus aquam portat.",
+    "notes": "servus = subject (nominative, 2nd decl.); aquam = object (accusative, 1st decl.); portat = 3rd person singular present"
+  },
+  {
+    "id": "q4-03",
+    "english": "The master calls the son.",
+    "hints": ["dominus, -i (master)", "filius, -i (son)", "vocare (to call)"],
+    "model": "dominus filium vocat.",
+    "notes": "dominus = subject (nominative, 2nd decl.); filium = object (accusative, 2nd decl.); vocat = 3rd person singular present"
+  },
+  {
+    "id": "q4-04",
+    "english": "The soldiers fight.",
+    "hints": ["miles, militis (soldier)", "pugnare (to fight)"],
+    "model": "milites pugnant.",
+    "notes": "milites = subject (nominative plural, 3rd decl.); pugnant = 3rd person plural present"
+  },
+  {
+    "id": "q4-05",
+    "english": "The girl loves the horse.",
+    "hints": ["puella, -ae (girl)", "equus, -i (horse)", "amare (to love)"],
+    "model": "puella equum amat.",
+    "notes": "puella = subject (nominative, 1st decl.); equum = object (accusative, 2nd decl.); amat = 3rd person singular present"
+  },
+  {
+    "id": "q4-06",
+    "english": "The sailors were carrying food.",
+    "hints": ["nauta, -ae (sailor)", "cibus, -i (food)", "portare (to carry)"],
+    "model": "nautae cibum portabant.",
+    "notes": "nautae = subject (nominative plural, 1st decl.); cibum = object (accusative, 2nd decl.); portabant = 3rd person plural imperfect"
+  },
+  {
+    "id": "q4-07",
+    "english": "The king was watching the soldiers.",
+    "hints": ["rex, regis (king)", "miles, militis (soldier)", "spectare (to watch)"],
+    "model": "rex milites spectabat.",
+    "notes": "rex = subject (nominative, 3rd decl.); milites = object (accusative plural, 3rd decl.); spectabat = 3rd person singular imperfect"
+  },
+  {
+    "id": "q4-08",
+    "english": "The father was praising the daughter.",
+    "hints": ["pater, patris (father)", "filia, -ae (daughter)", "laudare (to praise)"],
+    "model": "pater filiam laudabat.",
+    "notes": "pater = subject (nominative, 3rd decl.); filiam = object (accusative, 1st decl.); laudabat = 3rd person singular imperfect"
+  },
+  {
+    "id": "q4-09",
+    "english": "The slave was working in the field.",
+    "hints": ["servus, -i (slave)", "ager, agri (field)", "laborare (to work)"],
+    "model": "servus in agro laborabat.",
+    "notes": "servus = subject (nominative); in agro = prepositional phrase (in + ablative); laborabat = 3rd person singular imperfect"
+  },
+  {
+    "id": "q4-10",
+    "english": "The master killed the slave.",
+    "hints": ["dominus, -i (master)", "servus, -i (slave)", "necare (to kill)"],
+    "model": "dominus servum necavit.",
+    "notes": "dominus = subject (nominative); servum = object (accusative); necavit = 3rd person singular perfect"
+  },
+  {
+    "id": "q4-11",
+    "english": "The boy called the father.",
+    "hints": ["puer, pueri (boy)", "pater, patris (father)", "vocare (to call)"],
+    "model": "puer patrem vocavit.",
+    "notes": "puer = subject (nominative, 2nd decl.); patrem = object (accusative, 3rd decl.); vocavit = 3rd person singular perfect"
+  },
+  {
+    "id": "q4-12",
+    "english": "The soldiers saw the town.",
+    "hints": ["miles, militis (soldier)", "oppidum, -i (town)", "videre (to see)"],
+    "model": "milites oppidum viderunt.",
+    "notes": "milites = subject (nominative plural, 3rd decl.); oppidum = object (accusative, 2nd decl. neuter); viderunt = 3rd person plural perfect"
+  },
+  {
+    "id": "q4-13",
+    "english": "The good farmer praised the slave.",
+    "hints": ["bonus, -a, -um (good)", "agricola (farmer)", "servus, -i (slave)", "laudare (to praise)"],
+    "model": "bonus agricola servum laudavit.",
+    "notes": "bonus agricola = subject (nominative, adjective agrees with noun); servum = object (accusative); laudavit = 3rd person singular perfect"
+  },
+  {
+    "id": "q4-14",
+    "english": "The soldiers were leading the king to the camp.",
+    "hints": ["miles, militis (soldier)", "rex, regis (king)", "castra, -orum (camp)", "ducere (to lead)"],
+    "model": "milites regem ad castra ducebant.",
+    "notes": "milites = subject (nominative plural); regem = object (accusative, 3rd decl.); ad castra = to the camp (ad + accusative); ducebant = 3rd person plural imperfect"
+  },
+  {
+    "id": "q4-15",
+    "english": "The king was in the camp.",
+    "hints": ["rex, regis (king)", "castra, -orum (camp)", "esse (to be)"],
+    "model": "rex in castris erat.",
+    "notes": "rex = subject (nominative, 3rd decl.); in castris = in the camp (in + ablative plural); erat = 3rd person singular imperfect of esse"
+  }
+]

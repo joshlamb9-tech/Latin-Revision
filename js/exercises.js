@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     case 'gap-fill':  return runGapFill(app);
     case 'gapfill':   return runGapFill(app);
     case 'dashboard': return runDashboard(app);
+    case 'q4':        return runQ4Builder(app);
   }
 
   fetch('data/vocabulary/all.json')
@@ -152,11 +153,12 @@ function renderHub(app, allWords) {
     },
     {
       label: 'Grammar',
-      sublabel: 'CE Question 3',
+      sublabel: 'CE Questions 3 & 4',
       activities: [
-        { id: 'case',     title: 'Case Identifier', desc: 'Given a noun form — what case is it? With explanation of why that case is used.', ce: 'CE Q3', href: 'quiz.html?activity=case', icon: '🔍' },
-        { id: 'verb',     title: 'Verb Parser',     desc: 'Person, number, tense. Exactly what CE Q3 asks you to do.', ce: 'CE Q3', href: 'quiz.html?activity=verb', icon: '⚡' },
-        { id: 'paradigm', title: 'Paradigm Check',  desc: 'Fill the blanks in a declension or conjugation table.', ce: 'CE Q3 & Q4', href: 'quiz.html?activity=paradigm', icon: '📊' },
+        { id: 'case',     title: 'Case Identifier',    desc: 'Given a noun form — what case is it? With explanation of why that case is used.', ce: 'CE Q3', href: 'quiz.html?activity=case', icon: '🔍' },
+        { id: 'verb',     title: 'Verb Parser',         desc: 'Person, number, tense. Exactly what CE Q3 asks you to do.', ce: 'CE Q3', href: 'quiz.html?activity=verb', icon: '⚡' },
+        { id: 'paradigm', title: 'Paradigm Check',      desc: 'Fill the blanks in a declension or conjugation table.', ce: 'CE Q3 & Q4', href: 'quiz.html?activity=paradigm', icon: '📊' },
+        { id: 'q4',       title: 'Latin Composition',   desc: 'Read the English, then write the full Latin sentence. Uses vocabulary from the CE word list.', ce: 'CE Q4', href: 'quiz.html?activity=q4', icon: '✍️' },
       ]
     },
     {
@@ -1159,6 +1161,132 @@ function showGapFillSummary(app, correct, total) {
       <p>${pct >= 70 ? 'Strong work &#8212; you can read Latin in context.' : 'Keep going &#8212; context reading takes practice.'}</p>
       <div class="ex-summary-actions">
         <a href="quiz.html?activity=gap-fill" class="ex-btn ex-btn-primary">Try again</a>
+        <a href="quiz.html" class="ex-btn ex-btn-secondary">Back to Exercises</a>
+      </div>
+    </div>
+  `;
+}
+
+// =============================================================
+// Q4 LATIN COMPOSITION — quiz.html?activity=q4
+// =============================================================
+
+function runQ4Builder(app) {
+  fetch('data/exercises/q4-sentences.json')
+    .then(r => r.json())
+    .then(data => {
+      const sentences = shuffle(data).slice(0, 10);
+      let idx = 0;
+      const scores = []; // 'got' | 'nearly' | 'not-yet'
+
+      function showSentence() {
+        if (idx >= sentences.length) return showQ4Summary(app, scores);
+        const s = sentences[idx];
+        app.innerHTML = '';
+
+        const header = el('div', { className: 'ex-header' });
+        header.appendChild(el('a', { href: 'quiz.html', className: 'ex-back' }, '\u2190 Exercises'));
+        header.appendChild(el('span', { className: 'ex-ce-label' }, 'CE Question 4 \u2014 Latin Composition'));
+        app.appendChild(header);
+
+        app.appendChild(el('p', { className: 'ex-progress' }, (idx + 1) + ' / ' + sentences.length));
+
+        const card = el('div', { className: 'q4-card' });
+
+        card.appendChild(el('p', { className: 'q4-english' }, s.english));
+
+        // Word bank
+        const hintWrap = el('div', { className: 'q4-hints' });
+        hintWrap.appendChild(el('span', { className: 'q4-hints-label' }, 'Vocabulary:'));
+        s.hints.forEach(h => hintWrap.appendChild(el('span', { className: 'q4-hint-chip' }, h)));
+        card.appendChild(hintWrap);
+
+        // Textarea
+        const ta = el('textarea', { className: 'q4-textarea', placeholder: 'Write the full Latin sentence here\u2026', rows: '3' });
+        card.appendChild(ta);
+
+        const checkBtn = el('button', { className: 'ex-btn ex-btn-primary' }, 'Show answer \u2192');
+        card.appendChild(checkBtn);
+
+        const revealDiv = el('div', { className: 'q4-reveal' });
+        revealDiv.style.display = 'none';
+        card.appendChild(revealDiv);
+
+        app.appendChild(card);
+
+        // Focus textarea
+        setTimeout(() => ta.focus(), 50);
+
+        checkBtn.addEventListener('click', () => {
+          checkBtn.style.display = 'none';
+          ta.disabled = true;
+          revealDiv.style.display = '';
+          revealDiv.innerHTML = '';
+
+          const attempt = ta.value.trim();
+          if (attempt) {
+            const attemptDiv = el('div', { className: 'q4-attempt' });
+            attemptDiv.appendChild(el('span', { className: 'q4-section-label' }, 'Your answer:'));
+            attemptDiv.appendChild(el('p', { className: 'q4-attempt-text' }, attempt));
+            revealDiv.appendChild(attemptDiv);
+          }
+
+          const modelDiv = el('div', { className: 'q4-model-wrap' });
+          modelDiv.appendChild(el('span', { className: 'q4-section-label' }, 'Model answer:'));
+          modelDiv.appendChild(el('p', { className: 'q4-model-text' }, s.model));
+          modelDiv.appendChild(el('p', { className: 'q4-notes' }, s.notes));
+          revealDiv.appendChild(modelDiv);
+
+          // Self-mark
+          const markDiv = el('div', { className: 'q4-self-mark' });
+          markDiv.appendChild(el('p', { className: 'q4-mark-prompt' }, 'How did you do?'));
+          const btnRow = el('div', { className: 'q4-mark-btns' });
+          [
+            { label: '\u2713 Got it!', cls: 'q4-mark-got',    score: 'got' },
+            { label: '\u2248 Nearly',  cls: 'q4-mark-nearly', score: 'nearly' },
+            { label: 'Not yet',        cls: 'q4-mark-notyet', score: 'not-yet' }
+          ].forEach(({ label, cls, score }) => {
+            const b = el('button', { className: 'q4-mark-btn ' + cls }, label);
+            b.addEventListener('click', () => { scores.push(score); idx++; showSentence(); });
+            btnRow.appendChild(b);
+          });
+          markDiv.appendChild(btnRow);
+          revealDiv.appendChild(markDiv);
+        });
+      }
+
+      showSentence();
+    })
+    .catch(() => {
+      app.innerHTML = '<p class="error">Could not load composition exercises.</p>';
+    });
+}
+
+function showQ4Summary(app, scores) {
+  const got    = scores.filter(s => s === 'got').length;
+  const nearly = scores.filter(s => s === 'nearly').length;
+  const notYet = scores.filter(s => s === 'not-yet').length;
+  const total  = scores.length;
+  const pct    = Math.round((got / total) * 100);
+
+  const msg = got >= total * 0.7
+    ? 'Strong work \u2014 you\u2019re writing real Latin.'
+    : got + nearly >= total * 0.7
+      ? 'Good progress \u2014 keep practising the endings.'
+      : 'Latin composition takes time \u2014 work through it sentence by sentence.';
+
+  app.innerHTML = `
+    <div class="ex-summary">
+      <div class="ex-summary-icon">${pct >= 70 ? '&#10003;' : '&#8594;'}</div>
+      <h2>Composition complete</h2>
+      <div class="q4-summary-scores">
+        <span class="q4-score q4-score--got">${got} got it</span>
+        <span class="q4-score q4-score--nearly">${nearly} nearly</span>
+        <span class="q4-score q4-score--notyet">${notYet} not yet</span>
+      </div>
+      <p>${msg}</p>
+      <div class="ex-summary-actions">
+        <a href="quiz.html?activity=q4" class="ex-btn ex-btn-primary">Try again</a>
         <a href="quiz.html" class="ex-btn ex-btn-secondary">Back to Exercises</a>
       </div>
     </div>
