@@ -18,6 +18,11 @@
   --font-body: 'EB Garamond', Georgia, serif;
   --font-size-base: 1.1rem;
   --line-height-base: 1.65;
+
+  /* Aliases for Phase 3 Q4 styles — resolve undefined variable references */
+  --color-ink: var(--color-stone);
+  --font-display: var(--font-body);
+  --font-latin: var(--font-body);
 }
 
 /* --- Reset --- */
@@ -1549,3 +1554,41 @@ a:hover {
 .q4-score--got    { background: #d4edda; color: #155724; }
 .q4-score--nearly { background: #fff3cd; color: #856404; }
 .q4-score--notyet { background: #f8d7da; color: #721c24; }
+
+/* ============================================================
+   SW Update Banner (PWA-04)
+   ============================================================ */
+
+.update-banner {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-stone);
+  color: var(--color-parchment);
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 9999;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+}
+
+.update-banner-btn {
+  background: var(--color-terracotta);
+  color: var(--color-parchment);
+  border: none;
+  border-radius: 4px;
+  padding: 0.35rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.update-banner-btn:hover {
+  background: var(--color-terracotta-dark);
+}
