@@ -101,6 +101,110 @@
           }
         }
       }
+    },
+    {
+      "conjugation": 3,
+      "name": "Third Conjugation",
+      "example_verb": "duco",
+      "example_infinitive": "ducere",
+      "example_meaning": "to lead",
+      "note": "3rd conjugation verbs have a short vowel stem — watch the endings carefully, especially 3rd plural: ducunt (not ducant)",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "endings_note": "stem: duc-",
+          "singular": {
+            "1st": "duco",
+            "2nd": "ducis",
+            "3rd": "ducit"
+          },
+          "plural": {
+            "1st": "ducimus",
+            "2nd": "ducitis",
+            "3rd": "ducunt"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "endings_note": "stem + eba-",
+          "singular": {
+            "1st": "ducebam",
+            "2nd": "ducebas",
+            "3rd": "ducebat"
+          },
+          "plural": {
+            "1st": "ducebamus",
+            "2nd": "ducebatis",
+            "3rd": "ducebant"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "endings_note": "perfect stem dux- + perfect endings",
+          "singular": {
+            "1st": "duxi",
+            "2nd": "duxisti",
+            "3rd": "duxit"
+          },
+          "plural": {
+            "1st": "duximus",
+            "2nd": "duxistis",
+            "3rd": "duxerunt"
+          }
+        }
+      }
+    },
+    {
+      "conjugation": 4,
+      "name": "Fourth Conjugation",
+      "example_verb": "audio",
+      "example_infinitive": "audire",
+      "example_meaning": "to hear",
+      "note": "4th conjugation verbs have a long -i- stem — note 3rd plural present: audiunt",
+      "tenses": {
+        "present": {
+          "name": "Present",
+          "endings_note": "stem: audi-",
+          "singular": {
+            "1st": "audio",
+            "2nd": "audis",
+            "3rd": "audit"
+          },
+          "plural": {
+            "1st": "audimus",
+            "2nd": "auditis",
+            "3rd": "audiunt"
+          }
+        },
+        "imperfect": {
+          "name": "Imperfect",
+          "endings_note": "stem + eba-",
+          "singular": {
+            "1st": "audiebam",
+            "2nd": "audiebas",
+            "3rd": "audiebat"
+          },
+          "plural": {
+            "1st": "audiebamus",
+            "2nd": "audiebatis",
+            "3rd": "audiebant"
+          }
+        },
+        "perfect": {
+          "name": "Perfect",
+          "endings_note": "perfect stem audiv- + perfect endings",
+          "singular": {
+            "1st": "audivi",
+            "2nd": "audivisti",
+            "3rd": "audivit"
+          },
+          "plural": {
+            "1st": "audivimus",
+            "2nd": "audivistis",
+            "3rd": "audiverunt"
+          }
+        }
+      }
     }
   ],
   "irregular": [

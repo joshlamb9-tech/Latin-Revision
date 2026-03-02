@@ -1,5 +1,21 @@
 [
   {
+    "id": "agricola-01",
+    "latin": "agricola",
+    "genitive": "agricolae",
+    "gender": "m",
+    "english": "farmer",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "nature"
+    ],
+    "frequency_rank": 25,
+    "level": 1
+  },
+  {
     "id": "ancilla-01",
     "latin": "ancilla",
     "genitive": "ancillae",

@@ -53,6 +53,20 @@ const GRAMMAR_QUICK_CHECKS = {
     { question: 'Which ending marks the 2nd person plural present in the 2nd conjugation?', options: ['-\u0113tis', '-\u0113mus', '-ent', '-et'], correct: '-\u0113tis', explanation: 'Mon\u0113tis = you (pl.) warn. The 2nd person plural present ends in -\u0113tis for 2nd conjugation verbs.' },
     { question: 'What is the 1st person plural present of mone\u014d?', options: ['mon\u0113mus', 'monet', 'mon\u0113tis', 'monent'], correct: 'mon\u0113mus', explanation: 'Mon\u0113mus = we warn. The 1st person plural present of 2nd conjugation verbs ends in -\u0113mus.' },
   ],
+  verb_3_present: [
+    { question: 'What is the 3rd person singular present of duco?', options: ['ducit', 'ducis', 'duco', 'ducunt'], correct: 'ducit', explanation: 'Ducit = he/she/it leads. The 3rd person singular present of 3rd conjugation verbs ends in -it.' },
+    { question: 'What is the 3rd person plural present of duco?', options: ['ducunt', 'ducint', 'ducant', 'ducunt'], correct: 'ducunt', explanation: 'Ducunt = they lead. The 3rd person plural present of 3rd conjugation verbs ends in -unt. Watch out \u2014 not -ant like 1st conjugation.' },
+    { question: 'What is the 3rd person singular imperfect of duco?', options: ['duc\u0113bat', 'ducebam', 'ducit', 'duxit'], correct: 'duc\u0113bat', explanation: 'Duc\u0113bat = he/she/it was leading. The imperfect of 3rd conjugation uses the stem duc- + \u0113ba- + ending.' },
+    { question: 'What is the 3rd person plural perfect of duco?', options: ['dux\u0113runt', 'ducunt', 'dux\u012b', 'duc\u0113bant'], correct: 'dux\u0113runt', explanation: 'Dux\u0113runt = they led (completed). The perfect stem of duco is dux- (an irregular perfect \u2014 learn it).' },
+    { question: 'Which endings distinguish 3rd conjugation present from 1st conjugation present?', options: ['3rd uses -it/-unt; 1st uses -at/-ant', '3rd uses -at/-ant; 1st uses -it/-unt', 'They are the same', '3rd uses -et/-ent; 1st uses -at/-ant'], correct: '3rd uses -it/-unt; 1st uses -at/-ant', explanation: 'The key difference: 1st conjugation 3rd singular is -at (portat) and plural is -ant (portant). 3rd conjugation is -it (ducit) and -unt (ducunt).' },
+  ],
+  verb_4_present: [
+    { question: 'What is the 3rd person singular present of audio?', options: ['audit', 'audis', 'audio', 'audiunt'], correct: 'audit', explanation: 'Audit = he/she/it hears. The 3rd person singular present of 4th conjugation verbs ends in -it (same as 3rd conjugation \u2014 use the infinitive to tell them apart).' },
+    { question: 'What is the 3rd person plural present of audio?', options: ['audiunt', 'audunt', 'audiant', 'audent'], correct: 'audiunt', explanation: 'Audiunt = they hear. The 4th conjugation 3rd person plural ends in -iunt \u2014 the -i- before -unt distinguishes it from the 3rd conjugation.' },
+    { question: 'What is the 3rd person singular imperfect of audio?', options: ['audi\u0113bat', 'audiebam', 'audit', 'aud\u012bvit'], correct: 'audi\u0113bat', explanation: 'Audi\u0113bat = he/she/it was hearing. The imperfect of 4th conjugation uses the stem audi- + \u0113ba- + ending.' },
+    { question: 'What is the 1st person singular perfect of audio?', options: ['aud\u012bv\u012b', 'audio', 'audiebam', 'aud\u012bvit'], correct: 'aud\u012bv\u012b', explanation: 'Aud\u012bv\u012b = I heard (completed). The perfect stem of audio is aud\u012bv-. The 1st person singular perfect always ends in -\u012b.' },
+    { question: 'How do you tell a 4th conjugation verb from a 3rd conjugation verb?', options: ['The infinitive: 4th ends in -\u012bre; 3rd ends in -ere', 'The infinitive: 4th ends in -ere; 3rd ends in -\u012bre', 'By the present tense endings only', 'They are the same conjugation'], correct: 'The infinitive: 4th ends in -\u012bre; 3rd ends in -ere', explanation: 'The infinitive is the key: aud\u012bre (4th) vs ducere (3rd). Both use -it for 3rd singular present, so always check the infinitive to identify the conjugation.' },
+  ],
   adj_bonus: [
     { question: 'How does a Latin adjective agree with its noun?', options: ['In case, number, and gender', 'In case only', 'In number and gender only', 'In gender only'], correct: 'In case, number, and gender', explanation: 'Latin adjectives must agree with their nouns in all three: case, number, and gender. E.g. puella bona (fem. nom. sg.) but servus bonus (masc. nom. sg.).' },
     { question: 'What is the feminine accusative singular of bonus/a/um?', options: ['bonam', 'bona', 'bonae', 'bonum'], correct: 'bonam', explanation: 'Bonam follows 1st declension feminine endings: nom. bona, acc. bonam. E.g. puellam bonam video = I see the good girl.' },
@@ -307,6 +321,13 @@ function renderConjugationSection(conj) {
   example.textContent = conj.example_verb + ' (' + conj.example_infinitive + ') \u2014 ' + conj.example_meaning;
   section.appendChild(example);
 
+  if (conj.note) {
+    const note = document.createElement('p');
+    note.className = 'grammar-note';
+    note.textContent = conj.note;
+    section.appendChild(note);
+  }
+
   Object.keys(conj.tenses).forEach(tenseKey => {
     const tenseData = conj.tenses[tenseKey];
 
@@ -324,6 +345,10 @@ function renderConjugationSection(conj) {
     appendQuickCheck(section, 'verb_1_perfect');
   } else if (conj.conjugation === 2) {
     appendQuickCheck(section, 'verb_2_present');
+  } else if (conj.conjugation === 3) {
+    appendQuickCheck(section, 'verb_3_present');
+  } else if (conj.conjugation === 4) {
+    appendQuickCheck(section, 'verb_4_present');
   }
 
   return section;
