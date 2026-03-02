@@ -78,7 +78,7 @@ function appendQuickCheck(container, checkKey) {
       });
       const fb = div.querySelector('.qcheck-fb');
       fb.style.display = 'block';
-      fb.innerHTML = `<p class="${correct ? 'fb-correct' : 'fb-wrong'}">${correct ? '\u2713 Correct!' : `\u2717 The answer is <strong>${check.correct}</strong>`}</p><p class="fb-explanation">${check.explanation}</p>`;
+      fb.innerHTML = `<p class="${correct ? 'fb-correct' : 'fb-wrong'}">${correct ? '\u2713 Correct \u2014 you knew that.' : `Not yet \u2014 it\u2019s <strong>${check.correct}</strong>`}</p><p class="fb-explanation">${check.explanation}</p>`;
     });
   });
 }

@@ -262,7 +262,7 @@ function runFlashcard(app, words, filter) {
       // Rating buttons
       const ratings = el('div', { className: 'ex-ratings' });
 
-      const dontKnow = el('button', { className: 'btn btn-rating btn-rating-no' }, "Don't know");
+      const dontKnow = el('button', { className: 'btn btn-rating btn-rating-no' }, 'Not yet');
       const learning = el('button', { className: 'btn btn-rating btn-rating-maybe' }, 'Still learning');
       const know = el('button', { className: 'btn btn-rating btn-rating-yes' }, 'Know it');
 
@@ -319,6 +319,7 @@ function runMCQ(app, words, mode, allWords) {
   let index = 0;
   let score = 0;
   let answered = false;
+  let streak = 0;
   const results = [];
 
   function render() {
@@ -362,7 +363,7 @@ function runMCQ(app, words, mode, allWords) {
         if (answered) return;
         answered = true;
         const correct = opt.id === word.id;
-        if (correct) score++;
+        if (correct) { score++; streak++; } else { streak = 0; }
         SRS.rate(word.id, correct ? 'know' : 'dont-know');
         results.push({ word, correct, chosen: opt });
 
@@ -376,9 +377,10 @@ function runMCQ(app, words, mode, allWords) {
         // Feedback
         const fb = el('div', { className: 'ex-feedback ' + (correct ? 'ex-feedback-positive' : 'ex-feedback-negative') });
         if (correct) {
-          fb.textContent = 'Correct — ' + word.latin + ' means "' + word.english + '". ' + buildGrammarInsight(word);
+          let streakNote = streak >= 5 && streak % 5 === 0 ? ' \uD83D\uDD25 ' + streak + ' in a row!' : streak === 3 ? ' 3 in a row!' : '';
+          fb.textContent = 'Correct \u2014 ' + word.latin + ' means \u201c' + word.english + '\u201d. ' + buildGrammarInsight(word) + streakNote;
         } else {
-          fb.textContent = 'Not quite — ' + word.latin + ' means "' + word.english + '". ' + buildGrammarInsight(word);
+          fb.textContent = 'Not yet \u2014 ' + word.latin + ' means \u201c' + word.english + '\u201d. ' + buildGrammarInsight(word) + ' Seeing it again will help it stick.';
         }
         app.appendChild(fb);
 
@@ -415,10 +417,10 @@ function renderMCQSummary(app, results, score, mode) {
 
   const pct = Math.round(score / total * 100);
   let msg;
-  if (pct === 100) msg = 'Perfect score. Your vocabulary is in great shape for this set.';
-  else if (pct >= 80) msg = 'Strong result — you got ' + score + ' right. The ones you missed will come back in your next flashcard session.';
-  else if (pct >= 60) msg = 'Solid start — ' + (total - score) + ' to keep working on. Check those words in the vocabulary list.';
-  else msg = score + ' correct — keep going, these words need more practice. Flashcard mode will help.';
+  if (pct === 100) msg = 'Perfect — you know every word in this set. That\'s genuine mastery.';
+  else if (pct >= 80) msg = 'Strong work \u2014 ' + score + ' correct. The ' + (total - score) + ' you missed will come back in flashcard mode.';
+  else if (pct >= 60) msg = score + '/' + total + ' \u2014 solid progress. Each attempt builds the memory trace for the ones you missed.';
+  else msg = score + '/' + total + ' \u2014 not there yet, and that\u2019s fine. Flashcard mode will help these stick.';
   app.appendChild(el('p', { className: pct >= 60 ? 'ex-feedback-positive' : 'ex-feedback-neutral' }, msg));
 
   const actions = el('div', { className: 'ex-actions' });
@@ -520,8 +522,8 @@ function renderCaseQuestion(app, questions, index, score) {
       const fb = el('div', { className: 'ex-feedback ' + (isCorrect ? 'ex-feedback-positive' : 'ex-feedback-negative') });
       fb.appendChild(el('p', { className: 'ex-feedback-result' },
         isCorrect
-          ? '\u2713 Correct! That is the ' + q.caseName + '.'
-          : '\u2717 Not quite. That is the ' + q.caseName + '.'));
+          ? '\u2713 Correct \u2014 you knew the ' + q.caseName + '.'
+          : 'Not yet \u2014 it\u2019s the ' + q.caseName + '.'));
       fb.appendChild(el('p', { className: 'ex-feedback-explanation' },
         q.caseName.charAt(0).toUpperCase() + q.caseName.slice(1) + ': ' + CASE_FUNCTIONS[q.caseName]));
 
@@ -546,9 +548,9 @@ function renderCaseSummary(app, score) {
   summary.appendChild(el('p', { className: 'ex-score-big' }, score.correct + '/' + score.total + ' correct'));
 
   let msg;
-  if (score.correct === score.total) msg = 'Perfect score \u2014 excellent case knowledge!';
-  else if (score.correct >= Math.ceil(score.total * 0.7)) msg = 'Well done \u2014 you know your cases.';
-  else msg = 'Keep practising the cases \u2014 review the grammar tables to help.';
+  if (score.correct === score.total) msg = 'Perfect \u2014 you know your cases cold.';
+  else if (score.correct >= Math.ceil(score.total * 0.7)) msg = 'Strong work \u2014 you\u2019ve earned that case knowledge through practice.';
+  else msg = 'Not there yet \u2014 each attempt builds the pattern. Try the grammar tables, then come back.';
   summary.appendChild(el('p', { className: score.correct >= Math.ceil(score.total * 0.7) ? 'ex-feedback-positive' : 'ex-feedback-neutral' }, msg));
 
   const actions = el('div', { className: 'ex-actions' });
@@ -713,8 +715,8 @@ function renderVerbQuestion(app, questions, index, score) {
       const fb = el('div', { className: 'ex-feedback ' + (isCorrect ? 'ex-feedback-positive' : 'ex-feedback-negative') });
       fb.appendChild(el('p', { className: 'ex-feedback-result' },
         isCorrect
-          ? '\u2713 Correct!'
-          : '\u2717 Not quite. The correct answer is: ' + correctLabel + '.'));
+          ? '\u2713 Correct \u2014 you parsed it right.'
+          : 'Not yet \u2014 it\u2019s: ' + correctLabel + '.'));
       fb.appendChild(el('p', { className: 'ex-feedback-explanation' },
         q.form + ': ' + correctLabel + ' of ' + q.exampleVerb + ' \u2014 \u201c' + buildVerbTranslation(q) + '\u201d'));
       fb.appendChild(el('p', { className: 'ex-feedback-note' }, TENSE_NOTES[q.tense]));
@@ -740,9 +742,9 @@ function renderVerbSummary(app, score) {
   summary.appendChild(el('p', { className: 'ex-score-big' }, score.correct + '/' + score.total + ' correct'));
 
   let msg;
-  if (score.correct === score.total) msg = 'Perfect score \u2014 you can parse verbs fluently!';
-  else if (score.correct >= Math.ceil(score.total * 0.7)) msg = 'Good work \u2014 solid verb parsing skills.';
-  else msg = 'Keep at it \u2014 review the conjugation tables to help.';
+  if (score.correct === score.total) msg = 'Perfect \u2014 you can parse verbs fluently. That\u2019s real CE Q3 skill.';
+  else if (score.correct >= Math.ceil(score.total * 0.7)) msg = 'Strong work \u2014 you\u2019ve built genuine verb-parsing ability.';
+  else msg = 'Not there yet \u2014 each attempt builds the pattern. Review the conjugation tables, then try again.';
   summary.appendChild(el('p', { className: score.correct >= Math.ceil(score.total * 0.7) ? 'ex-feedback-positive' : 'ex-feedback-neutral' }, msg));
 
   const actions = el('div', { className: 'ex-actions' });
@@ -1122,7 +1124,7 @@ function runGapFill(app) {
             const fb = document.getElementById('gf-feedback');
             fb.style.display = 'block';
             fb.innerHTML = `
-              <p class="${isCorrect ? 'fb-correct' : 'fb-wrong'}">${isCorrect ? '&#10003; Correct!' : `&#10007; The answer is <strong>${q.correct}</strong>`}</p>
+              <p class="${isCorrect ? 'fb-correct' : 'fb-wrong'}">${isCorrect ? '&#10003; Correct \u2014 you knew that one.' : `Not yet \u2014 it\u2019s <strong>${q.correct}</strong>`}</p>
               <p class="fb-explanation">${q.explanation}</p>
               <button class="ex-btn ex-btn-primary" id="gf-next">
                 ${idx + 1 < questions.length ? 'Next sentence &#8594;' : 'See results &#8594;'}
