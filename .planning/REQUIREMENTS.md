@@ -26,7 +26,7 @@
 - [x] **PWA-01**: Service worker (`sw.js`) with unique `ce-latin-` cache namespace — does not collide with French site cache
 - [x] **PWA-02**: All site assets precached on SW install — full offline access
 - [x] **PWA-03**: Web App Manifest (`manifest.webmanifest`) — installable from Safari as home screen app
-- [ ] **PWA-04**: SW update notification banner — users see "content updated, reload" when new version available
+- [x] **PWA-04**: SW update notification banner — users see "content updated, reload" when new version available
 - [x] **PWA-05**: French site service worker audited and confirmed safe (no cache namespace collision)
 
 ### Grammar Reference
@@ -150,7 +150,7 @@
 | PWA-01 | Phase 1 | Complete |
 | PWA-02 | Phase 1 | Complete |
 | PWA-03 | Phase 1 | Complete |
-| PWA-04 | Phase 4 | Pending |
+| PWA-04 | Phase 4 | Complete |
 | PWA-05 | Phase 1 | Complete |
 | GRAM-01 | Phase 2 | Complete |
 | GRAM-02 | Phase 2 | Complete |

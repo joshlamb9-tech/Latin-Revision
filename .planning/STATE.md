@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-01)
 
 **Core value:** A student can revise every examinable area of CE Latin from their phone or tablet, offline if needed, without needing to carry textbooks.
-**Current focus:** Phase 2 — Grammar and Vocabulary
+**Current focus:** Phase 4 — Past Papers and Polish
 
 ## Current Position
 
-Phase: 2 of 4 (Grammar and Vocabulary) -- IN PROGRESS
-Plan: 2 of 3 in current phase -- COMPLETE
-Status: Phase 2 underway — Plan 02-02 vocabulary reference page complete
-Last activity: 2026-03-01 -- Completed 02-02 vocabulary page (js/vocabulary.js, topic+freq filtering, CSS vocab styles, sw.js v2)
+Phase: 4 of 4 (Past Papers and Polish) -- IN PROGRESS
+Plan: 1 of 3 in current phase -- COMPLETE
+Status: Phase 4 underway — Plan 04-01 SW update banner and CSS variable aliases complete
+Last activity: 2026-03-02 -- Completed 04-01 (js/app.js controllerchange banner, css/style.css variable aliases, sw.js v8)
 
-Progress: [█████░░░░░] 50%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
@@ -29,9 +29,10 @@ Progress: [█████░░░░░] 50%
 |-------|-------|-------|----------|
 | 01-foundation | 3 of 3 | ~21 min | ~7 min |
 | 02-grammar-and-vocabulary | 2 of 3 | ~8 min | ~4 min |
+| 04-past-papers-and-polish | 1 of 3 | ~2 min | ~2 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (5 min), 01-02 (6 min), 01-03 (10 min), 02-01 (5 min), 02-02 (3 min)
+- Last 5 plans: 01-01 (5 min), 01-02 (6 min), 01-03 (10 min), 02-01 (5 min), 02-02 (3 min), 04-01 (2 min)
 - Trend: stable
 
 *Updated after each plan completion*
@@ -62,6 +63,8 @@ Recent decisions affecting current work:
 - [Phase 02-grammar-and-vocabulary]: grammar.js fully self-contained, no shared globals with app.js
 - [Phase 02-grammar-and-vocabulary]: URLSearchParams decodes %2F automatically — topic filter compares against 'war/army' directly; hrefs encode slash as %2F
 - [Phase 02-grammar-and-vocabulary]: sw.js bumped to ce-latin-v2 to force reinstall with grammar.js and vocabulary.js in precache manifest
+- [Phase 04-past-papers-and-polish]: No postMessage SKIP_WAITING handler needed — sw.js already calls self.skipWaiting() unconditionally in install
+- [Phase 04-past-papers-and-polish]: pageWasControlled flag captured before registration so first-install controllerchange does not trigger banner
 
 ### Pending Todos
 
@@ -74,6 +77,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-01
-Stopped at: Completed 02-02 vocabulary reference page — vocabulary.html rendering all 211 ISEB words with topic and frequency filtering
+Last session: 2026-03-02
+Stopped at: Completed 04-01 SW update banner — app.js controllerchange listener, style.css aliases, sw.js v8
 Resume file: None

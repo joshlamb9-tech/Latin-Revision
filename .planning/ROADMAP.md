@@ -98,4 +98,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | 1. Foundation | 3/3 | Complete | 2026-03-01 |
 | 2. Grammar and Vocabulary | 3/3 | Complete | 2026-03-02 |
 | 3. Interactive Exercises | 4/4 | Complete | 2026-03-02 |
-| 4. Past Papers and Polish | 0/3 | Not started | - |
+| 4. Past Papers and Polish | 1/3 | In Progress|  |
