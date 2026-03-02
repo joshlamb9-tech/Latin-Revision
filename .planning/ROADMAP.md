@@ -50,7 +50,7 @@ Plans:
 Plans:
 - [x] 02-01-PLAN.md — Grammar JS module, table CSS, wire grammar.html (GRAM-01 through GRAM-05)
 - [x] 02-02-PLAN.md — Vocabulary JS module, vocab CSS, wire vocabulary.html, update SW cache (VOCAB-01 through VOCAB-04)
-- [ ] 02-03-PLAN.md — Push to GitHub Pages, human-verify on real iPhone Safari
+- [x] 02-03-PLAN.md — Push to GitHub Pages, human-verify on real iPhone Safari
 
 ### Phase 3: Interactive Exercises
 **Goal**: A student can test themselves through varied activities covering vocabulary, case identification, verb parsing, and paradigm recall — all mapped to CE exam question types, with a visible mastery dashboard showing what they've secured.
@@ -68,10 +68,10 @@ Plans:
 **Plans**: 4 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Exercise hub (quiz.html rewrite) + SRS state manager + flashcard activity + MCQ vocabulary quiz (EX-01, EX-02, EX-03, EX-04)
-- [ ] 03-02-PLAN.md — Grammar activities: case identifier, verb parser, paradigm self-check (EX-06, EX-07, EX-08)
-- [ ] 03-03-PLAN.md — Matching pairs activity + gap-fill activity + exercise sentence data (EX-05, EX-09)
-- [ ] 03-04-PLAN.md — Mastery dashboard + vocabulary "test yourself" integration + grammar quick-check integration + SW update to ce-latin-v3 (EX-10, EX-11, EX-12)
+- [x] 03-01-PLAN.md — Exercise hub (quiz.html rewrite) + SRS state manager + flashcard activity + MCQ vocabulary quiz (EX-01, EX-02, EX-03, EX-04)
+- [x] 03-02-PLAN.md — Grammar activities: case identifier, verb parser, paradigm self-check (EX-06, EX-07, EX-08)
+- [x] 03-03-PLAN.md — Matching pairs activity + gap-fill activity + exercise sentence data (EX-05, EX-09)
+- [x] 03-04-PLAN.md — Mastery dashboard + vocabulary "test yourself" integration + grammar quick-check integration + SW update to ce-latin-v4 (EX-10, EX-11, EX-12)
 
 ### Phase 4: Past Papers and Polish
 **Goal**: A student can find past paper links, installed-app users see update prompts when content changes, and the mobile experience is consistent and polished across all pages.
@@ -94,6 +94,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete | 2026-03-01 |
-| 2. Grammar and Vocabulary | 2/3 | In Progress|  |
-| 3. Interactive Exercises | 0/4 | Not started | - |
+| 2. Grammar and Vocabulary | 3/3 | Complete | 2026-03-02 |
+| 3. Interactive Exercises | 4/4 | Complete | 2026-03-02 |
 | 4. Past Papers and Polish | 0/TBD | Not started | - |
