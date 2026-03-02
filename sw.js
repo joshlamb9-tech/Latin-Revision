@@ -1,6 +1,6 @@
 'use strict';
 
-const CACHE_NAME = 'ce-latin-v6';
+const CACHE_NAME = 'ce-latin-v8';
 
 // All assets to precache — enumerate EVERY file the site needs to work offline
 const PRECACHE_ASSETS = [
