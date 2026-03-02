@@ -354,9 +354,6 @@ a:hover {
   flex-wrap: wrap;
   gap: 0.5rem;
   align-items: center;
-  position: sticky;
-  top: 56px;
-  z-index: 90;
   background-color: var(--color-parchment);
   margin-bottom: 1.5rem;
   padding: 0.75rem 0 1rem;
@@ -1249,6 +1246,8 @@ a:hover {
   border-radius: 2px;
   align-self: center;
   white-space: nowrap;
+  min-width: 1.8rem;
+  text-align: center;
 }
 
 .vocab-level--1 {
