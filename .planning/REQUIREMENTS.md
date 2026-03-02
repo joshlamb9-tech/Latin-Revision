@@ -63,6 +63,36 @@
 
 ---
 
+## v1.1 Requirements — Interactive Exercises
+*(Informed by: Cognitive Ergonomics and Digital Interface Design doc; Building Confidence Through Accumulated Success; CE specimen papers L1 & L2; Latin pedagogy research)*
+
+### Exercise Hub
+- [ ] **EX-01**: `quiz.html` rewritten as an exercise hub — menu of all available activity types, each labelled with the CE question type it practises (e.g. "This practises Question 3")
+- [ ] **EX-02**: SRS state manager (`js/srs.js`) — tracks each vocabulary word's mastery level (new / learning / mastered) in localStorage with try/catch graceful degradation for Safari private mode
+
+### Vocabulary Activities
+- [ ] **EX-03**: Flashcard mode — Latin word shown, pupil taps to reveal English; confidence rating buttons (Know it / Still learning / Don't know); SRS state updated per response; words rated "Know it" 3× marked mastered
+- [ ] **EX-04**: MCQ vocabulary quiz (replaces/expands QUIZ-01..04) — 4-option multiple choice Latin→English and English→Latin; distractors filtered by part of speech; warm feedback on wrong answers naming the specific grammar insight
+- [ ] **EX-05**: Matching pairs — 6 Latin words displayed alongside 6 shuffled English meanings; pupil taps a Latin word then an English word to match; matched pairs lock and highlight; all 6 matched = success
+
+### Grammar Activities (CE Question 3 practice)
+- [ ] **EX-06**: Case identifier — given a noun form generated from the declension JSON (e.g. "puellam"), pupil identifies the case from 4 options; after answering, why that case is used is shown (subject / object / possession / indirect object / with preposition)
+- [ ] **EX-07**: Verb parser — given a verb form generated from the conjugation JSON, pupil identifies person + number + tense from dropdown-style options; maps directly onto CE Q3 verb parsing questions
+- [ ] **EX-08**: Paradigm self-check — noun or verb paradigm table displayed with random cells blanked; pupil types or selects the missing form; immediate cell-by-cell feedback; "Reveal all" option for self-study mode
+- [ ] **EX-09**: Gap-fill sentences — CE-level Latin sentence with one content word blanked, 4 options given; sentences stored in `data/exercises/gap-fill.json`; tests vocabulary in grammatical context
+
+### Mastery and Progress
+- [ ] **EX-10**: Mastery dashboard — shows counts for new / learning / mastered vocabulary words, and grammar topics attempted; visual "bank of successes" strip showing mastered word count; no punitive framing
+- [ ] **EX-11**: "Test yourself on this list" shortcut on vocabulary page — when viewing a filtered list (e.g. 1st Declension nouns, or Family topic) a button launches flashcard mode pre-filtered to that word set
+- [ ] **EX-12**: "Quick check" prompts embedded at the end of each grammar section on `grammar.html` — one MCQ question per paradigm group (e.g. after noun tables: "What case is used for the subject of a verb?")
+
+### Cognitive Design Principles Applied (cross-cutting)
+- All activities labelled with the CE exam question they practise
+- Feedback attributes success to specific knowledge: "Correct — you knew that accusative endings in -am/-os/-as mark the object"
+- No mandatory timers on any activity (optional timed mode only)
+- Activities work fully offline (all data from cached JSON, SRS state in localStorage)
+- Consistent activity structure throughout: Prompt → Attempt → Feedback → Next
+
 ## v2 Requirements
 
 ### English-to-Latin Quiz
@@ -79,6 +109,13 @@
 
 ### Level Differentiation
 - **LEVEL-01**: Level 1 / Level 2 / Level 3 vocabulary filtering
+
+### Passage Comprehension (needs morning approval — content decisions required)
+- **PASS-01**: CE-format reading comprehension activity using specimen paper passages — needs decision on which passages to include and copyright approach
+- **PASS-02**: Line-reference focus questions mirroring CE Q1/Q3 format
+
+### English-to-Latin Composition (needs morning approval — marking decisions required)
+- **COMP-01**: English sentence → Latin translation exercise with element-by-element marking — needs decision on marking scheme design
 
 ---
 
@@ -124,10 +161,22 @@
 | VOCAB-02 | Phase 2 | Complete |
 | VOCAB-03 | Phase 2 | Complete |
 | VOCAB-04 | Phase 2 | Complete |
-| QUIZ-01 | Phase 3 | Pending |
-| QUIZ-02 | Phase 3 | Pending |
-| QUIZ-03 | Phase 3 | Pending |
-| QUIZ-04 | Phase 3 | Pending |
+| QUIZ-01 | Phase 3 | Superseded by EX-04 |
+| QUIZ-02 | Phase 3 | Superseded by EX-02/EX-03 |
+| QUIZ-03 | Phase 3 | Superseded by EX-10 |
+| QUIZ-04 | Phase 3 | Superseded by EX-02 |
+| EX-01 | Phase 3 | Pending |
+| EX-02 | Phase 3 | Pending |
+| EX-03 | Phase 3 | Pending |
+| EX-04 | Phase 3 | Pending |
+| EX-05 | Phase 3 | Pending |
+| EX-06 | Phase 3 | Pending |
+| EX-07 | Phase 3 | Pending |
+| EX-08 | Phase 3 | Pending |
+| EX-09 | Phase 3 | Pending |
+| EX-10 | Phase 3 | Pending |
+| EX-11 | Phase 3 | Pending |
+| EX-12 | Phase 3 | Pending |
 | PAPER-01 | Phase 4 | Pending |
 | PAPER-02 | Phase 4 | Pending |
 | DEPLOY-01 | Phase 1 | Complete |

@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation** - Data layer, app shell, visual identity, PWA infrastructure, and GitHub Pages deployment
 - [ ] **Phase 2: Grammar and Vocabulary** - Grammar reference tables and vocabulary pages, all rendered from JSON
-- [ ] **Phase 3: Practice Quiz** - Latin-to-English multiple choice quiz engine with adaptive pool
+- [ ] **Phase 3: Interactive Exercises** - Varied self-test activities across vocabulary and grammar, aligned to CE exam question types, with mastery tracking
 - [ ] **Phase 4: Past Papers and Polish** - Past papers section, SW update notification, and site-wide mobile polish
 
 ## Phase Details
@@ -52,19 +52,26 @@ Plans:
 - [x] 02-02-PLAN.md — Vocabulary JS module, vocab CSS, wire vocabulary.html, update SW cache (VOCAB-01 through VOCAB-04)
 - [ ] 02-03-PLAN.md — Push to GitHub Pages, human-verify on real iPhone Safari
 
-### Phase 3: Practice Quiz
-**Goal**: A student can test themselves on Latin vocabulary with multiple choice questions, track their score, and have correctly answered words removed from the pool.
+### Phase 3: Interactive Exercises
+**Goal**: A student can test themselves through varied activities covering vocabulary, case identification, verb parsing, and paradigm recall — all mapped to CE exam question types, with a visible mastery dashboard showing what they've secured.
 **Depends on**: Phase 2
-**Requirements**: QUIZ-01, QUIZ-02, QUIZ-03, QUIZ-04
+**Requirements**: EX-01, EX-02, EX-03, EX-04, EX-05, EX-06, EX-07, EX-08, EX-09, EX-10, EX-11, EX-12
 **Success Criteria** (what must be TRUE):
-  1. A student can start a Latin-to-English quiz and receive questions with 4 multiple choice options where distractors are filtered by part of speech
-  2. Words the student gets right are removed from the quiz pool — on the next session they are not asked those words again
-  3. At the end of a quiz the student sees their score and feedback
-  4. The quiz works in Safari private mode — if localStorage is unavailable it degrades gracefully without crashing
-**Plans**: TBD
+  1. A student can launch a flashcard session and rate their confidence on each word; the SRS state persists across page reloads
+  2. A student can take a 4-option MCQ vocabulary quiz (Latin→English and English→Latin) with warm, specific feedback on wrong answers
+  3. A student can practise CE Question 3 grammar skills: identifying the case of a noun form and parsing a verb form (person/number/tense)
+  4. A student can do a matching-pairs activity and a gap-fill activity in context sentences
+  5. A student can see a mastery dashboard showing new/learning/mastered counts for vocabulary
+  6. "Test yourself on this list" appears on vocabulary filtered views and launches flashcard mode for that subset
+  7. Quick-check questions appear at the end of each grammar paradigm group on the grammar page
+  8. All activities work offline and degrade gracefully in Safari private mode
+**Plans**: 4 plans
 
 Plans:
-- [ ] 03-01: TBD
+- [ ] 03-01-PLAN.md — Exercise hub (quiz.html rewrite) + SRS state manager + flashcard activity + MCQ vocabulary quiz (EX-01, EX-02, EX-03, EX-04)
+- [ ] 03-02-PLAN.md — Grammar activities: case identifier, verb parser, paradigm self-check (EX-06, EX-07, EX-08)
+- [ ] 03-03-PLAN.md — Matching pairs activity + gap-fill activity + exercise sentence data (EX-05, EX-09)
+- [ ] 03-04-PLAN.md — Mastery dashboard + vocabulary "test yourself" integration + grammar quick-check integration + SW update to ce-latin-v3 (EX-10, EX-11, EX-12)
 
 ### Phase 4: Past Papers and Polish
 **Goal**: A student can find past paper links, installed-app users see update prompts when content changes, and the mobile experience is consistent and polished across all pages.
@@ -88,5 +95,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. Foundation | 3/3 | Complete | 2026-03-01 |
 | 2. Grammar and Vocabulary | 2/3 | In Progress|  |
-| 3. Practice Quiz | 0/TBD | Not started | - |
+| 3. Interactive Exercises | 0/4 | Not started | - |
 | 4. Past Papers and Polish | 0/TBD | Not started | - |
