@@ -1,8 +1,8 @@
 [
   {
     "id": "group-a",
-    "label": "Group A — 1st declension nouns (f.)",
-    "note": "Nouns ending in -a: puella, ancilla, via...",
+    "label": "Group A — 1st declension nouns (mostly f.)",
+    "note": "Nouns ending in -a: puella, ancilla, via... Note: nauta (sailor) is 1st declension but masculine.",
     "words": [
       { "english": "dinner", "latin": "cena" },
       { "english": "girl", "latin": "puella" },
@@ -64,8 +64,7 @@
       { "english": "look at / watch", "latin": "specto" },
       { "english": "praise", "latin": "laudo" },
       { "english": "prepare", "latin": "paro" },
-      { "english": "shout", "latin": "clamo" },
-      { "english": "watch", "latin": "specto" }
+      { "english": "shout", "latin": "clamo" }
     ]
   },
   {
@@ -85,7 +84,7 @@
     "label": "Verbs — Irregular",
     "note": "Must be learned separately — no regular pattern",
     "words": [
-      { "english": "be", "latin": "sum (es, est, sumus, estis, sunt)" }
+      { "english": "be", "latin": "sum" }
     ]
   },
   {

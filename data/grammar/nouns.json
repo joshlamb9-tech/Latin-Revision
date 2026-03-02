@@ -6,14 +6,7 @@
       "gender": "f",
       "example_noun": "puella",
       "example_meaning": "girl",
-      "cases": [
-        "nominative",
-        "vocative",
-        "accusative",
-        "genitive",
-        "dative",
-        "ablative"
-      ],
+      "cases": ["nominative","vocative","accusative","genitive","dative","ablative"],
       "singular": {
         "nominative": "puella",
         "vocative": "puella",
@@ -37,14 +30,7 @@
       "gender": "m",
       "example_noun": "servus",
       "example_meaning": "slave",
-      "cases": [
-        "nominative",
-        "vocative",
-        "accusative",
-        "genitive",
-        "dative",
-        "ablative"
-      ],
+      "cases": ["nominative","vocative","accusative","genitive","dative","ablative"],
       "singular": {
         "nominative": "servus",
         "vocative": "serve",
@@ -64,18 +50,36 @@
     },
     {
       "declension": 2,
+      "name": "Second Declension (Masculine -er)",
+      "gender": "m",
+      "example_noun": "puer",
+      "example_meaning": "boy",
+      "note": "puer keeps the -e- throughout; magister drops it (gen. sg. magistri, not magisteri)",
+      "cases": ["nominative","vocative","accusative","genitive","dative","ablative"],
+      "singular": {
+        "nominative": "puer",
+        "vocative": "puer",
+        "accusative": "puerum",
+        "genitive": "pueri",
+        "dative": "puero",
+        "ablative": "puero"
+      },
+      "plural": {
+        "nominative": "pueri",
+        "vocative": "pueri",
+        "accusative": "pueros",
+        "genitive": "puerorum",
+        "dative": "pueris",
+        "ablative": "pueris"
+      }
+    },
+    {
+      "declension": 2,
       "name": "Second Declension (Neuter -um)",
       "gender": "n",
       "example_noun": "bellum",
       "example_meaning": "war",
-      "cases": [
-        "nominative",
-        "vocative",
-        "accusative",
-        "genitive",
-        "dative",
-        "ablative"
-      ],
+      "cases": ["nominative","vocative","accusative","genitive","dative","ablative"],
       "singular": {
         "nominative": "bellum",
         "vocative": "bellum",
@@ -99,14 +103,7 @@
       "gender": "m",
       "example_noun": "rex",
       "example_meaning": "king",
-      "cases": [
-        "nominative",
-        "vocative",
-        "accusative",
-        "genitive",
-        "dative",
-        "ablative"
-      ],
+      "cases": ["nominative","vocative","accusative","genitive","dative","ablative"],
       "singular": {
         "nominative": "rex",
         "vocative": "rex",
@@ -130,14 +127,7 @@
       "gender": "n",
       "example_noun": "nomen",
       "example_meaning": "name",
-      "cases": [
-        "nominative",
-        "vocative",
-        "accusative",
-        "genitive",
-        "dative",
-        "ablative"
-      ],
+      "cases": ["nominative","vocative","accusative","genitive","dative","ablative"],
       "singular": {
         "nominative": "nomen",
         "vocative": "nomen",
@@ -153,6 +143,183 @@
         "genitive": "nominum",
         "dative": "nominibus",
         "ablative": "nominibus"
+      }
+    }
+  ],
+  "adjectives": [
+    {
+      "name": "bonus/a/um — 1st/2nd Declension Adjective",
+      "meaning": "good",
+      "type": "2-1-2",
+      "cases": ["nominative","vocative","accusative","genitive","dative","ablative"],
+      "masculine": {
+        "singular": {
+          "nominative": "bonus",
+          "vocative": "bone",
+          "accusative": "bonum",
+          "genitive": "boni",
+          "dative": "bono",
+          "ablative": "bono"
+        },
+        "plural": {
+          "nominative": "boni",
+          "vocative": "boni",
+          "accusative": "bonos",
+          "genitive": "bonorum",
+          "dative": "bonis",
+          "ablative": "bonis"
+        }
+      },
+      "feminine": {
+        "singular": {
+          "nominative": "bona",
+          "vocative": "bona",
+          "accusative": "bonam",
+          "genitive": "bonae",
+          "dative": "bonae",
+          "ablative": "bona"
+        },
+        "plural": {
+          "nominative": "bonae",
+          "vocative": "bonae",
+          "accusative": "bonas",
+          "genitive": "bonarum",
+          "dative": "bonis",
+          "ablative": "bonis"
+        }
+      },
+      "neuter": {
+        "singular": {
+          "nominative": "bonum",
+          "vocative": "bonum",
+          "accusative": "bonum",
+          "genitive": "boni",
+          "dative": "bono",
+          "ablative": "bono"
+        },
+        "plural": {
+          "nominative": "bona",
+          "vocative": "bona",
+          "accusative": "bona",
+          "genitive": "bonorum",
+          "dative": "bonis",
+          "ablative": "bonis"
+        }
+      }
+    },
+    {
+      "name": "omnis/e — 3rd Declension Adjective",
+      "meaning": "all, every",
+      "type": "3rd-2-termination",
+      "cases": ["nominative","vocative","accusative","genitive","dative","ablative"],
+      "masculine": {
+        "singular": {
+          "nominative": "omnis",
+          "vocative": "omnis",
+          "accusative": "omnem",
+          "genitive": "omnis",
+          "dative": "omni",
+          "ablative": "omni"
+        },
+        "plural": {
+          "nominative": "omnes",
+          "vocative": "omnes",
+          "accusative": "omnes",
+          "genitive": "omnium",
+          "dative": "omnibus",
+          "ablative": "omnibus"
+        }
+      },
+      "feminine": {
+        "singular": {
+          "nominative": "omnis",
+          "vocative": "omnis",
+          "accusative": "omnem",
+          "genitive": "omnis",
+          "dative": "omni",
+          "ablative": "omni"
+        },
+        "plural": {
+          "nominative": "omnes",
+          "vocative": "omnes",
+          "accusative": "omnes",
+          "genitive": "omnium",
+          "dative": "omnibus",
+          "ablative": "omnibus"
+        }
+      },
+      "neuter": {
+        "singular": {
+          "nominative": "omne",
+          "vocative": "omne",
+          "accusative": "omne",
+          "genitive": "omnis",
+          "dative": "omni",
+          "ablative": "omni"
+        },
+        "plural": {
+          "nominative": "omnia",
+          "vocative": "omnia",
+          "accusative": "omnia",
+          "genitive": "omnium",
+          "dative": "omnibus",
+          "ablative": "omnibus"
+        }
+      }
+    }
+  ],
+  "pronouns": [
+    {
+      "name": "is/ea/id — he / she / it",
+      "meaning": "he, she, it; this, that (3rd person pronoun)",
+      "cases": ["nominative","accusative","genitive","dative","ablative"],
+      "masculine": {
+        "singular": {
+          "nominative": "is",
+          "accusative": "eum",
+          "genitive": "eius",
+          "dative": "ei",
+          "ablative": "eo"
+        },
+        "plural": {
+          "nominative": "ei",
+          "accusative": "eos",
+          "genitive": "eorum",
+          "dative": "eis",
+          "ablative": "eis"
+        }
+      },
+      "feminine": {
+        "singular": {
+          "nominative": "ea",
+          "accusative": "eam",
+          "genitive": "eius",
+          "dative": "ei",
+          "ablative": "ea"
+        },
+        "plural": {
+          "nominative": "eae",
+          "accusative": "eas",
+          "genitive": "earum",
+          "dative": "eis",
+          "ablative": "eis"
+        }
+      },
+      "neuter": {
+        "singular": {
+          "nominative": "id",
+          "accusative": "id",
+          "genitive": "eius",
+          "dative": "ei",
+          "ablative": "eo"
+        },
+        "plural": {
+          "nominative": "ea",
+          "accusative": "ea",
+          "genitive": "eorum",
+          "dative": "eis",
+          "ablative": "eis"
+        }
       }
     }
   ]

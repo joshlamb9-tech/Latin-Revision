@@ -58,6 +58,53 @@
     .wg-table tr:hover td {
       background-color: var(--color-parchment-dark);
     }
+    /* Support toggle */
+    .wg-mode-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .wg-mode-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--color-stone-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 0.25rem;
+    }
+    .wg-mode-toggle {
+      display: flex;
+      border: 1.5px solid var(--color-border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .wg-mode-btn {
+      padding: 0.4rem 1rem;
+      font-family: 'EB Garamond', serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: transparent;
+      color: var(--color-stone-light);
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s;
+    }
+    .wg-mode-btn:first-child { border-right: 1.5px solid var(--color-border); }
+    .wg-mode-btn.active {
+      background: var(--color-terracotta);
+      color: #fff;
+    }
+    /* Hide Latin column in test mode */
+    .wg-mode-test .wg-table td:last-child {
+      color: transparent;
+      user-select: none;
+      border-left: 2px dashed var(--color-border);
+    }
+    .wg-mode-test .wg-table tr:hover td:last-child {
+      color: var(--color-stone);
+    }
   </style>
 </head>
 <body>
@@ -82,7 +129,14 @@
   </header>
   <main id="app">
     <h1>Q4 Word Groups</h1>
-    <p class="wg-intro">English to Latin — organised by noun group and verb conjugation. Use this for Q4 sentence practice: cover the Latin column and test yourself.</p>
+    <p class="wg-intro">English to Latin &mdash; organised by noun group and verb conjugation.</p>
+    <div class="wg-mode-bar">
+      <span class="wg-mode-label">Mode:</span>
+      <div class="wg-mode-toggle">
+        <button class="wg-mode-btn active" id="btn-study">Study</button>
+        <button class="wg-mode-btn" id="btn-test">Test (hover to reveal)</button>
+      </div>
+    </div>
     <div id="groups-container"><p>Loading&hellip;</p></div>
   </main>
   <footer class="site-footer">
@@ -130,6 +184,19 @@
       .catch(() => {
         document.getElementById('groups-container').innerHTML = '<p class="error">Could not load word groups.</p>';
       });
+
+    // Support / Test mode toggle
+    var main = document.getElementById('app');
+    document.getElementById('btn-study').addEventListener('click', function () {
+      main.classList.remove('wg-mode-test');
+      this.classList.add('active');
+      document.getElementById('btn-test').classList.remove('active');
+    });
+    document.getElementById('btn-test').addEventListener('click', function () {
+      main.classList.add('wg-mode-test');
+      this.classList.add('active');
+      document.getElementById('btn-study').classList.remove('active');
+    });
   </script>
 </body>
 </html>

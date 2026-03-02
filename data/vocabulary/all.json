@@ -1211,7 +1211,7 @@
     "english": "I hear, listen to",
     "part_of_speech": "verb",
     "declension": null,
-    "conjugation": null,
+    "conjugation": 4,
     "topics": [
       "daily-life"
     ],
@@ -1226,7 +1226,7 @@
     "english": "I drink",
     "part_of_speech": "verb",
     "declension": null,
-    "conjugation": null,
+    "conjugation": 3,
     "topics": [
       "daily-life"
     ],
@@ -1241,7 +1241,7 @@
     "english": "I take, capture",
     "part_of_speech": "verb",
     "declension": null,
-    "conjugation": null,
+    "conjugation": 3,
     "topics": [
       "war/army",
       "daily-life"
@@ -1288,7 +1288,7 @@
     "english": "I want, desire, wish",
     "part_of_speech": "verb",
     "declension": null,
-    "conjugation": null,
+    "conjugation": 3,
     "topics": [
       "daily-life"
     ],
@@ -1318,7 +1318,7 @@
     "english": "I depart, go away",
     "part_of_speech": "verb",
     "declension": null,
-    "conjugation": null,
+    "conjugation": 3,
     "topics": [
       "travel",
       "daily-life"
@@ -1349,7 +1349,7 @@
     "english": "I lead; (here) I marry",
     "part_of_speech": "verb",
     "declension": null,
-    "conjugation": null,
+    "conjugation": 3,
     "topics": [
       "family",
       "war/army"
@@ -1429,7 +1429,7 @@
     "english": "I flee, run away",
     "part_of_speech": "verb",
     "declension": null,
-    "conjugation": null,
+    "conjugation": 3,
     "topics": [
       "war/army",
       "travel"
@@ -1524,7 +1524,7 @@
     "english": "I send",
     "part_of_speech": "verb",
     "declension": null,
-    "conjugation": null,
+    "conjugation": 3,
     "topics": [
       "war/army",
       "daily-life"
@@ -1650,7 +1650,7 @@
     "english": "I seek, make for, attack",
     "part_of_speech": "verb",
     "declension": null,
-    "conjugation": null,
+    "conjugation": 3,
     "topics": [
       "war/army",
       "travel"
@@ -1713,7 +1713,7 @@
     "english": "I rule, govern",
     "part_of_speech": "verb",
     "declension": null,
-    "conjugation": null,
+    "conjugation": 3,
     "topics": [
       "war/army",
       "family"
@@ -1852,7 +1852,7 @@
     "english": "I come",
     "part_of_speech": "verb",
     "declension": null,
-    "conjugation": null,
+    "conjugation": 4,
     "topics": [
       "travel",
       "daily-life"
@@ -3024,21 +3024,6 @@
     "level": 2
   },
   {
-    "id": "dux-02",
-    "latin": "dux",
-    "genitive": "ducis",
-    "gender": "m",
-    "english": "leader, general",
-    "part_of_speech": "noun",
-    "declension": 3,
-    "conjugation": null,
-    "topics": [
-      "war/army"
-    ],
-    "frequency_rank": 18,
-    "level": 2
-  },
-  {
     "id": "corpus-01",
     "latin": "corpus",
     "genitive": "corporis",
@@ -3272,5 +3257,117 @@
     ],
     "frequency_rank": 42,
     "level": 2
+  },
+  {
+    "id": "cibus-01",
+    "latin": "cibus",
+    "genitive": "cibi",
+    "gender": "m",
+    "english": "food",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "food",
+      "daily-life"
+    ],
+    "frequency_rank": 155,
+    "level": 1
+  },
+  {
+    "id": "hortus-01",
+    "latin": "hortus",
+    "genitive": "horti",
+    "gender": "m",
+    "english": "garden",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "home",
+      "daily-life"
+    ],
+    "frequency_rank": 160,
+    "level": 1
+  },
+  {
+    "id": "forum-01",
+    "latin": "forum",
+    "genitive": "fori",
+    "gender": "n",
+    "english": "forum, market place",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "town",
+      "daily-life"
+    ],
+    "frequency_rank": 165,
+    "level": 1
+  },
+  {
+    "id": "carmen-01",
+    "latin": "carmen",
+    "genitive": "carminis",
+    "gender": "n",
+    "english": "song, poem",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "culture",
+      "daily-life"
+    ],
+    "frequency_rank": 170,
+    "level": 2
+  },
+  {
+    "id": "discipulus-01",
+    "latin": "discipulus",
+    "genitive": "discipuli",
+    "gender": "m",
+    "english": "pupil, student",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "school",
+      "daily-life"
+    ],
+    "frequency_rank": 175,
+    "level": 1
+  },
+  {
+    "id": "fons-01",
+    "latin": "fons",
+    "genitive": "fontis",
+    "gender": "m",
+    "english": "spring, fountain",
+    "part_of_speech": "noun",
+    "declension": 3,
+    "conjugation": null,
+    "topics": [
+      "nature",
+      "daily-life"
+    ],
+    "frequency_rank": 180,
+    "level": 2
+  },
+  {
+    "id": "ager-01",
+    "latin": "ager",
+    "genitive": "agri",
+    "gender": "m",
+    "english": "field",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "nature",
+      "farm"
+    ],
+    "frequency_rank": 185,
+    "level": 1
   }
 ]

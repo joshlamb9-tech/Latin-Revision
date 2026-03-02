@@ -53,6 +53,13 @@ const GRAMMAR_QUICK_CHECKS = {
     { question: 'Which ending marks the 2nd person plural present in the 2nd conjugation?', options: ['-\u0113tis', '-\u0113mus', '-ent', '-et'], correct: '-\u0113tis', explanation: 'Mon\u0113tis = you (pl.) warn. The 2nd person plural present ends in -\u0113tis for 2nd conjugation verbs.' },
     { question: 'What is the 1st person plural present of mone\u014d?', options: ['mon\u0113mus', 'monet', 'mon\u0113tis', 'monent'], correct: 'mon\u0113mus', explanation: 'Mon\u0113mus = we warn. The 1st person plural present of 2nd conjugation verbs ends in -\u0113mus.' },
   ],
+  adj_bonus: [
+    { question: 'How does a Latin adjective agree with its noun?', options: ['In case, number, and gender', 'In case only', 'In number and gender only', 'In gender only'], correct: 'In case, number, and gender', explanation: 'Latin adjectives must agree with their nouns in all three: case, number, and gender. E.g. puella bona (fem. nom. sg.) but servus bonus (masc. nom. sg.).' },
+    { question: 'What is the feminine accusative singular of bonus/a/um?', options: ['bonam', 'bona', 'bonae', 'bonum'], correct: 'bonam', explanation: 'Bonam follows 1st declension feminine endings: nom. bona, acc. bonam. E.g. puellam bonam video = I see the good girl.' },
+    { question: 'What is the neuter nominative and accusative singular of bonus/a/um?', options: ['bonum', 'bonus', 'bona', 'bone'], correct: 'bonum', explanation: 'Neuter adjectives always use the same form for nominative, vocative, and accusative: bonum. E.g. templum bonum = a good temple.' },
+    { question: 'What is the masculine nominative plural of bonus/a/um?', options: ['boni', 'bonos', 'bonorum', 'bonis'], correct: 'boni', explanation: 'The masculine nominative plural of 2nd-declension adjectives ends in -i: boni. E.g. servi boni = the good slaves.' },
+    { question: 'What is the neuter nominative/accusative plural of bonus/a/um?', options: ['bona', 'boni', 'bonos', 'bonum'], correct: 'bona', explanation: 'Neuter plural nominative and accusative always end in -a: bona. E.g. templa bona = good temples.' },
+  ],
 };
 
 /**
@@ -182,6 +189,28 @@ function renderAllGrammar(container, nounsData, verbsData) {
   verbsData.irregular.forEach(verb => {
     container.appendChild(renderIrregularSection(verb));
   });
+
+  // --- Adjectives ---
+  if (nounsData.adjectives && nounsData.adjectives.length) {
+    const adjHeading = document.createElement('h2');
+    adjHeading.textContent = 'Adjectives';
+    container.appendChild(adjHeading);
+
+    nounsData.adjectives.forEach(adj => {
+      container.appendChild(renderAdjectiveSection(adj));
+    });
+  }
+
+  // --- Pronouns ---
+  if (nounsData.pronouns && nounsData.pronouns.length) {
+    const pronHeading = document.createElement('h2');
+    pronHeading.textContent = 'Pronouns';
+    container.appendChild(pronHeading);
+
+    nounsData.pronouns.forEach(pron => {
+      container.appendChild(renderPronounSection(pron));
+    });
+  }
 }
 
 /**
@@ -201,6 +230,13 @@ function renderDeclensionSection(decl) {
   example.className = 'grammar-example';
   example.textContent = decl.example_noun + ' \u2014 ' + decl.example_meaning;
   section.appendChild(example);
+
+  if (decl.note) {
+    const note = document.createElement('p');
+    note.className = 'grammar-note';
+    note.textContent = decl.note;
+    section.appendChild(note);
+  }
 
   section.appendChild(renderNounTable(decl));
 
@@ -327,6 +363,106 @@ function renderVerbTable(tenseData) {
 
     const plurCell = row.insertCell();
     plurCell.textContent = (tenseData.plural && tenseData.plural[person]) || '';
+  });
+
+  wrapper.appendChild(table);
+  return wrapper;
+}
+
+/**
+ * Render a single adjective section with singular and plural tables (Case | M | F | N).
+ * @param {Object} adj - one entry from nounsData.adjectives
+ * @returns {HTMLElement}
+ */
+function renderAdjectiveSection(adj) {
+  const section = document.createElement('div');
+  section.className = 'grammar-section';
+
+  const h3 = document.createElement('h3');
+  h3.textContent = adj.name;
+  section.appendChild(h3);
+
+  const example = document.createElement('p');
+  example.className = 'grammar-example';
+  example.textContent = adj.meaning;
+  section.appendChild(example);
+
+  ['singular', 'plural'].forEach(num => {
+    const label = document.createElement('p');
+    label.className = 'tense-label';
+    label.textContent = num.charAt(0).toUpperCase() + num.slice(1);
+    section.appendChild(label);
+    section.appendChild(renderAdjPronTable(adj, adj.cases, num));
+  });
+
+  if (adj.type === '2-1-2') appendQuickCheck(section, 'adj_bonus');
+
+  return section;
+}
+
+/**
+ * Render a pronoun section with singular and plural tables (Case | M | F | N).
+ * @param {Object} pron - one entry from nounsData.pronouns
+ * @returns {HTMLElement}
+ */
+function renderPronounSection(pron) {
+  const section = document.createElement('div');
+  section.className = 'grammar-section';
+
+  const h3 = document.createElement('h3');
+  h3.textContent = pron.name;
+  section.appendChild(h3);
+
+  const example = document.createElement('p');
+  example.className = 'grammar-example';
+  example.textContent = pron.meaning;
+  section.appendChild(example);
+
+  ['singular', 'plural'].forEach(num => {
+    const label = document.createElement('p');
+    label.className = 'tense-label';
+    label.textContent = num.charAt(0).toUpperCase() + num.slice(1);
+    section.appendChild(label);
+    section.appendChild(renderAdjPronTable(pron, pron.cases, num));
+  });
+
+  return section;
+}
+
+/**
+ * Render a scrollable adjective/pronoun table (Case | Masculine | Feminine | Neuter).
+ * @param {Object} data   - adjective or pronoun data object
+ * @param {string[]} cases - array of case names
+ * @param {string} number  - 'singular' or 'plural'
+ * @returns {HTMLElement} wrapper div
+ */
+function renderAdjPronTable(data, cases, number) {
+  const wrapper = document.createElement('div');
+  wrapper.className = 'table-scroll';
+
+  const table = document.createElement('table');
+  table.className = 'grammar-table';
+
+  const thead = table.createTHead();
+  const headRow = thead.insertRow();
+  ['Case', 'Masculine', 'Feminine', 'Neuter'].forEach(label => {
+    const th = document.createElement('th');
+    th.textContent = label;
+    headRow.appendChild(th);
+  });
+
+  const tbody = table.createTBody();
+  cases.forEach(caseName => {
+    const row = tbody.insertRow();
+
+    const caseCell = row.insertCell();
+    caseCell.className = 'case-label';
+    caseCell.textContent = caseName.charAt(0).toUpperCase() + caseName.slice(1);
+
+    ['masculine', 'feminine', 'neuter'].forEach(gender => {
+      const cell = row.insertCell();
+      cell.textContent = (data[gender] && data[gender][number] && data[gender][number][caseName]) || '';
+    });
   });
 
   wrapper.appendChild(table);
