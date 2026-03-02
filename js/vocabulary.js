@@ -73,8 +73,11 @@ function renderVocabulary(app, filtered, filters, total) {
   // Count line
   const count = document.createElement('p');
   count.className = 'vocab-count';
+  const noFiltersActive = !filters.topic && !filters.freq && !filters.pos && !filters.level;
   if (filters.freq) {
     count.textContent = 'Top ' + filters.freq + ' by frequency';
+  } else if (noFiltersActive) {
+    count.textContent = 'Level 1: 87 words \u00b7 Level 2: 131 words \u2014 start with Level 1';
   } else {
     count.textContent = filtered.length + ' word' + (filtered.length !== 1 ? 's' : '');
   }
