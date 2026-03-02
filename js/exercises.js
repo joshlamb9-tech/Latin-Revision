@@ -1195,10 +1195,18 @@ function runQ4Builder(app) {
 
         card.appendChild(el('p', { className: 'q4-english' }, s.english));
 
-        // Word bank
+        // Word bank — hidden by default, revealed on request
         const hintWrap = el('div', { className: 'q4-hints' });
         hintWrap.appendChild(el('span', { className: 'q4-hints-label' }, 'Vocabulary:'));
         s.hints.forEach(h => hintWrap.appendChild(el('span', { className: 'q4-hint-chip' }, h)));
+        hintWrap.style.display = 'none';
+
+        const hintToggle = el('button', { className: 'q4-hint-toggle' }, 'Show vocabulary hints');
+        hintToggle.addEventListener('click', () => {
+          hintWrap.style.display = 'flex';
+          hintToggle.style.display = 'none';
+        });
+        card.appendChild(hintToggle);
         card.appendChild(hintWrap);
 
         // Textarea

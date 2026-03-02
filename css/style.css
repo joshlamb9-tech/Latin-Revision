@@ -1373,6 +1373,23 @@ a:hover {
   margin-bottom: 1rem;
 }
 
+.q4-hint-toggle {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--color-stone);
+  background: none;
+  border: 1px dashed var(--color-stone-light);
+  border-radius: 3px;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+}
+
+.q4-hint-toggle:hover {
+  color: var(--color-terracotta);
+  border-color: var(--color-terracotta);
+}
+
 .q4-hints-label {
   font-size: 0.8rem;
   font-weight: 600;
