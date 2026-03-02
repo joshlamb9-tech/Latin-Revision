@@ -45,9 +45,11 @@ function applyFilters(words, filters) {
     }
   }
 
-  if (filters.level) {
-    result = result.filter(w => w.level === filters.level);
+  if (filters.level === 1) {
+    // Level 1 only — core vocabulary
+    result = result.filter(w => w.level === 1);
   }
+  // Level 2 = all words (Level 1 + Level 2 additional), so no filter needed
 
   if (filters.freq) {
     result = result.slice().sort((a, b) => a.frequency_rank - b.frequency_rank);

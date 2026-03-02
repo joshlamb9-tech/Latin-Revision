@@ -83,8 +83,11 @@ function applyUrlParamFilter(words, params) {
   const decl  = params.get('decl')  ? parseInt(params.get('decl'), 10)  : null;
   const conj  = params.get('conj')  ? parseInt(params.get('conj'), 10)  : null;
   const freq  = params.get('freq')  ? parseInt(params.get('freq'), 10)  : null;
+  const level = params.get('level') ? parseInt(params.get('level'), 10) : null;
 
   let pool = words;
+  if (level === 1) pool = pool.filter(w => w.level === 1);
+  // level 2 = all words, no filter needed
   if (topic) pool = pool.filter(w => w.topics && w.topics.includes(topic));
   if (pos)   pool = pool.filter(w => w.part_of_speech === pos);
   if (decl)  pool = pool.filter(w => w.declension === decl);
@@ -99,11 +102,31 @@ function applyUrlParamFilter(words, params) {
 // -- HUB ------------------------------------------------------------------
 
 function renderHub(app, allWords) {
+  const params = new URLSearchParams(location.search);
+  const level = params.get('level') ? parseInt(params.get('level'), 10) : null;
+  const l1count = allWords.filter(w => w.level === 1).length;
+  const allcount = allWords.length;
+
   const summary = SRS.summary(allWords.map(w => w.id));
   app.innerHTML = '';
 
   const h1 = el('h1', {}, 'Exercises');
   app.appendChild(h1);
+
+  // Level switch
+  const levelSwitch = el('div', { className: 'ex-level-switch' });
+  levelSwitch.appendChild(el('span', { className: 'ex-level-switch-label' }, 'Testing:'));
+  const l1btn = el('a', {
+    href: 'quiz.html?level=1',
+    className: 'ex-level-btn' + (level === 1 ? ' active' : '')
+  }, 'Level 1 (' + l1count + ' words)');
+  const l2btn = el('a', {
+    href: 'quiz.html',
+    className: 'ex-level-btn' + (!level ? ' active' : '')
+  }, 'Level 2 — all (' + allcount + ' words)');
+  levelSwitch.appendChild(l1btn);
+  levelSwitch.appendChild(l2btn);
+  app.appendChild(levelSwitch);
 
   // Mastery strip
   const strip = el('div', { className: 'ex-mastery-strip' });
@@ -112,16 +135,19 @@ function renderHub(app, allWords) {
   strip.appendChild(el('span', { className: 'ex-mastery-done' }, summary.mastered + ' mastered'));
   app.appendChild(strip);
 
+  // Build level suffix for activity links
+  const levelSuffix = level === 1 ? '&level=1' : '';
+
   // Grouped activity sections
   const sections = [
     {
       label: 'Vocabulary',
-      sublabel: 'Levels 1 & 2',
+      sublabel: level === 1 ? 'Level 1 only' : 'Levels 1 & 2',
       activities: [
-        { id: 'flashcard', title: 'Flashcards', desc: 'See a word, recall the meaning, rate yourself. The best way to build a word bank.', ce: 'CE: all questions', href: 'quiz.html?activity=flashcard', icon: '🃏', start: true },
-        { id: 'mcq-le',   title: 'Word Quiz',  desc: 'Latin → English. Choose from 4 options. Quick and effective.', ce: 'CE Q3 vocab', href: 'quiz.html?activity=mcq&mode=latin-english', icon: '📝' },
-        { id: 'mcq-el',   title: 'Reverse Quiz', desc: 'English → Latin. Harder — great exam preparation.', ce: 'CE Q4 prep', href: 'quiz.html?activity=mcq&mode=english-latin', icon: '🔄' },
-        { id: 'pairs',    title: 'Matching Pairs', desc: 'Tap a Latin word, then its English match. Race through 6 pairs.', ce: 'CE vocab recall', href: 'quiz.html?activity=pairs', icon: '🔗' },
+        { id: 'flashcard', title: 'Flashcards', desc: 'See a word, recall the meaning, rate yourself. The best way to build a word bank.', ce: 'CE: all questions', href: 'quiz.html?activity=flashcard' + levelSuffix, icon: '🃏', start: true },
+        { id: 'mcq-le',   title: 'Word Quiz',  desc: 'Latin \u2192 English. Choose from 4 options. Quick and effective.', ce: 'CE Q3 vocab', href: 'quiz.html?activity=mcq&mode=latin-english' + levelSuffix, icon: '📝' },
+        { id: 'mcq-el',   title: 'Reverse Quiz', desc: 'English \u2192 Latin. Harder \u2014 great exam preparation.', ce: 'CE Q4 prep', href: 'quiz.html?activity=mcq&mode=english-latin' + levelSuffix, icon: '🔄' },
+        { id: 'pairs',    title: 'Matching Pairs', desc: 'Tap a Latin word, then its English match. Race through 6 pairs.', ce: 'CE vocab recall', href: 'quiz.html?activity=pairs' + levelSuffix, icon: '🔗' },
       ]
     },
     {

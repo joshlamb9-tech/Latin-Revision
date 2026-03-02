@@ -1257,3 +1257,51 @@ a:hover {
   color: #7a5a0a;
   border: 1px solid rgba(181, 130, 27, 0.25);
 }
+
+/* ============================================
+   Level Switch — Exercise hub
+   ============================================ */
+
+.ex-level-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  padding: 0.6rem 0.75rem;
+  background-color: var(--color-parchment-dark);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+.ex-level-switch-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-stone-light);
+  margin-right: 0.25rem;
+}
+
+.ex-level-btn {
+  padding: 0.3rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 2rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--color-stone);
+  background-color: var(--color-parchment);
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.ex-level-btn:hover {
+  border-color: var(--color-terracotta);
+  color: var(--color-terracotta);
+}
+
+.ex-level-btn.active {
+  background-color: var(--color-terracotta);
+  border-color: var(--color-terracotta);
+  color: var(--color-parchment);
+}
