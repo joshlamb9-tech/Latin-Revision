@@ -111,18 +111,18 @@ function renderVocabulary(app, filtered, filters, total) {
 }
 
 function buildHeading(filters) {
-  if (filters.level) return 'Level ' + filters.level + ' Words';
-  if (filters.freq)  return 'Top ' + filters.freq;
+  const lvlPrefix = filters.level ? 'Level ' + filters.level + ' ' : '';
+  if (filters.freq) return 'Top ' + filters.freq;
   if (filters.topic) {
-    const label = filters.topic.charAt(0).toUpperCase() + filters.topic.slice(1);
-    return label;
+    return lvlPrefix + filters.topic.charAt(0).toUpperCase() + filters.topic.slice(1);
   }
   if (filters.pos) {
     const posLabel = filters.pos.charAt(0).toUpperCase() + filters.pos.slice(1) + 's';
-    if (filters.decl) return posLabel + ' \u2014 ' + ordinal(filters.decl) + ' Declension';
-    if (filters.conj) return posLabel + ' \u2014 ' + ordinal(filters.conj) + ' Conjugation';
-    return posLabel;
+    if (filters.decl) return lvlPrefix + ordinal(filters.decl) + ' Declension ' + posLabel;
+    if (filters.conj) return lvlPrefix + ordinal(filters.conj) + ' Conjugation ' + posLabel;
+    return lvlPrefix + posLabel;
   }
+  if (filters.level) return 'Level ' + filters.level + ' Words';
   return 'All Words';
 }
 
@@ -130,40 +130,55 @@ function ordinal(n) {
   return ['', '1st', '2nd', '3rd'][n] || n + 'th';
 }
 
+// Build a vocabulary.html URL, merging newParams over preserveParams
+function buildUrl(newParams, preserveParams) {
+  const merged = Object.assign({}, preserveParams || {}, newParams);
+  const search = Object.entries(merged)
+    .filter(([, v]) => v !== null && v !== undefined)
+    .map(([k, v]) => encodeURIComponent(k) + '=' + encodeURIComponent(v))
+    .join('&');
+  return 'vocabulary.html' + (search ? '?' + search : '');
+}
+
 function renderFilterNav(filters) {
   const nav = document.createElement('nav');
   nav.className = 'vocab-filters';
 
   // ── All ──────────────────────────────────────────────────────
-  addFilterLink(nav, 'All words', 'vocabulary.html', !filters.topic && !filters.freq && !filters.pos);
+  addFilterLink(nav, 'All words', 'vocabulary.html', !filters.topic && !filters.freq && !filters.pos && !filters.level);
+
+  // Grammar filter links preserve the current level selection
+  const lvl = filters.level ? { level: filters.level } : {};
+
+  // Level filter links preserve the current grammar selection
+  const gram = {};
+  if (filters.pos)  gram.pos  = filters.pos;
+  if (filters.decl) gram.decl = filters.decl;
+  if (filters.conj) gram.conj = filters.conj;
 
   // ── By Grammar ──────────────────────────────────────────────
   addSectionLabel(nav, 'By Grammar');
 
-  // Nouns group
-  addFilterLink(nav, 'All Nouns',     'vocabulary.html?pos=noun',        !filters.topic && !filters.freq && filters.pos === 'noun' && !filters.decl);
-  addFilterLink(nav, '1st Decl.',     'vocabulary.html?pos=noun&decl=1', filters.pos === 'noun' && filters.decl === 1);
-  addFilterLink(nav, '2nd Decl.',     'vocabulary.html?pos=noun&decl=2', filters.pos === 'noun' && filters.decl === 2);
-  addFilterLink(nav, '3rd Decl.',     'vocabulary.html?pos=noun&decl=3', filters.pos === 'noun' && filters.decl === 3);
+  addFilterLink(nav, 'All Nouns',    buildUrl({ pos: 'noun' },         lvl), filters.pos === 'noun' && !filters.decl);
+  addFilterLink(nav, '1st Decl.',    buildUrl({ pos: 'noun', decl: 1 }, lvl), filters.pos === 'noun' && filters.decl === 1);
+  addFilterLink(nav, '2nd Decl.',    buildUrl({ pos: 'noun', decl: 2 }, lvl), filters.pos === 'noun' && filters.decl === 2);
+  addFilterLink(nav, '3rd Decl.',    buildUrl({ pos: 'noun', decl: 3 }, lvl), filters.pos === 'noun' && filters.decl === 3);
 
-  // Verbs group
-  addFilterLink(nav, 'All Verbs',     'vocabulary.html?pos=verb',        filters.pos === 'verb' && !filters.conj);
-  addFilterLink(nav, '1st Conj.',     'vocabulary.html?pos=verb&conj=1', filters.pos === 'verb' && filters.conj === 1);
-  addFilterLink(nav, '2nd Conj.',     'vocabulary.html?pos=verb&conj=2', filters.pos === 'verb' && filters.conj === 2);
+  addFilterLink(nav, 'All Verbs',    buildUrl({ pos: 'verb' },         lvl), filters.pos === 'verb' && !filters.conj);
+  addFilterLink(nav, '1st Conj.',    buildUrl({ pos: 'verb', conj: 1 }, lvl), filters.pos === 'verb' && filters.conj === 1);
+  addFilterLink(nav, '2nd Conj.',    buildUrl({ pos: 'verb', conj: 2 }, lvl), filters.pos === 'verb' && filters.conj === 2);
 
-  // Other parts of speech
-  addFilterLink(nav, 'Adjectives',    'vocabulary.html?pos=adjective',   filters.pos === 'adjective');
-  addFilterLink(nav, 'Adverbs',       'vocabulary.html?pos=adverb',      filters.pos === 'adverb');
-  addFilterLink(nav, 'Prepositions',  'vocabulary.html?pos=preposition',  filters.pos === 'preposition');
+  addFilterLink(nav, 'Adjectives',   buildUrl({ pos: 'adjective' },   lvl), filters.pos === 'adjective');
+  addFilterLink(nav, 'Adverbs',      buildUrl({ pos: 'adverb' },      lvl), filters.pos === 'adverb');
+  addFilterLink(nav, 'Prepositions', buildUrl({ pos: 'preposition' }, lvl), filters.pos === 'preposition');
 
   // ── By Level ─────────────────────────────────────────────────
   addSectionLabel(nav, 'By Level');
-  addFilterLink(nav, 'Level 1', 'vocabulary.html?level=1', filters.level === 1);
-  addFilterLink(nav, 'Level 2', 'vocabulary.html?level=2', filters.level === 2);
+  addFilterLink(nav, 'Level 1', buildUrl({ level: 1 }, gram), filters.level === 1);
+  addFilterLink(nav, 'Level 2', buildUrl({ level: 2 }, gram), filters.level === 2);
 
   // ── By Frequency ─────────────────────────────────────────────
   addSectionLabel(nav, 'By Frequency');
-
   addFilterLink(nav, 'Top 50',  'vocabulary.html?freq=50',  filters.freq === 50);
   addFilterLink(nav, 'Top 100', 'vocabulary.html?freq=100', filters.freq === 100);
 
