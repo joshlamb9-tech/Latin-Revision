@@ -603,7 +603,7 @@
       "daily-life"
     ],
     "frequency_rank": 31,
-    "level": 2
+    "level": 1
   },
   {
     "id": "maritus-01",
@@ -666,7 +666,7 @@
       "daily-life"
     ],
     "frequency_rank": 26,
-    "level": 2
+    "level": 1
   },
   {
     "id": "periculum-01",
@@ -730,7 +730,7 @@
       "daily-life"
     ],
     "frequency_rank": 28,
-    "level": 2
+    "level": 1
   },
   {
     "id": "vir-01",
@@ -1183,7 +1183,7 @@
       "gods"
     ],
     "frequency_rank": 23,
-    "level": 2
+    "level": 1
   },
   {
     "id": "porta-01",
@@ -1215,7 +1215,7 @@
       "war/army"
     ],
     "frequency_rank": 45,
-    "level": 2
+    "level": 1
   },
   {
     "id": "arma-01",
@@ -1309,7 +1309,7 @@
       "travel"
     ],
     "frequency_rank": 18,
-    "level": 2
+    "level": 1
   },
   {
     "id": "appropinquo-01",
@@ -1402,7 +1402,7 @@
       "war/army"
     ],
     "frequency_rank": 19,
-    "level": 2
+    "level": 1
   },
   {
     "id": "cupio-01",
@@ -1448,7 +1448,7 @@
       "war/army"
     ],
     "frequency_rank": 22,
-    "level": 2
+    "level": 1
   },
   {
     "id": "dico-01",
@@ -1620,7 +1620,7 @@
       "travel"
     ],
     "frequency_rank": 17,
-    "level": 2
+    "level": 1
   },
   {
     "id": "laudo-01",
@@ -1713,7 +1713,7 @@
       "war/army"
     ],
     "frequency_rank": 23,
-    "level": 2
+    "level": 1
   },
   {
     "id": "nuntio-01",
@@ -1809,7 +1809,7 @@
       "family"
     ],
     "frequency_rank": 16,
-    "level": 2
+    "level": 1
   },
   {
     "id": "respondeo-01",
@@ -1869,7 +1869,7 @@
       "daily-life"
     ],
     "frequency_rank": 34,
-    "level": 2
+    "level": 1
   },
   {
     "id": "timeo-01",
@@ -2103,7 +2103,7 @@
       "daily-life"
     ],
     "frequency_rank": 16,
-    "level": 2
+    "level": 1
   },
   {
     "id": "multus-01",
@@ -2133,7 +2133,7 @@
       "daily-life"
     ],
     "frequency_rank": 22,
-    "level": 2
+    "level": 1
   },
   {
     "id": "saevus-01",
@@ -2164,7 +2164,7 @@
       "daily-life"
     ],
     "frequency_rank": 17,
-    "level": 2
+    "level": 1
   },
   {
     "id": "miser-01",
@@ -2179,7 +2179,7 @@
       "daily-life"
     ],
     "frequency_rank": 18,
-    "level": 2
+    "level": 1
   },
   {
     "id": "iratus-01",
@@ -2194,7 +2194,7 @@
       "daily-life"
     ],
     "frequency_rank": 19,
-    "level": 2
+    "level": 1
   },
   {
     "id": "omnis-01",
@@ -2349,7 +2349,7 @@
       "war/army"
     ],
     "frequency_rank": 42,
-    "level": 2
+    "level": 1
   },
   {
     "id": "audax-01",
@@ -2501,7 +2501,7 @@
       "daily-life"
     ],
     "frequency_rank": 16,
-    "level": 2
+    "level": 1
   },
   {
     "id": "postquam-01",
@@ -2781,7 +2781,7 @@
       "daily-life"
     ],
     "frequency_rank": 16,
-    "level": 2
+    "level": 1
   },
   {
     "id": "diu-01",
@@ -2828,7 +2828,7 @@
       "daily-life"
     ],
     "frequency_rank": 18,
-    "level": 2
+    "level": 1
   },
   {
     "id": "ibi-01",
@@ -2904,7 +2904,7 @@
       "daily-life"
     ],
     "frequency_rank": 17,
-    "level": 2
+    "level": 1
   },
   {
     "id": "non-01",
@@ -3025,7 +3025,7 @@
       "war/army"
     ],
     "frequency_rank": 20,
-    "level": 2
+    "level": 1
   },
   {
     "id": "tandem-01",
@@ -3040,7 +3040,7 @@
       "daily-life"
     ],
     "frequency_rank": 21,
-    "level": 2
+    "level": 1
   },
   {
     "id": "hic-02",
@@ -3235,6 +3235,241 @@
       "daily-life"
     ],
     "frequency_rank": 44,
+    "level": 2
+  },
+  {
+    "id": "etiam-01",
+    "latin": "etiam",
+    "genitive": null,
+    "gender": null,
+    "english": "also, even",
+    "part_of_speech": "conjunction",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 13,
+    "level": 1
+  },
+  {
+    "id": "Graecia-01",
+    "latin": "Graecia",
+    "genitive": null,
+    "gender": "f",
+    "english": "Greece",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "places"
+    ],
+    "frequency_rank": 55,
+    "level": 1
+  },
+  {
+    "id": "Graecus-01",
+    "latin": "Graecus",
+    "genitive": null,
+    "gender": null,
+    "english": "Greek",
+    "part_of_speech": "adjective",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "places",
+      "daily-life"
+    ],
+    "frequency_rank": 56,
+    "level": 1
+  },
+  {
+    "id": "meus-01",
+    "latin": "meus",
+    "genitive": null,
+    "gender": null,
+    "english": "my",
+    "part_of_speech": "adjective",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "family"
+    ],
+    "frequency_rank": 57,
+    "level": 1
+  },
+  {
+    "id": "noster-01",
+    "latin": "noster",
+    "genitive": null,
+    "gender": null,
+    "english": "our",
+    "part_of_speech": "adjective",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "family"
+    ],
+    "frequency_rank": 58,
+    "level": 1
+  },
+  {
+    "id": "Roma-01",
+    "latin": "Roma",
+    "genitive": null,
+    "gender": "f",
+    "english": "Rome",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "places"
+    ],
+    "frequency_rank": 59,
+    "level": 1
+  },
+  {
+    "id": "Romanus-01",
+    "latin": "Romanus",
+    "genitive": null,
+    "gender": null,
+    "english": "Roman",
+    "part_of_speech": "adjective",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "places",
+      "war/army",
+      "daily-life"
+    ],
+    "frequency_rank": 60,
+    "level": 1
+  },
+  {
+    "id": "sic-01",
+    "latin": "sic",
+    "genitive": null,
+    "gender": null,
+    "english": "in this way, thus",
+    "part_of_speech": "adverb",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 61,
+    "level": 1
+  },
+  {
+    "id": "suus-01",
+    "latin": "suus",
+    "genitive": null,
+    "gender": null,
+    "english": "his own, her own, their own",
+    "part_of_speech": "adjective",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "family"
+    ],
+    "frequency_rank": 62,
+    "level": 1
+  },
+  {
+    "id": "Troia-01",
+    "latin": "Troia",
+    "genitive": null,
+    "gender": "f",
+    "english": "Troy",
+    "part_of_speech": "noun",
+    "declension": 1,
+    "conjugation": null,
+    "topics": [
+      "places"
+    ],
+    "frequency_rank": 63,
+    "level": 1
+  },
+  {
+    "id": "Troianus-01",
+    "latin": "Troianus",
+    "genitive": null,
+    "gender": null,
+    "english": "Trojan",
+    "part_of_speech": "adjective",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "places",
+      "war/army"
+    ],
+    "frequency_rank": 64,
+    "level": 1
+  },
+  {
+    "id": "tuus-01",
+    "latin": "tuus",
+    "genitive": null,
+    "gender": null,
+    "english": "your (singular)",
+    "part_of_speech": "adjective",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "family"
+    ],
+    "frequency_rank": 65,
+    "level": 1
+  },
+  {
+    "id": "vester-01",
+    "latin": "vester",
+    "genitive": null,
+    "gender": null,
+    "english": "your (plural)",
+    "part_of_speech": "adjective",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life",
+      "family"
+    ],
+    "frequency_rank": 66,
+    "level": 1
+  },
+  {
+    "id": "vinum-01",
+    "latin": "vinum",
+    "genitive": "vini",
+    "gender": "n",
+    "english": "wine",
+    "part_of_speech": "noun",
+    "declension": 2,
+    "conjugation": null,
+    "topics": [
+      "food",
+      "daily-life"
+    ],
+    "frequency_rank": 67,
+    "level": 1
+  },
+  {
+    "id": "quamquam-01",
+    "latin": "quamquam",
+    "genitive": null,
+    "gender": null,
+    "english": "although",
+    "part_of_speech": "conjunction",
+    "declension": null,
+    "conjugation": null,
+    "topics": [
+      "daily-life"
+    ],
+    "frequency_rank": 19,
     "level": 2
   }
 ]
