@@ -60,7 +60,7 @@ body {
   justify-content: space-between;
   max-width: 100%;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 1.25rem;
   height: 56px;
 }
 
@@ -177,9 +177,9 @@ body {
 
 /* --- Main Content Area --- */
 main#app {
-  max-width: 100%;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 1.5rem 3rem;
+  padding: 1.5rem 1.25rem;
 }
 
 /* --- Hero Section --- */
